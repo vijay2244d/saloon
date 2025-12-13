@@ -1,11 +1,120 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import StatusIndicator from '../components/StatusIndicator.jsx';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="The Smart Salon | Home">
+  <main>
+    <div class="hero-container">
+      <div class="status-indicator-wrapper">
+        <StatusIndicator client:load />
+      </div>
+
+      <div class="hero-content">
+        <h1>The Smart Salon</h1>
+        <p>Cutting-edge styles, real-time availability.</p>
+        <a href="#services" class="button">Our Services</a>
+      </div>
+    </div>
+
+    <section id="about" class="content-section">
+      <h2>About Us</h2>
+      <p>Welcome to the intersection of style and technology. We're a full-service salon dedicated to providing you with the best look, and the most convenient experience. Our unique real-time status lets you know the moment our stylists are in and ready for you.</p>
+    </section>
+
+    <section id="services" class="content-section">
+      <h2>Our Services</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <i class="fa-solid fa-scissors"></i>
+          <h3>Haircuts & Styling</h3>
+          <p>From classic cuts to the latest trends, our stylists will craft the perfect look for you.</p>
+        </div>
+        <div class="service-card">
+          <i class="fa-solid fa-paint-brush"></i>
+          <h3>Color & Highlights</h3>
+          <p>Transform your look with our expert coloring services, from subtle shades to bold new hues.</p>
+        </div>
+        <div class="service-card">
+          <i class="fa-solid fa-spa"></i>
+          <h3>Treatments</h3>
+          <p>Revitalize your hair with our range of deep conditioning and strengthening treatments.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
 </Layout>
+
+<style>
+  .hero-container {
+    text-align: center;
+    padding: 6rem 1rem 4rem;
+    position: relative;
+  }
+
+  .status-indicator-wrapper {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+  }
+
+  /* Note: The styles for .status-indicator are now implicitly handled by the SolidJS component and global.css */
+  /* You can keep shared styles here if needed, but component-specific states are in the component file */
+
+  .hero-content p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+  }
+
+  .content-section {
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .content-section h2 {
+    margin-bottom: 2rem;
+  }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    text-align: left;
+  }
+
+  .service-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+  }
+
+  .service-card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero-container {
+      padding: 4rem 1rem 2rem;
+    }
+    .status-indicator-wrapper {
+      top: 1rem;
+      right: 1rem;
+    }
+    .content-section {
+      padding: 3rem 0;
+    }
+  }
+</style>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
