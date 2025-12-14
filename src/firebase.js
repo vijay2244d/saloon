@@ -2,6 +2,7 @@
 export const firebaseConfig = {
   apiKey: "AIzaSyA5T5t3-1234567890",
   authDomain: "test-project-12345.firebaseapp.com",
+  databaseURL: "https://test-project-12345-default-rtdb.firebaseio.com/",
   projectId: "test-project-12345",
   storageBucket: "test-project-12345.appspot.com",
   messagingSenderId: "1234567890",

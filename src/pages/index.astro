@@ -1,13 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import StatusIndicator from '../components/StatusIndicator.jsx';
+import SaloonStatus from '../components/SaloonStatus.jsx';
 ---
 
 <Layout title="The Smart Salon | Home">
   <main>
     <div class="hero-container">
       <div class="status-indicator-wrapper">
-        <StatusIndicator client:load />
+        <StatusIndicator client:only="react" />
+      </div>
+      <div class="saloon-status-wrapper">
+        <SaloonStatus client:only="react" />
       </div>
 
       <div class="hero-content">
@@ -59,8 +63,11 @@ import StatusIndicator from '../components/StatusIndicator.jsx';
     right: 2rem;
   }
 
-  /* Note: The styles for .status-indicator are now implicitly handled by the SolidJS component and global.css */
-  /* You can keep shared styles here if needed, but component-specific states are in the component file */
+  .saloon-status-wrapper {
+    position: absolute;
+    top: 5rem;
+    right: 2rem;
+  }
 
   .hero-content p {
     font-size: 1.25rem;
@@ -109,6 +116,10 @@ import StatusIndicator from '../components/StatusIndicator.jsx';
     }
     .status-indicator-wrapper {
       top: 1rem;
+      right: 1rem;
+    }
+    .saloon-status-wrapper {
+      top: 4rem;
       right: 1rem;
     }
     .content-section {

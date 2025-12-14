@@ -5,7 +5,7 @@ import { firebaseConfig } from './firebase';
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
+const db = getDatabase(app, firebaseConfig.databaseURL);
 const statusRef = ref(db, 'salon/status');
 
 // Create an atom to hold the salon's status

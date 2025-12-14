@@ -1,13 +1,14 @@
-import { useStore } from '@nanostores/solid';
+import React from 'react';
+import { useStore } from '@nanostores/react';
 import { isSalonOpen } from '../store';
 
 export default function StatusIndicator() {
-  const open = useStore(isSalonOpen);
+  const isOpen = useStore(isSalonOpen);
 
   return (
-    <div class={`status-indicator ${open() ? 'open' : 'closed'}`}>
-      <i class={`fa-solid ${open() ? 'fa-door-open' : 'fa-door-closed'}`}></i>
-      <span>{open() ? 'Open' : 'Closed'}</span>
+    <div className={`status-indicator ${isOpen ? 'open' : 'closed'}`}>
+      <i className={`fa-solid ${isOpen ? 'fa-door-open' : 'fa-door-closed'}`}></i>
+      <span>{isOpen ? 'Open' : 'Closed'}</span>
     </div>
   );
 }
