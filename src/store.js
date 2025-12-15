@@ -3,9 +3,12 @@ import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, onValue, set } from 'firebase/database';
 import { firebaseConfig } from './firebase';
 
+// Log the firebaseConfig to the console for debugging
+console.log("Firebase Config:", firebaseConfig);
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getDatabase(app, firebaseConfig.databaseURL);
+const db = getDatabase(app);
 const statusRef = ref(db, 'salon/status');
 
 // Create an atom to hold the salon's status

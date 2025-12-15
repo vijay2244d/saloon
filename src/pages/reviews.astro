@@ -1,0 +1,356 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const reviews = [
+  {
+    name: "Ananya",
+    text: "Absolutely love the service here! I got a fantastic haircut from Priya. She really understood what I wanted and gave me a style that's easy to manage. The salon has a great atmosphere too. Will definitely be back!"
+  },
+  {
+    name: "Karthik",
+    text: "I came in for a color treatment and I'm so happy with the results. Suresh was my colorist and he did an amazing job. The color is vibrant and my hair feels so healthy. Highly recommend The Smart Salon!"
+  },
+  {
+    name: "Lakshmi",
+    text: "This is my go-to salon for any hair treatment. The staff is professional and friendly. I always leave feeling refreshed and beautiful. Thank you to the whole team!"
+  },
+  {
+    name: "Vikram",
+    text: "A great experience from start to finish. Booking was easy, the salon is clean and modern, and my stylist, Murali, was excellent. He gave me some great tips for maintaining my new hairstyle."
+  },
+  {
+    name: "Rohan",
+    text: "The best salon experience I've ever had! The stylists are true artists."
+  },
+  {
+    name: "Sonia",
+    text: "I'm so impressed with the quality of service. My hair has never looked better."
+  },
+  {
+    name: "Amit",
+    text: "A wonderful and relaxing atmosphere. I'll be coming back for sure."
+  },
+  {
+    name: "Pooja",
+    text: "The attention to detail is incredible. Highly recommend for a perfect haircut."
+  },
+  {
+    name: "Rajesh",
+    text: "My hair color is exactly what I wanted. The colorist was so skilled."
+  },
+  {
+    name: "Deepika",
+    text: "I always leave feeling like a new person. Thank you for the amazing service!"
+  },
+  {
+    name: "Sanjay",
+    text: "The staff is so welcoming and professional. A truly top-notch salon."
+  },
+  {
+    name: "Meera",
+    text: "I've been a loyal customer for years, and I'm never disappointed."
+  },
+  {
+    name: "Arun",
+    text: "The treatments are so nourishing. My hair feels incredibly healthy."
+  },
+  {
+    name: "Geeta",
+    text: "A fantastic salon with a modern vibe. The stylists are up-to-date with the latest trends."
+  },
+  {
+    name: "Vijay",
+    text: "The best salon experience I've ever had! The stylists are true artists."
+  },
+  {
+    name: "Anita",
+    text: "I'm so impressed with the quality of service. My hair has never looked better."
+  },
+  {
+    name: "Prakash",
+    text: "A wonderful and relaxing atmosphere. I'll be coming back for sure."
+  },
+  {
+    name: "Sunita",
+    text: "The attention to detail is incredible. Highly recommend for a perfect haircut."
+  },
+  {
+    name: "Anil",
+    text: "My hair color is exactly what I wanted. The colorist was so skilled."
+  },
+  {
+    name: "Kavita",
+    text: "I always leave feeling like a new person. Thank you for the amazing service!"
+  },
+  {
+    name: "Ashok",
+    text: "The staff is so welcoming and professional. A truly top-notch salon."
+  },
+  {
+    name: "Usha",
+    text: "I've been a loyal customer for years, and I'm never disappointed."
+  },
+  {
+    name: "Ravi",
+    text: "The treatments are so nourishing. My hair feels incredibly healthy."
+  },
+  {
+    name: "Rekha",
+    text: "A fantastic salon with a modern vibe. The stylists are up-to-date with the latest trends."
+  },
+  {
+    name: "Manoj",
+    text: "The best salon experience I've ever had! The stylists are true artists."
+  },
+  {
+    name: "Sarita",
+    text: "I'm so impressed with the quality of service. My hair has never looked better."
+  },
+  {
+    name: "Alok",
+    text: "A wonderful and relaxing atmosphere. I'll be coming back for sure."
+  },
+  {
+    name: "Priya",
+    text: "The attention to detail is incredible. Highly recommend for a perfect haircut."
+  },
+  {
+    name: "Rahul",
+    text: "My hair color is exactly what I wanted. The colorist was so skilled."
+  },
+  {
+    name: "Anjali",
+    text: "I always leave feeling like a new person. Thank you for the amazing service!"
+  },
+  {
+    name: "Suresh",
+    text: "The staff is so welcoming and professional. A truly top-notch salon."
+  },
+  {
+    name: "Rani",
+    text: "I've been a loyal customer for years, and I'm never disappointed."
+  },
+  {
+    name: "Vinod",
+    text: "The treatments are so nourishing. My hair feels incredibly healthy."
+  },
+  {
+    name: "Poonam",
+    text: "A fantastic salon with a modern vibe. The stylists are up-to-date with the latest trends."
+  },
+  {
+    name: "Gopal",
+    text: "The best salon experience I've ever had! The stylists are true artists."
+  },
+  {
+    name: "Shanti",
+    text: "I'm so impressed with the quality of service. My hair has never looked better."
+  },
+  {
+    name: "Rakesh",
+    text: "A wonderful and relaxing atmosphere. I'll be coming back for sure."
+  },
+  {
+    name: "Sita",
+    text: "The attention to detail is incredible. Highly recommend for a perfect haircut."
+  },
+  {
+    name: "Hari",
+    text: "My hair color is exactly what I wanted. The colorist was so skilled."
+  },
+  {
+    name: "Gita",
+    text: "I always leave feeling like a new person. Thank you for the amazing service!"
+  },
+  {
+    name: "Dinesh",
+    text: "The staff is so welcoming and professional. A truly top-notch salon."
+  },
+  {
+    name: "Manju",
+    text: "I've been a loyal customer for years, and I'm never disappointed."
+  },
+  {
+    name: "Chandan",
+    text: "The treatments are so nourishing. My hair feels incredibly healthy."
+  },
+  {
+    name: "Sudha",
+    text: "A fantastic salon with a modern vibe. The stylists are up-to-date with the latest trends."
+  },
+  {
+    name: "Raj",
+    text: "The best salon experience I've ever had! The stylists are true artists."
+  },
+  {
+    name: "Neelam",
+    text: "I'm so impressed with the quality of service. My hair has never looked better."
+  },
+  {
+    name: "Ajay",
+    text: "A wonderful and relaxing atmosphere. I'll be coming back for sure."
+  },
+  {
+    name: "Urmila",
+    text: "The attention to detail is incredible. Highly recommend for a perfect haircut."
+  },
+  {
+    name: "Sachin",
+    text: "My hair color is exactly what I wanted. The colorist was so skilled."
+  },
+  {
+    name: "Babita",
+    text: "I always leave feeling like a new person. Thank you for the amazing service!"
+  },
+  {
+    name: "Kishore",
+    text: "The staff is so welcoming and professional. A truly top-notch salon."
+  },
+  {
+    name: "Leela",
+    text: "I've been a loyal customer for years, and I'm never disappointed."
+  },
+  {
+    name: "Arvind",
+    text: "The treatments are so nourishing. My hair feels incredibly healthy."
+  },
+  {
+    name: "Sushma",
+    text: "A fantastic salon with a modern vibe. The stylists are up-to-date with the latest trends."
+  },
+  {
+    name: "Ramesh",
+    text: "The best salon experience I've ever had! The stylists are true artists."
+  },
+  {
+    name: "Kamla",
+    text: "I'm so impressed with the quality of service. My hair has never looked better."
+  },
+  {
+    name: "Sandeep",
+    text: "A wonderful and relaxing atmosphere. I'll be coming back for sure."
+  },
+  {
+    name: "Vimla",
+    text: "The attention to detail is incredible. Highly recommend for a perfect haircut."
+  },
+  {
+    name: "Mahesh",
+    text: "My hair color is exactly what I wanted. The colorist was so skilled."
+  },
+  {
+    name: "Kiran",
+    text: "I always leave feeling like a new person. Thank you for the amazing service!"
+  },
+  {
+    name: "Mukesh",
+    text: "The staff is so welcoming and professional. A truly top-notch salon."
+  },
+  {
+    name: "Shobha",
+    text: "I've been a loyal customer for years, and I'm never disappointed."
+  },
+  {
+    name: "Anand",
+    text: "The treatments are so nourishing. My hair feels incredibly healthy."
+  },
+  {
+    name: "Prema",
+    text: "A fantastic salon with a modern vibe. The stylists are up-to-date with the latest trends."
+  },
+  {
+    name: "Satish",
+    text: "The best salon experience I've ever had! The stylists are true artists."
+  },
+  {
+    name: "Lata",
+    text: "I'm so impressed with the quality of service. My hair has never looked better."
+  },
+  {
+    name: "Rajendra",
+    text: "A wonderful and relaxing atmosphere. I'll be coming back for sure."
+  },
+  {
+    name: "Asha",
+    text: "The attention to detail is incredible. Highly recommend for a perfect haircut."
+  },
+  {
+    name: "Jitendra",
+    text: "My hair color is exactly what I wanted. The colorist was so skilled."
+  },
+  {
+    name: "Shashi",
+    text: "I always leave feeling like a new person. Thank you for the amazing service!"
+  },
+  {
+    name: "Devendra",
+    text: "The staff is so welcoming and professional. A truly top-notch salon."
+  },
+  {
+    name: "Savitri",
+    text: "I've been a loyal customer for years, and I'm never disappointed."
+  },
+  {
+    name: "Narendra",
+    text: "The treatments are so nourishing. My hair feels incredibly healthy."
+  },
+  {
+    name: "Reena",
+    text: "A fantastic salon with a modern vibe. The stylists are up-to-date with the latest trends."
+  }
+];
+---
+
+<Layout title="Reviews | The Smart Salon">
+  <main>
+    <section id="reviews" class="content-section">
+      <h2>What Our Clients Say</h2>
+      <div class="review-grid">
+        {reviews.map(review => (
+          <div class="review-card">
+            <p>"{review.text}"</p>
+            <h4>- {review.name}</h4>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .content-section {
+    padding: 4rem 1rem;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .content-section h2 {
+    margin-bottom: 2rem;
+  }
+
+  .review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .review-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+    text-align: left;
+  }
+
+  .review-card p {
+    font-style: italic;
+    color: var(--text-secondary);
+  }
+
+  .review-card h4 {
+    text-align: right;
+    color: var(--primary);
+    margin-top: 1rem;
+  }
+</style>

@@ -1,10 +1,10 @@
 // Firebase configuration
 export const firebaseConfig = {
-  apiKey: "AIzaSyA5T5t3-1234567890",
-  authDomain: "test-project-12345.firebaseapp.com",
-  databaseURL: "https://test-project-12345-default-rtdb.firebaseio.com/",
-  projectId: "test-project-12345",
-  storageBucket: "test-project-12345.appspot.com",
-  messagingSenderId: "1234567890",
-  appId: "1:1234567890:web:1234567890abcdef"
+  apiKey: import.meta.env.PUBLIC_FIREBASE_API_KEY,
+  authDomain: import.meta.env.PUBLIC_FIREBASE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.PUBLIC_FIREBASE_DATABASE_URL,
+  projectId: import.meta.env.PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.PUBLIC_FIREBASE_APP_ID,
 };
