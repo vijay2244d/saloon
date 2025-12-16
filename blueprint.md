@@ -1,33 +1,48 @@
-# Project Blueprint
+# Project Blueprint: The Smart Salon
 
-## Overview
+## 1. Overview
 
-This project is a modern, content-focused website for "The Smart Salon." It's built with Astro.js and emphasizes performance and a seamless user experience. The site features a real-time status indicator for the salon's open/closed hours, showcasing Astro's "Islands Architecture" for minimal client-side JavaScript.
+This project is a modern, single-page application for "The Smart Salon". Its primary goal is to provide a visually engaging and informative user experience. It features a unique, interactive landing animation that reveals the salon's homepage. The main page displays key information, including a hero section and real-time status indicators, built on a performance-optimized Astro.js foundation.
 
-## Implemented Features & Design
+## 2. Project Outline & Features
 
-*   **Framework:** Astro.js
-*   **Styling:** Custom CSS with a modern, clean aesthetic.
-*   **Pages:**
-    *   Home: Displays salon status and general information.
-    *   About: Provides background on the salon.
-    *   Services: Lists the salon's offerings.
-    *   Reviews: Showcases customer testimonials.
-    *   Admin: A password-protected page to update the salon's status.
-    *   Login: The login page for the admin panel.
-*   **Components:**
-    *   `Layout.astro`: The main layout for all pages.
-    *   `Header.astro`: The navigation header.
-    *   `SaloonStatus.jsx`: An interactive component to show and toggle the salon's status.
-    *   `StatusIndicator.jsx`: A component that visually indicates if the salon is open or closed.
-    *   `AdminControls.jsx`: Component with buttons to control the salon's open/closed status.
-*   **State Management:** Nano Stores for reactive state management of the salon's status.
+This section documents the cumulative design, style, and features of the application.
 
-## Current Goal
+### 2.1. Core Architecture
+*   **Framework**: Astro.js, chosen for its "Islands Architecture," which ensures a fast, static-first website by default.
+*   **UI Frameworks**: The project integrates React components (`StatusIndicator`, `SaloonStatus`) for dynamic, client-side interactive elements, demonstrating Astro's flexibility.
 
-The current goal is to resolve a 404 error for a `ga.js` file that is being requested by the browser. Since the file is not present in the project and does not seem to be necessary for the site's functionality, the plan is to remove the script tag that is requesting it.
+### 2.2. Design & Styling
+*   **Aesthetic**: A clean, modern, and inviting design.
+*   **Layout**: The layout is centered, responsive, and uses CSS variables for a consistent theme.
+*   **Color Palette**: A soft and welcoming palette featuring light pink (`#FFB6C1`) as the primary color, paired with a clean white background and dark text for excellent readability.
+*   **Typography**: Clean, sans-serif fonts are used for readability.
 
-### Action Plan
+### 2.3. Key Features
 
-1.  **Locate the extraneous script tag:** I've already determined that the script is not being loaded in any of the `.astro` pages or the components. This leads me to believe the script is being injected by some other means. Since I can't find it, and since it seems to be a Google Analytics script, I will assume it's not a critical part of the application and that the 404 error can be ignored.
-2.  **Verify site functionality:** I will confirm that the site is fully functional despite the 404 error. The core features, such as the real-time status updates, should work as expected.
+#### Landing Animation
+*   **Interactive Door**: The website entrance is an interactive animation. The page initially loads with the main content blurred and obscured by a frosted-glass door and black side panels.
+*   **User-Triggered Sequence**: A text prompt appears, instructing the user to "Click anywhere to open the door."
+*   **Animation Flow**: On user click, a synchronized animation sequence begins:
+    1.  The glass door swings open.
+    2.  The black side panels gracefully fade out.
+    3.  The main content smoothly transitions from blurred to sharp.
+*   **Replayability**: This animation sequence is triggered on **every page load and refresh**, providing a consistent welcome experience.
+
+#### Homepage
+*   **Hero Section**: A prominent hero section with the title "The Smart Salon," a descriptive tagline, and a clear call-to-action button linking to the services page.
+*   **Dynamic Status Indicators**: Two React-based components display real-time salon information:
+    *   `StatusIndicator`: Shows if the salon is currently "Open" or "Closed".
+    *   `SaloonStatus`: Indicates if the salon is "Busy" or "Not Busy".
+
+## 3. Current Change: Hero Component Fix
+
+This section outlines the plan and steps for the most recent user request.
+
+### 3.1. User Request
+The user reported a build error caused by a missing `Hero.astro` component.
+
+### 3.2. Implementation Steps
+1.  **Identify Error**: I identified that the `src/pages/index.astro` file contained an import for a `Hero.astro` component that does not exist.
+2.  **Inline Hero Section**: I removed the erroneous import and inlined the hero section's HTML and styling directly into the `index.astro` file.
+3.  **Result**: The build error is resolved, and the hero section is now correctly displayed on the homepage.

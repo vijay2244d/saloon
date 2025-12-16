@@ -1,0 +1,108 @@
+---
+---
+<div class="blackout left" id="blackout-left"></div>
+<div class="blackout right" id="blackout-right"></div>
+
+<div class="door-container" id="door">
+  <div class="door-panel" id="door-panel">
+    <div class="door-handle"></div>
+  </div>
+</div>
+
+<style>
+  .blackout {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    background: #000;
+    z-index: 999;
+    pointer-events: none;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .blackout.hiding {
+    animation: fade-out 0.5s 2.5s forwards;
+  }
+
+  .blackout.left {
+    left: 0;
+    width: 25vw;
+  }
+
+  .blackout.right {
+    right: 0;
+    width: 25vw;
+  }
+
+  .door-container {
+    position: fixed;
+    top: 0;
+    left: 25vw;
+    width: 50vw;
+    height: 100vh;
+    z-index: 1000;
+    perspective: 1200px;
+    visibility: visible;
+    cursor: pointer; 
+  }
+
+  .door-container.hiding {
+    animation: hide-container 0s 3s forwards;
+  }
+
+  .door-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: left;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .door-panel.opening {
+    animation: open-door 3s forwards cubic-bezier(0.65, 0.05, 0.36, 1);
+  }
+
+  .door-handle {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 120px;
+    background: linear-gradient(to right, #e0e0e0, #c0c0c0);
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+
+  @keyframes open-door {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(-110deg);
+    }
+  }
+
+  @keyframes hide-container {
+    to {
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+</style>

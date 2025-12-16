@@ -2,9 +2,97 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Book an Appointment">
+<style>
+  .booking-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: var(--accent);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+  }
+
+  .form-row {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .form-row .form-group {
+    flex: 1;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.25rem;
+  }
+</style>
+
+<Layout title="Book an Appointment | The Smart Salon">
   <main>
     <h1>Book an Appointment</h1>
-    <p>Details on how to book an appointment will go here.</p>
+    <p>We look forward to seeing you! Please fill out the form below to schedule your visit.</p>
+
+    <form class="booking-form">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="service">Select Service</label>
+        <select id="service" name="service" required>
+          <option value="">-- Please choose a service --</option>
+          <option value="haircut">Haircut</option>
+          <option value="coloring">Coloring</option>
+          <option value="styling">Styling</option>
+          <option value="manicure">Manicure</option>
+          <option value="pedicure">Pedicure</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="date">Preferred Date</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+        <div class="form-group">
+          <label for="time">Preferred Time</label>
+          <input type="time" id="time" name="time" required />
+        </div>
+      </div>
+
+      <button type="submit" class="button submit-btn">Book Now</button>
+    </form>
   </main>
 </Layout>

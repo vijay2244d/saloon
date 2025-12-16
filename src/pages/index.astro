@@ -1,74 +1,152 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import StatusIndicator from '../components/StatusIndicator.jsx';
-import SaloonStatus from '../components/SaloonStatus.jsx';
-import Curtain from '../components/Curtain.astro';
+import SaloonStatus from '../components/SaloonStatus';
+import StatusIndicator from '../components/StatusIndicator';
+import Door from '../components/Door.astro';
+import SidePanels from '../components/SidePanels.astro';
 ---
 
-<Layout title="The Smart Salon | Home">
-  <Curtain />
-  <main>
-    <div class="hero-container">
-      <div class="status-indicator-wrapper">
-        <StatusIndicator client:only="react" />
-      </div>
-      <div class="saloon-status-wrapper">
-        <SaloonStatus client:only="react" />
-      </div>
+<Layout title="The Smart Salon">
+	<Door />
+	<SidePanels />
 
-      <div class="hero-content">
-        <h1>The Smart Salon</h1>
-        <p>Cutting-edge styles, real-time availability.</p>
-        <a href="/services" class="button">Our Services</a>
-      </div>
-    </div>
-  </main>
+	<div id="reveal-prompt" class="reveal-prompt-hidden">
+		<p>Click anywhere to open the door</p>
+	</div>
+
+	<main id="main-content">
+        <div class="hero">
+            <h1>The Smart Salon</h1>
+            <p>Your hair, smarter.</p>
+            <a href="/services" class="button">Our Services</a>
+        </div>
+		<div class="status-container">
+			<StatusIndicator client:load />
+			<SaloonStatus client:load />
+		</div>
+		<div class="content-placeholder">
+			<h2>Welcome to the Future of Salon Experience</h2>
+			<p>Discover our services, meet our talented team, and book your next appointment with ease. We blend technology with artistry to give you the look you deserve.</p>
+		</div>
+	</main>
 </Layout>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const doorContainer = document.getElementById('door-container');
+      const sidePanels = document.getElementById('side-panels');
+      const mainContent = document.getElementById('main-content');
+      const revealPrompt = document.getElementById('reveal-prompt');
+
+      const openTheDoor = () => {
+        if (doorContainer) doorContainer.classList.add('opening');
+        if (sidePanels) sidePanels.classList.add('fade-out');
+        if (mainContent) {
+          mainContent.classList.remove('content-blur-initial');
+          mainContent.classList.add('content-blur-reveal');
+        }
+        if (revealPrompt) {
+            revealPrompt.classList.remove('reveal-prompt-visible');
+            revealPrompt.classList.add('reveal-prompt-hidden');
+        }
+
+        document.removeEventListener('click', openTheDoor);
+      };
+
+      const setupAnimation = () => {
+        if (mainContent) mainContent.classList.add('content-blur-initial');
+        
+        setTimeout(() => {
+          if (revealPrompt) {
+              revealPrompt.classList.remove('reveal-prompt-hidden');
+              revealPrompt.classList.add('reveal-prompt-visible');
+          }
+        }, 1000);
+    
+        document.addEventListener('click', openTheDoor);
+      }
+
+      const skipAnimation = () => {
+          if(doorContainer) doorContainer.style.display = 'none';
+          if(sidePanels) sidePanels.style.display = 'none';
+          if(revealPrompt) revealPrompt.style.display = 'none';
+          if(mainContent) mainContent.classList.remove('content-blur-initial');
+      }
+
+      const navEntries = performance.getEntriesByType("navigation");
+      const navType = navEntries.length > 0 ? navEntries[0].type : 'navigate';
+      const animationPlayed = sessionStorage.getItem('doorAnimationPlayed');
+
+      if (navType === 'reload' || !animationPlayed) {
+        setupAnimation();
+        sessionStorage.setItem('doorAnimationPlayed', 'true');
+      } else {
+        skipAnimation();
+      }
+    });
+</script>
+
 <style>
-  .hero-container {
-    text-align: center;
-    padding: 6rem 1rem 4rem;
-    position: relative;
-  }
+	.hero {
+		text-align: center;
+		padding: 4rem 1rem;
+	}
+	.hero h1 {
+		font-size: 3.5rem;
+		margin-bottom: 1rem;
+	}
+	.hero p {
+		font-size: 1.5rem;
+		margin-bottom: 2rem;
+	}
 
-  .status-indicator-wrapper {
-    position: absolute;
-    top: 1.5rem;
-    right: 2rem;
-  }
+	.content-blur-initial {
+		filter: blur(12px);
+	}
 
-  .saloon-status-wrapper {
-    position: absolute;
-    top: 5rem;
-    right: 2rem;
-  }
+	.content-blur-reveal {
+		filter: blur(0px);
+		transition: filter 1.5s 1s ease-out; /* Start unblurring after 1s */
+	}
 
-  .hero-content p {
-    font-size: 1.25rem;
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
-  }
+	.reveal-prompt-hidden {
+		display: none;
+		opacity: 0;
+	}
 
-  .content-section {
-    padding: 4rem 0;
-    text-align: center;
-  }
+	#reveal-prompt {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 1001; /* Above the door */
+		background: rgba(0,0,0,0.6);
+		color: white;
+		padding: 1rem 2rem;
+		border-radius: 8px;
+		font-size: 1.25rem;
+		text-align: center;
+		transition: opacity 0.5s ease-in-out;
+		opacity: 0;
+	}
 
-  @media (max-width: 768px) {
-    .hero-container {
-      padding: 4rem 1rem 2rem;
-    }
-    .status-indicator-wrapper {
-      top: 1rem;
-      right: 1rem;
-    }
-    .saloon-status-wrapper {
-      top: 4rem;
-      right: 1rem;
-    }
-    .content-section {
-      padding: 3rem 0;
-    }
-  }
+	.reveal-prompt-visible {
+		opacity: 1;
+	}
+
+	.status-container {
+		display: flex;
+		justify-content: center;
+		gap: 2rem;
+		margin: 2rem 0;
+	}
+
+	.content-placeholder {
+		text-align: center;
+		max-width: 800px;
+		margin: 4rem auto;
+		padding: 2rem;
+		background: var(--accent);
+		border-radius: var(--border-radius);
+	}
 </style>

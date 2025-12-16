@@ -1,4 +1,5 @@
 // Firebase configuration
+console.log("Import Meta Env:", import.meta.env);
 export const firebaseConfig = {
   apiKey: import.meta.env.PUBLIC_FIREBASE_API_KEY,
   authDomain: import.meta.env.PUBLIC_FIREBASE_AUTH_DOMAIN,
