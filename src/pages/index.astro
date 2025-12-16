@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SaloonStatus from '../components/SaloonStatus';
-import StatusIndicator from '../components/StatusIndicator';
+import SaloonStatus from '../components/SaloonStatus.jsx';
+import StatusIndicator from '../components/StatusIndicator.jsx';
 import Door from '../components/Door.astro';
 import SidePanels from '../components/SidePanels.astro';
 ---
@@ -33,13 +33,19 @@ import SidePanels from '../components/SidePanels.astro';
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const doorContainer = document.getElementById('door-container');
+      const doorContainer = document.getElementById('door');
+      const doorPanel = document.getElementById('door-panel');
       const sidePanels = document.getElementById('side-panels');
       const mainContent = document.getElementById('main-content');
       const revealPrompt = document.getElementById('reveal-prompt');
+      const blackoutLeft = document.getElementById('blackout-left');
+      const blackoutRight = document.getElementById('blackout-right');
 
       const openTheDoor = () => {
-        if (doorContainer) doorContainer.classList.add('opening');
+        if (doorPanel) doorPanel.classList.add('opening');
+        if (doorContainer) doorContainer.classList.add('hiding');
+        if (blackoutLeft) blackoutLeft.classList.add('hiding');
+        if (blackoutRight) blackoutRight.classList.add('hiding');
         if (sidePanels) sidePanels.classList.add('fade-out');
         if (mainContent) {
           mainContent.classList.remove('content-blur-initial');
@@ -71,6 +77,8 @@ import SidePanels from '../components/SidePanels.astro';
           if(sidePanels) sidePanels.style.display = 'none';
           if(revealPrompt) revealPrompt.style.display = 'none';
           if(mainContent) mainContent.classList.remove('content-blur-initial');
+          if (blackoutLeft) blackoutLeft.style.display = 'none';
+          if (blackoutRight) blackoutRight.style.display = 'none';
       }
 
       const navEntries = performance.getEntriesByType("navigation");
@@ -110,8 +118,8 @@ import SidePanels from '../components/SidePanels.astro';
 	}
 
 	.reveal-prompt-hidden {
-		display: none;
 		opacity: 0;
+        pointer-events: none;
 	}
 
 	#reveal-prompt {
