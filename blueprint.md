@@ -2,47 +2,59 @@
 
 ## 1. Overview
 
-This project is a modern, single-page application for "The Smart Salon". Its primary goal is to provide a visually engaging and informative user experience. It features a unique, interactive landing animation that reveals the salon's homepage. The main page displays key information, including a hero section and real-time status indicators, built on a performance-optimized Astro.js foundation.
+This document outlines the architecture, design, and features of "The Smart Salon," a modern, content-focused website built with Astro.js. The goal is to create a visually immersive and highly performant user experience that reflects the salon's brand of style and serenity. The site features a unique, animation-driven entrance on the homepage to captivate users from the first moment.
 
-## 2. Project Outline & Features
+## 2. Project Outline
 
-This section documents the cumulative design, style, and features of the application.
+### 2.1. Technology Stack
 
-### 2.1. Core Architecture
-*   **Framework**: Astro.js, chosen for its "Islands Architecture," which ensures a fast, static-first website by default.
-*   **UI Frameworks**: The project integrates React components (`StatusIndicator`, `SaloonStatus`) for dynamic, client-side interactive elements, demonstrating Astro's flexibility.
+*   **Framework:** Astro.js
+*   **Styling:** Global CSS (`global.css`) and scoped styles within Astro components.
+*   **Deployment:** Static-first build, suitable for modern hosting platforms.
 
-### 2.2. Design & Styling
-*   **Aesthetic**: A clean, modern, and inviting design.
-*   **Layout**: The layout is centered, responsive, and uses CSS variables for a consistent theme.
-*   **Color Palette**: A soft and welcoming palette featuring light pink (`#FFB6C1`) as the primary color, paired with a clean white background and dark text for excellent readability.
-*   **Typography**: Clean, sans-serif fonts are used for readability.
+### 2.2. Design & Aesthetics
 
-### 2.3. Key Features
+*   **Color Palette:** Primarily uses variables defined in `global.css`, featuring a clean and modern aesthetic with primary, text, and background colors.
+*   **Typography:** Utilizes Garamond for serif fonts, lending an elegant and classic feel.
+*   **Visual Effects:** Implements blur and scaling effects to create a sense of depth, particularly in the entrance animation.
 
-#### Landing Animation
-*   **Interactive Door**: The website entrance is an interactive animation. The page initially loads with the main content blurred and obscured by a frosted-glass door and black side panels.
-*   **User-Triggered Sequence**: A text prompt appears, instructing the user to "Click anywhere to open the door."
-*   **Animation Flow**: On user click, a synchronized animation sequence begins:
-    1.  The glass door swings open.
-    2.  The black side panels gracefully fade out.
-    3.  The main content smoothly transitions from blurred to sharp.
-*   **Replayability**: This animation sequence is triggered on **every page load and refresh**, providing a consistent welcome experience.
+### 2.3. Implemented Features
 
-#### Homepage
-*   **Hero Section**: A prominent hero section with the title "The Smart Salon," a descriptive tagline, and a clear call-to-action button linking to the services page.
-*   **Dynamic Status Indicators**: Two React-based components display real-time salon information:
-    *   `StatusIndicator`: Shows if the salon is currently "Open" or "Closed".
-    *   `SaloonStatus`: Indicates if the salon is "Busy" or "Not Busy".
+#### 2.3.1. Global Components
 
-## 3. Current Change: Hero Component Fix
+*   **Header (`Header.astro`):**
+    *   Displays site navigation.
+    *   Features black text for high readability.
+    *   Includes a prominent, large "Book Now" button to drive user action.
+*   **Footer (`Footer.astro`):**
+    *   Contains a simple copyright notice and branding.
+    *   Visually separated from the main content with a top border.
 
-This section outlines the plan and steps for the most recent user request.
+#### 2.3.2. Homepage (`index.astro`)
 
-### 3.1. User Request
-The user reported a build error caused by a missing `Hero.astro` component.
+*   **Grand Entrance Animation (Corrected Implementation):**
+    *   **Architecture:** The animation is now driven by a simplified `Door.astro` component and a synchronized script in `index.astro`. The new implementation uses a dedicated `div` for the black background, which is more reliable than the previous CSS-only methods.
+    *   **Loading Behavior:** A `visibility: hidden` rule in `Layout.astro` prevents any "flash of unstyled content" (FOUC). The script in `index.astro` makes the page visible only after the initial scene is fully prepared, guaranteeing a smooth and glitch-free load.
+    *   **Trigger:** The animation is exclusively user-initiated, starting only on a click or keypress. It activates only on the user's first visit to the homepage during a session (managed via `sessionStorage`).
+    *   **Initial State:** The screen is covered by a solid, pitch-black overlay (`door-overlay`). A "blurry glass" door (`glass-door`) appears to float in the darkness, showing a blurred preview of the homepage content behind it.
+    *   **Animation Sequence:**
+        1.  On user interaction, the `.opening` class is added to the glass door, causing it to swing open with a 3D effect.
+        2.  Simultaneously, the `.hiding` class is added to the black overlay, causing it to fade out.
+        3.  The main page content (`page-content`) has its `.content-hidden` class removed, allowing it to un-blur, scale up, and fade in.
+        4.  The entire door component is hidden from view after the animations are complete.
+*   **Hero Section:**
+    *   Displays the main marketing message with a clear typographic hierarchy.
 
-### 3.2. Implementation Steps
-1.  **Identify Error**: I identified that the `src/pages/index.astro` file contained an import for a `Hero.astro` component that does not exist.
-2.  **Inline Hero Section**: I removed the erroneous import and inlined the hero section's HTML and styling directly into the `index.astro` file.
-3.  **Result**: The build error is resolved, and the hero section is now correctly displayed on the homepage.
+### 2.4. Page Structure
+
+*   **`src/layouts/Layout.astro`:** The main site template, which includes the global `visibility: hidden` style to prevent FOUC.
+*   **`src/pages/index.astro`:** The homepage, containing the hero section and the master script for the entrance animation.
+*   **`src/components/Door.astro`:** The rewritten, simplified component for the entrance animation, now with a dedicated overlay `div`.
+*   **`src/components/Header.astro` and `src/components/Footer.astro`:** Global header and footer.
+
+## 3. Current Task
+
+**Objective:** Awaiting final user confirmation on the corrected animation.
+
+**Plan:**
+*   No active task. Ready for new instructions.

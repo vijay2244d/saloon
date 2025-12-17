@@ -2,24 +2,63 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="About | The Smart Salon">
+<Layout title="About The Smart Salon">
   <main>
-    <section id="about" class="content-section">
-      <h2>About Us</h2>
-      <p>Welcome to the intersection of style and technology. We're a full-service salon dedicated to providing you with the best look, and the most convenient experience. Our unique real-time status lets you know the moment our stylists are in and ready for you.</p>
+    <section class="about-intro">
+      <h1>About The Smart Salon</h1>
+      <p>Welcome to The Smart Salon, where artistry, innovation, and personalized care converge. We are more than just a salon; we are a creative space dedicated to bringing your unique vision to life.</p>
+    </section>
+
+    <section class="mission">
+      <h2>Our Mission</h2>
+      <p>Our mission is to provide an exceptional salon experience by combining advanced techniques with a deep commitment to client satisfaction. We believe in continuous education and staying at the forefront of the latest trends to offer you the best in hair and beauty care.</p>
+    </section>
+
+    <section class="history">
+      <h2>Our Story</h2>
+      <p>Founded in 2020 by visionary stylist Alex Tran, The Smart Salon started as a small studio with a big dream: to create a modern, inclusive, and forward-thinking salon. Alex's passion for technology and beauty led to a unique space where smart tools and artistic talent work in harmony. Today, we have grown into a premier destination for those seeking a transformative beauty experience.</p>
+    </section>
+
+    <section class="founder">
+      <h2>Meet Our Founder</h2>
+      <div class="founder-profile">
+        <img src="/images/founder.jpg" alt="Alex Tran, Founder of The Smart Salon" class="founder-img" />
+        <div>
+          <h3>Alex Tran</h3>
+          <p>With over 15 years of experience in the beauty industry, Alex Tran is a master stylist celebrated for their innovative approach and meticulous attention to detail. Alex's philosophy is rooted in the belief that every client deserves to look and feel their absolute best. This vision is the driving force behind The Smart Salon's success.</p>
+        </div>
+      </div>
     </section>
   </main>
 </Layout>
 
 <style>
-  .content-section {
-    padding: 4rem 1rem;
+  .about-intro h1 {
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .content-section h2 {
     margin-bottom: 2rem;
+  }
+  .mission, .history, .founder {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--accent);
+    border-radius: var(--border-radius);
+  }
+  .founder-profile {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .founder-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--primary);
+  }
+  @media(max-width: 768px) {
+    .founder-profile {
+      flex-direction: column;
+      text-align: center;
+    }
   }
 </style>

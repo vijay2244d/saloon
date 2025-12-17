@@ -2,9 +2,81 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Special Offers | The Smart Salon">
+<Layout title="Special Offers">
   <main>
-    <h1>Special Offers</h1>
-    <p>Check back soon for our latest deals and promotions!</p>
+    <div class="offers-header">
+      <h1>Exclusive Offers</h1>
+      <p>Take advantage of our special deals, available for a limited time!</p>
+    </div>
+
+    <div class="offers-grid">
+      <!-- Offer Card 1 -->
+      <div class="offer-card">
+        <img src="https://via.placeholder.com/400x250.png/007BFF/FFFFFF?text=Haircut" alt="Special offer on haircuts" class="offer-image">
+        <div class="offer-content">
+          <h3>20% Off Your Next Haircut</h3>
+          <p>Refresh your look with a stylish new haircut. Book now and receive a 20% discount.</p>
+          <a href="/book" class="button">Claim Offer</a>
+        </div>
+      </div>
+
+      <!-- Offer Card 2 -->
+      <div class="offer-card">
+        <img src="https://via.placeholder.com/400x250.png/007BFF/FFFFFF?text=Color" alt="Special offer on hair color" class="offer-image">
+        <div class="offer-content">
+          <h3>$50 Off Full-Color Service</h3>
+          <p>Transform your hair with a vibrant new color. Get $50 off when you book a full-color service.</p>
+          <a href="/book" class="button">Claim Offer</a>
+        </div>
+      </div>
+
+      <!-- Offer Card 3 -->
+      <div class="offer-card">
+        <img src="https://via.placeholder.com/400x250.png/007BFF/FFFFFF?text=Styling" alt="Special offer on styling" class="offer-image">
+        <div class="offer-content">
+          <h3>Free Styling with Any Treatment</h3>
+          <p>Pamper yourself with any of our nourishing hair treatments and get a professional styling session for free.</p>
+          <a href="/book" class="button">Claim Offer</a>
+        </div>
+      </div>
+    </div>
   </main>
 </Layout>
+
+<style>
+  .offers-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  .offer-card {
+    background: var(--accent);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .offer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px -2px rgba(0,0,0,0.15), 0 4px 8px -4px rgba(0,0,0,0.15);
+  }
+  .offer-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .offer-content {
+    padding: 1.5rem;
+  }
+  .offer-content h3 {
+    margin-top: 0;
+    color: var(--primary);
+  }
+  .offer-content .button {
+    margin-top: 1rem;
+  }
+</style>

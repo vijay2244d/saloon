@@ -1,160 +1,122 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SaloonStatus from '../components/SaloonStatus.jsx';
-import StatusIndicator from '../components/StatusIndicator.jsx';
 import Door from '../components/Door.astro';
-import SidePanels from '../components/SidePanels.astro';
 ---
 
 <Layout title="The Smart Salon">
-	<Door />
-	<SidePanels />
-
-	<div id="reveal-prompt" class="reveal-prompt-hidden">
-		<p>Click anywhere to open the door</p>
-	</div>
-
-	<main id="main-content">
-        <div class="hero">
-            <h1>The Smart Salon</h1>
-            <p>Your hair, smarter.</p>
-            <a href="/services" class="button">Our Services</a>
-        </div>
-		<div class="status-container">
-			<StatusIndicator client:load />
-			<SaloonStatus client:load />
-		</div>
-		<div class="content-placeholder">
-			<h2>Welcome to the Future of Salon Experience</h2>
-			<p>Discover our services, meet our talented team, and book your next appointment with ease. We blend technology with artistry to give you the look you deserve.</p>
-		</div>
-	</main>
+  <main id="page-content" class="content-hidden">
+    <div class="hero">
+      <div class="hero-content">
+        <h1 class="slogan">Your Hair, Reimagined.</h1>
+        <p class="sub-slogan-bold">Relax. Renew. Refine.</p>
+        <p class="sub-slogan">Define Your Look with Our Experts.</p>
+      </div>
+    </div>
+  </main>
+  <Door />
 </Layout>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const doorContainer = document.getElementById('door');
-      const doorPanel = document.getElementById('door-panel');
-      const sidePanels = document.getElementById('side-panels');
-      const mainContent = document.getElementById('main-content');
-      const revealPrompt = document.getElementById('reveal-prompt');
-      const blackoutLeft = document.getElementById('blackout-left');
-      const blackoutRight = document.getElementById('blackout-right');
+  document.addEventListener('DOMContentLoaded', () => {
+    const doorContainer = document.getElementById('door-container');
+    const doorOverlay = document.getElementById('door-overlay');
+    const glassDoor = document.getElementById('glass-door');
+    const pageContent = document.getElementById('page-content');
+    const animationPlayed = sessionStorage.getItem('animationPlayed');
+    const isHomePage = window.location.pathname === '/';
 
-      const openTheDoor = () => {
-        if (doorPanel) doorPanel.classList.add('opening');
-        if (doorContainer) doorContainer.classList.add('hiding');
-        if (blackoutLeft) blackoutLeft.classList.add('hiding');
-        if (blackoutRight) blackoutRight.classList.add('hiding');
-        if (sidePanels) sidePanels.classList.add('fade-out');
-        if (mainContent) {
-          mainContent.classList.remove('content-blur-initial');
-          mainContent.classList.add('content-blur-reveal');
-        }
-        if (revealPrompt) {
-            revealPrompt.classList.remove('reveal-prompt-visible');
-            revealPrompt.classList.add('reveal-prompt-hidden');
-        }
-
-        document.removeEventListener('click', openTheDoor);
-      };
-
-      const setupAnimation = () => {
-        if (mainContent) mainContent.classList.add('content-blur-initial');
-        
+    const openDoor = () => {
+      // Trigger the animations
+      if (glassDoor) glassDoor.classList.add('opening');
+      if (doorOverlay) doorOverlay.classList.add('hiding');
+      if (pageContent) pageContent.classList.remove('content-hidden');
+      
+      // Hide the entire component after the animation finishes
+      if (doorContainer) {
         setTimeout(() => {
-          if (revealPrompt) {
-              revealPrompt.classList.remove('reveal-prompt-hidden');
-              revealPrompt.classList.add('reveal-prompt-visible');
-          }
-        }, 1000);
-    
-        document.addEventListener('click', openTheDoor);
+          doorContainer.classList.add('hiding');
+        }, 2000); // Sync with CSS transition durations
       }
 
-      const skipAnimation = () => {
-          if(doorContainer) doorContainer.style.display = 'none';
-          if(sidePanels) sidePanels.style.display = 'none';
-          if(revealPrompt) revealPrompt.style.display = 'none';
-          if(mainContent) mainContent.classList.remove('content-blur-initial');
-          if (blackoutLeft) blackoutLeft.style.display = 'none';
-          if (blackoutRight) blackoutRight.style.display = 'none';
-      }
+      sessionStorage.setItem('animationPlayed', 'true');
+    };
 
-      const navEntries = performance.getEntriesByType("navigation");
-      const navType = navEntries.length > 0 ? navEntries[0].type : 'navigate';
-      const animationPlayed = sessionStorage.getItem('doorAnimationPlayed');
+    // Set the initial visibility of the page
+    document.body.style.visibility = 'visible';
 
-      if (navType === 'reload' || !animationPlayed) {
-        setupAnimation();
-        sessionStorage.setItem('doorAnimationPlayed', 'true');
-      } else {
-        skipAnimation();
-      }
-    });
+    if (isHomePage && !animationPlayed) {
+      // SCENE 1: Show the animation
+      // HTML and CSS defaults are already set for this scene.
+      // We just need to wait for the user to start it.
+      document.body.addEventListener('click', openDoor, { once: true });
+      document.body.addEventListener('keydown', openDoor, { once: true });
+    } else {
+      // SCENE 2: Skip the animation
+      // Hide the door component immediately and show the content.
+      if (doorContainer) doorContainer.style.display = 'none';
+      if (pageContent) pageContent.classList.remove('content-hidden');
+    }
+  });
 </script>
 
 <style>
-	.hero {
-		text-align: center;
-		padding: 4rem 1rem;
-	}
-	.hero h1 {
-		font-size: 3.5rem;
-		margin-bottom: 1rem;
-	}
-	.hero p {
-		font-size: 1.5rem;
-		margin-bottom: 2rem;
-	}
+  /* This is now the ONLY class controlling visibility */
+  .content-hidden {
+    filter: blur(20px);
+    transform: scale(0.9);
+    opacity: 0;
+    /* The transition for the page content reveal */
+    transition: all 1.5s 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  }
 
-	.content-blur-initial {
-		filter: blur(12px);
-	}
+  main {
+    padding: 0;
+  }
+  .hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--background);
+  }
 
-	.content-blur-reveal {
-		filter: blur(0px);
-		transition: filter 1.5s 1s ease-out; /* Start unblurring after 1s */
-	}
+  .hero-content {
+    padding: 3rem;
+  }
 
-	.reveal-prompt-hidden {
-		opacity: 0;
-        pointer-events: none;
-	}
+  .slogan {
+    font-size: 5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    line-height: 1.2;
+  }
 
-	#reveal-prompt {
-		position: fixed;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		z-index: 1001; /* Above the door */
-		background: rgba(0,0,0,0.6);
-		color: white;
-		padding: 1rem 2rem;
-		border-radius: 8px;
-		font-size: 1.25rem;
-		text-align: center;
-		transition: opacity 0.5s ease-in-out;
-		opacity: 0;
-	}
+  .sub-slogan-bold {
+    font-size: 2rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+  }
 
-	.reveal-prompt-visible {
-		opacity: 1;
-	}
+  .sub-slogan {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    opacity: 0.8;
+  }
 
-	.status-container {
-		display: flex;
-		justify-content: center;
-		gap: 2rem;
-		margin: 2rem 0;
-	}
-
-	.content-placeholder {
-		text-align: center;
-		max-width: 800px;
-		margin: 4rem auto;
-		padding: 2rem;
-		background: var(--accent);
-		border-radius: var(--border-radius);
-	}
+  @media (max-width: 768px) {
+    .slogan {
+      font-size: 3rem;
+    }
+    .sub-slogan-bold {
+      font-size: 1.5rem;
+    }
+    .sub-slogan {
+      font-size: 1.25rem;
+    }
+  }
 </style>

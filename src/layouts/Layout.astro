@@ -1,36 +1,33 @@
 ---
 import Header from '../components/Header.astro';
-import '../styles/global.css';
-
-export interface Props {
-	title: string;
-}
+import Footer from '../components/Footer.astro';
 
 const { title } = Astro.props;
+const active = Astro.url.pathname;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<meta name="description" content="The Smart Salon - Know when we're open, instantly." />
-		<script>
-			document.addEventListener('astro:page-load', () => {
-			  const cursors = ['scissors.svg', 'trimmer.svg'];
-			  const randomCursor = cursors[Math.floor(Math.random() * cursors.length)];
-			  document.body.style.cursor = `url(/${randomCursor}), auto`;
-			});
-		</script>
-	</head>
-	<body>
-		<Header />
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="stylesheet" href="/src/styles/global.css">
+    <style is:inline>
+      /* Hide the page by default to prevent FOUC. No transition. */
+      body {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main-content">
+        <Header active={active} />
+        <slot />
+        <Footer />
+    </div>
+  </body>
 </html>

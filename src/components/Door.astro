@@ -1,108 +1,99 @@
----
----
-<div class="blackout left" id="blackout-left"></div>
-<div class="blackout right" id="blackout-right"></div>
-
-<div class="door-container" id="door">
-  <div class="door-panel" id="door-panel">
+<!-- 
+The door-overlay provides the solid black background.
+The door-container handles the 3D perspective and user interaction.
+The glass-door is the interactive element that swings open.
+-->
+<div class="door-container" id="door-container">
+  <div class="door-overlay" id="door-overlay"></div>
+  <div class="glass-door" id="glass-door">
     <div class="door-handle"></div>
+    <div class="welcome-text">Enter</div>
   </div>
 </div>
 
 <style>
-  .blackout {
-    position: fixed;
-    top: 0;
-    height: 100vh;
-    background: #000;
-    z-index: 999;
-    pointer-events: none;
-    visibility: visible;
-    opacity: 1;
-  }
-
-  .blackout.hiding {
-    animation: fade-out 0.5s 2.5s forwards;
-  }
-
-  .blackout.left {
-    left: 0;
-    width: 25vw;
-  }
-
-  .blackout.right {
-    right: 0;
-    width: 25vw;
-  }
-
   .door-container {
     position: fixed;
     top: 0;
-    left: 25vw;
-    width: 50vw;
+    left: 0;
+    width: 100vw;
     height: 100vh;
-    z-index: 1000;
-    perspective: 1200px;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1500px;
+    /* Hides the entire component after animation */
+    transition: visibility 0s 2s;
     visibility: visible;
-    cursor: pointer; 
   }
-
   .door-container.hiding {
-    animation: hide-container 0s 3s forwards;
+    visibility: hidden;
   }
 
-  .door-panel {
+  /* The solid black background overlay */
+  .door-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    transform-origin: left;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    background: #000;
+    z-index: 1;
+    opacity: 1;
+    /* Fades out on interaction */
+    transition: opacity 1.5s 0.2s ease-out;
+  }
+  .door-overlay.hiding {
+    opacity: 0;
   }
 
-  .door-panel.opening {
-    animation: open-door 3s forwards cubic-bezier(0.65, 0.05, 0.36, 1);
+  /* The blurry glass door itself */
+  .glass-door {
+    width: 280px;
+    height: 450px;
+    position: relative;
+    z-index: 2; /* Sits on top of the black overlay */
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: transform 1.5s cubic-bezier(0.76, 0.01, 0.2, 1);
+    
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.5);
+  }
+  .glass-door.opening {
+    transform: rotateY(-120deg) translateX(-100px) scale(0.8);
   }
 
   .door-handle {
     position: absolute;
-    top: 50%;
     right: 20px;
+    top: 50%;
+    width: 8px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
     transform: translateY(-50%);
-    width: 10px;
-    height: 120px;
-    background: linear-gradient(to right, #e0e0e0, #c0c0c0);
-    border-radius: 5px;
-    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   }
 
-  @keyframes open-door {
-    from {
-      transform: rotateY(0deg);
-    }
-    to {
-      transform: rotateY(-110deg);
-    }
+  .welcome-text {
+    color: var(--white);
+    font-family: 'Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
   }
 
-  @keyframes hide-container {
-    to {
-      visibility: hidden;
-      pointer-events: none;
-    }
-  }
-
-  @keyframes fade-out {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-      visibility: hidden;
-    }
+  .glass-door.opening .welcome-text {
+    opacity: 0;
   }
 </style>

@@ -11,19 +11,55 @@ const { active } = Astro.props;
     <a href="/about" class={active === '/about' ? 'active' : ''}>About</a>
     <a href="/services" class={active === '/services' ? 'active' : ''}>Services</a>
     <a href="/offers" class={active === '/offers' ? 'active' : ''}>Offers</a>
-    <a href="/book" class={active === '/book' ? 'active' : ''}>Book</a>
+    <a href="/book" class={`button button-highlight ${active === '/book' ? 'active' : ''}`}>Book Now</a>
   </nav>
 </header>
 
 <style>
   header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
   }
 
-  nav {
-    display: flex;
-    gap: 1rem; /* Adjust gap for closer spacing */
+  .logo a {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: black !important;
+    text-decoration: none;
+  }
+
+  nav a {
+    color: black !important;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+  }
+
+  nav a.active,
+  nav a:hover {
+    color: var(--primary) !important;
+    font-weight: 600;
+  }
+
+  /* Style for the highlighted button */
+  .button-highlight {
+    background-color: var(--primary);
+    color: var(--primary-text) !important;
+    padding: 1rem 2rem;
+    transition: all 0.3s ease;
+    font-size: 1.2rem; /* Increased font size */
+  }
+
+  .button-highlight:hover {
+    background-color: #a89185; /* Darker Almond Silk */
+    color: var(--primary-text) !important;
+    text-decoration: none;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   }
 </style>
