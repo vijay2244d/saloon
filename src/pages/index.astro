@@ -1,63 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Door from '../components/Door.astro';
+import Welcome from '../components/Welcome.astro';
 ---
 
 <Layout title="The Smart Salon">
   <main id="page-content" class="content-hidden">
-    <div class="hero">
-      <div class="hero-content">
-        <h1 class="slogan">Your Hair, Reimagined.</h1>
-        <p class="sub-slogan-bold">Relax. Renew. Refine.</p>
-        <p class="sub-slogan">Define Your Look with Our Experts.</p>
-      </div>
-    </div>
+    <Welcome />
   </main>
   <Door />
 </Layout>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const doorContainer = document.getElementById('door-container');
-    const doorOverlay = document.getElementById('door-overlay');
-    const glassDoor = document.getElementById('glass-door');
-    const pageContent = document.getElementById('page-content');
-    const animationPlayed = sessionStorage.getItem('animationPlayed');
-    const isHomePage = window.location.pathname === '/';
-
-    const openDoor = () => {
-      // Trigger the animations
-      if (glassDoor) glassDoor.classList.add('opening');
-      if (doorOverlay) doorOverlay.classList.add('hiding');
-      if (pageContent) pageContent.classList.remove('content-hidden');
-      
-      // Hide the entire component after the animation finishes
-      if (doorContainer) {
-        setTimeout(() => {
-          doorContainer.classList.add('hiding');
-        }, 2000); // Sync with CSS transition durations
-      }
-
-      sessionStorage.setItem('animationPlayed', 'true');
-    };
-
-    // Set the initial visibility of the page
-    document.body.style.visibility = 'visible';
-
-    if (isHomePage && !animationPlayed) {
-      // SCENE 1: Show the animation
-      // HTML and CSS defaults are already set for this scene.
-      // We just need to wait for the user to start it.
-      document.body.addEventListener('click', openDoor, { once: true });
-      document.body.addEventListener('keydown', openDoor, { once: true });
-    } else {
-      // SCENE 2: Skip the animation
-      // Hide the door component immediately and show the content.
-      if (doorContainer) doorContainer.style.display = 'none';
-      if (pageContent) pageContent.classList.remove('content-hidden');
-    }
-  });
-</script>
 
 <style>
   /* This is now the ONLY class controlling visibility */
@@ -69,54 +22,4 @@ import Door from '../components/Door.astro';
     transition: all 1.5s 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   }
 
-  main {
-    padding: 0;
-  }
-  .hero {
-    position: relative;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: var(--background);
-  }
-
-  .hero-content {
-    padding: 3rem;
-  }
-
-  .slogan {
-    font-size: 5rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: var(--primary);
-    line-height: 1.2;
-  }
-
-  .sub-slogan-bold {
-    font-size: 2rem;
-    color: var(--text-primary);
-    font-weight: 600;
-    margin-bottom: 1rem;
-    opacity: 0.9;
-  }
-
-  .sub-slogan {
-    font-size: 1.5rem;
-    color: var(--text-primary);
-    opacity: 0.8;
-  }
-
-  @media (max-width: 768px) {
-    .slogan {
-      font-size: 3rem;
-    }
-    .sub-slogan-bold {
-      font-size: 1.5rem;
-    }
-    .sub-slogan {
-      font-size: 1.25rem;
-    }
-  }
 </style>

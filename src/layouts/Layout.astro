@@ -29,5 +29,34 @@ const active = Astro.url.pathname;
         <slot />
         <Footer />
     </div>
+    <script is:inline>
+    function revealContent() {
+      const doorContainer = document.getElementById("door-container");
+      const doorOverlay = document.getElementById("door-overlay");
+      const glassDoor = document.getElementById("glass-door");
+
+      if (!sessionStorage.getItem("animationPlayed")) {
+        if (glassDoor) {
+          glassDoor.addEventListener("click", () => {
+            glassDoor.classList.add("opening");
+            doorOverlay.classList.add("hiding");
+            doorContainer.classList.add("hiding");
+
+            setTimeout(() => {
+              document.body.style.visibility = "visible";
+            }, 100); 
+
+            sessionStorage.setItem("animationPlayed", "true");
+          });
+        }
+      } else {
+        if (doorContainer) doorContainer.style.display = "none";
+        if (doorOverlay) doorOverlay.style.display = "none";
+        document.body.style.visibility = "visible";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", revealContent);
+  </script>
   </body>
 </html>
