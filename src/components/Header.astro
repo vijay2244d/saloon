@@ -1,65 +1,15 @@
 ---
-const { active } = Astro.props;
 ---
-
-<header>
-  <div class="logo">
-    <a href="/">The Smart Salon</a>
+<header class="w-full p-4 md:p-6 shadow-md" style="background-color: var(--ivory);">
+  <div class="container mx-auto flex justify-between items-center">
+    <a href="/" class="text-2xl font-bold" style="color: var(--gunmetal);">The Smart Salon</a>
+    <nav>
+      <ul class="flex space-x-8 md:space-x-10">
+        <li><a href="/" class="hover:text-[var(--fiery-terracotta)] transition-colors">Home</a></li>
+        <li><a href="/about" class="hover:text-[var(--fiery-terracotta)] transition-colors">About</a></li>
+        <li><a href="/services" class="hover:text-[var(--fiery-terracotta)] transition-colors">Services</a></li>
+        <li><a href="/contact" class="hover:text-[var(--fiery-terracotta)] transition-colors">Contact</a></li>
+      </ul>
+    </nav>
   </div>
-  <nav>
-    <a href="/" class={active === '/' ? 'active' : ''}>Home</a>
-    <a href="/about" class={active === '/about' ? 'active' : ''}>About</a>
-    <a href="/services" class={active === '/services' ? 'active' : ''}>Services</a>
-    <a href="/offers" class={active === '/offers' ? 'active' : ''}>Offers</a>
-    <a href="/book" class={`button button-highlight ${active === '/book' ? 'active' : ''}`}>Book Now</a>
-  </nav>
 </header>
-
-<style>
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-  }
-
-  .logo a {
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: black !important;
-    text-decoration: none;
-  }
-
-  nav a {
-    color: black !important;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
-    border-radius: var(--border-radius);
-  }
-
-  nav a.active,
-  nav a:hover {
-    color: var(--primary) !important;
-    font-weight: 600;
-  }
-
-  /* Style for the highlighted button */
-  .button-highlight {
-    background-color: var(--primary);
-    color: var(--primary-text) !important;
-    padding: 1rem 2rem;
-    transition: all 0.3s ease;
-    font-size: 1.2rem; /* Increased font size */
-  }
-
-  .button-highlight:hover {
-    background-color: #a89185; /* Darker Almond Silk */
-    color: var(--primary-text) !important;
-    text-decoration: none;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-  }
-</style>

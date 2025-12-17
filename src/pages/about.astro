@@ -1,64 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
 ---
 
-<Layout title="About The Smart Salon">
+<Layout title="About - The Smart Salon">
+  <Header />
   <main>
-    <section class="about-intro">
-      <h1>About The Smart Salon</h1>
-      <p>Welcome to The Smart Salon, where artistry, innovation, and personalized care converge. We are more than just a salon; we are a creative space dedicated to bringing your unique vision to life.</p>
-    </section>
-
-    <section class="mission">
-      <h2>Our Mission</h2>
-      <p>Our mission is to provide an exceptional salon experience by combining advanced techniques with a deep commitment to client satisfaction. We believe in continuous education and staying at the forefront of the latest trends to offer you the best in hair and beauty care.</p>
-    </section>
-
-    <section class="history">
-      <h2>Our Story</h2>
-      <p>Founded in 2020 by visionary stylist Alex Tran, The Smart Salon started as a small studio with a big dream: to create a modern, inclusive, and forward-thinking salon. Alex's passion for technology and beauty led to a unique space where smart tools and artistic talent work in harmony. Today, we have grown into a premier destination for those seeking a transformative beauty experience.</p>
-    </section>
-
-    <section class="founder">
-      <h2>Meet Our Founder</h2>
-      <div class="founder-profile">
-        <img src="/images/founder.jpg" alt="Alex Tran, Founder of The Smart Salon" class="founder-img" />
-        <div>
-          <h3>Alex Tran</h3>
-          <p>With over 15 years of experience in the beauty industry, Alex Tran is a master stylist celebrated for their innovative approach and meticulous attention to detail. Alex's philosophy is rooted in the belief that every client deserves to look and feel their absolute best. This vision is the driving force behind The Smart Salon's success.</p>
-        </div>
+    <section class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto text-center px-4">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--gunmetal);">About The Smart Salon</h2>
+        <p class="max-w-3xl mx-auto text-lg" style="color: var(--gunmetal);">
+          Founded in 2024, The Smart Salon is a fusion of cutting-edge technology and timeless style. We believe in a personalized approach to hair care, using smart diagnostics and expert artistry to craft the perfect look for you. Our mission is to provide an unparalleled salon experience, from the moment you walk through our digital door.
+        </p>
       </div>
     </section>
   </main>
 </Layout>
-
-<style>
-  .about-intro h1 {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  .mission, .history, .founder {
-    margin-top: 3rem;
-    padding: 2rem;
-    background: var(--accent);
-    border-radius: var(--border-radius);
-  }
-  .founder-profile {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-  }
-  .founder-img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid var(--primary);
-  }
-  @media(max-width: 768px) {
-    .founder-profile {
-      flex-direction: column;
-      text-align: center;
-    }
-  }
-</style>

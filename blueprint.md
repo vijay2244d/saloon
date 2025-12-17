@@ -1,60 +1,51 @@
 # Project Blueprint: The Smart Salon
 
-## 1. Overview
+## 1. Project Overview
 
-This document outlines the architecture, design, and features of "The Smart Salon," a modern, content-focused website built with Astro.js. The goal is to create a visually immersive and highly performant user experience that reflects the salon's brand of style and serenity. The site features a unique, animation-driven entrance on the homepage to captivate users from the first moment.
+This project is a modern, multi-page website for "The Smart Salon," a fictional high-tech hair salon. The site is built with Astro.js and focuses on a clean, visually appealing design, smooth animations, and a clear, intuitive user experience. The architecture has been transitioned from a single-page layout to a more traditional multi-page structure for better organization and scalability.
 
-## 2. Project Outline
+## 2. Implemented Features & Design
 
-### 2.1. Technology Stack
+### 2.1. Multi-Page Architecture
 
-*   **Framework:** Astro.js
-*   **Styling:** Global CSS (`global.css`) and scoped styles within Astro components.
-*   **Deployment:** Static-first build, suitable for modern hosting platforms.
+The website is now structured as a multi-page application with the following pages:
 
-### 2.2. Design & Aesthetics
+*   **Home (`/`):** A welcoming landing page featuring a unique door-opening animation.
+*   **About (`/about`):** A page describing the salon's mission and team.
+*   **Services (`/services`):** A page detailing the salon's offerings.
+*   **Contact (`/contact`):** A page with contact information and a map.
 
-*   **Color Palette:** Primarily uses variables defined in `global.css`, featuring a clean and modern aesthetic with primary, text, and background colors.
-*   **Typography:** Utilizes Garamond for serif fonts, lending an elegant and classic feel.
-*   **Visual Effects:** Implements blur and scaling effects to create a sense of depth, particularly in the entrance animation.
+This structure was achieved by moving content from individual components into dedicated page files within the `src/pages/` directory.
 
-### 2.3. Implemented Features
+### 2.2. Header & Navigation
 
-#### 2.3.1. Global Components
+*   A consistent header is present on all pages.
+*   The header displays the salon's name on the left and navigation links on the right.
+*   The navigation links have increased spacing for better readability and a more balanced design.
 
-*   **Header (`Header.astro`):**
-    *   Displays site navigation.
-    *   Features black text for high readability.
-    *   Includes a prominent, large "Book Now" button to drive user action.
-*   **Footer (`Footer.astro`):**
-    *   Contains a simple copyright notice and branding.
-    *   Visually separated from the main content with a top border.
+### 2.3. Door Animation (Home Page)
 
-#### 2.3.2. Homepage (`index.astro`)
+*   **Functionality:** On a user's first visit, they are presented with a full-screen overlay and a stylized, clickable door. The main content is hidden.
+*   **Interaction:** The main content is revealed with a smooth animation *only* when the user clicks directly on the door structure.
+*   **Animation Details:**
+    *   The door swings open with a 3D perspective effect.
+    *   The door and overlay fade out smoothly after the animation completes.
+    *   Subsequent visits bypass the animation for a faster experience, tracked via `sessionStorage`.
+*   **Visuals:** The door has a modern, semi-transparent design with a handle for better affordance.
 
-*   **Grand Entrance Animation (Corrected Implementation):**
-    *   **Architecture:** The animation is now driven by a simplified `Door.astro` component and a synchronized script in `index.astro`. The new implementation uses a dedicated `div` for the black background, which is more reliable than the previous CSS-only methods.
-    *   **Loading Behavior:** A `visibility: hidden` rule in `Layout.astro` prevents any "flash of unstyled content" (FOUC). The script in `index.astro` makes the page visible only after the initial scene is fully prepared, guaranteeing a smooth and glitch-free load.
-    *   **Trigger:** The animation is exclusively user-initiated, starting only on a click or keypress. It activates only on the user's first visit to the homepage during a session (managed via `sessionStorage`).
-    *   **Initial State:** The screen is covered by a solid, pitch-black overlay (`door-overlay`). A "blurry glass" door (`glass-door`) appears to float in the darkness, showing a blurred preview of the homepage content behind it.
-    *   **Animation Sequence:**
-        1.  On user interaction, the `.opening` class is added to the glass door, causing it to swing open with a 3D effect.
-        2.  Simultaneously, the `.hiding` class is added to the black overlay, causing it to fade out.
-        3.  The main page content (`page-content`) has its `.content-hidden` class removed, allowing it to un-blur, scale up, and fade in.
-        4.  The entire door component is hidden from view after the animations are complete.
-*   **Hero Section:**
-    *   Displays the main marketing message with a clear typographic hierarchy.
+### 2.4. Hair Animation (Services Page)
 
-### 2.4. Page Structure
+*   **Functionality:** When a user navigates to the "Services" page, a gentle animation of falling hair strands plays in the background.
+*   **Visuals:** The animation features realistic-looking hair strands of varying colors and sizes, creating an elegant and immersive effect.
+*   **Duration:** The animation runs for a few seconds and then fades out to avoid distracting from the page content.
 
-*   **`src/layouts/Layout.astro`:** The main site template, which includes the global `visibility: hidden` style to prevent FOUC.
-*   **`src/pages/index.astro`:** The homepage, containing the hero section and the master script for the entrance animation.
-*   **`src/components/Door.astro`:** The rewritten, simplified component for the entrance animation, now with a dedicated overlay `div`.
-*   **`src/components/Header.astro` and `src/components/Footer.astro`:** Global header and footer.
+### 2.5. Styling & Design
 
-## 3. Current Task
+*   **Color Palette:** The design uses a sophisticated color palette with `--ivory` as the primary background color, `--gunmetal` for text, and `--fiery-terracotta` for accents and highlights.
+*   **Typography:** The site uses a clean, modern font with a clear hierarchy for headings and body text.
+*   **Layout:** The layout is responsive and uses Tailwind CSS for a consistent and mobile-friendly design.
 
-**Objective:** Awaiting final user confirmation on the corrected animation.
+## 3. Current State & Plan
 
-**Plan:**
-*   No active task. Ready for new instructions.
+*   **Current Action:** The door animation's click behavior has been corrected to only trigger when the door itself is clicked. The clickable area is no longer the entire screen.
+*   **Next Steps:** Awaiting user feedback on the corrected door animation and overall site design before proceeding with any further changes.

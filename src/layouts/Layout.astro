@@ -1,62 +1,24 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+}
 
 const { title } = Astro.props;
-const active = Astro.url.pathname;
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-    <link rel="stylesheet" href="/src/styles/global.css">
-    <style is:inline>
-      /* Hide the page by default to prevent FOUC. No transition. */
-      body {
-        visibility: hidden;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="main-content">
-        <Header active={active} />
-        <slot />
-        <Footer />
-    </div>
-    <script is:inline>
-    function revealContent() {
-      const doorContainer = document.getElementById("door-container");
-      const doorOverlay = document.getElementById("door-overlay");
-      const glassDoor = document.getElementById("glass-door");
-
-      if (!sessionStorage.getItem("animationPlayed")) {
-        if (glassDoor) {
-          glassDoor.addEventListener("click", () => {
-            glassDoor.classList.add("opening");
-            doorOverlay.classList.add("hiding");
-            doorContainer.classList.add("hiding");
-
-            setTimeout(() => {
-              document.body.style.visibility = "visible";
-            }, 100); 
-
-            sessionStorage.setItem("animationPlayed", "true");
-          });
-        }
-      } else {
-        if (doorContainer) doorContainer.style.display = "none";
-        if (doorOverlay) doorOverlay.style.display = "none";
-        document.body.style.visibility = "visible";
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", revealContent);
-  </script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="bg-[var(--ivory)]">
+		<slot />
+	</body>
 </html>

@@ -1,99 +1,22 @@
-<!-- 
- The door-overlay provides the solid black background.
- The door-container handles the 3D perspective and user interaction.
- The glass-door is the interactive element that swings open.
- -->
-<div class="door-container" id="door-container">
-  <div class="door-overlay" id="door-overlay"></div>
-  <div class="glass-door" id="glass-door">
-    <div class="door-handle"></div>
-    <div class="welcome-text">Enter</div>
+---
+---
+<!-- The full-screen overlay, which is NOT clickable -->
+<div id="door-overlay" class="fixed inset-0 bg-black/70 z-40"></div>
+
+<!-- A container to center the door -->
+<div id="door-container" class="fixed inset-0 z-50 flex justify-center items-center">
+  <!-- The physical door structure that will animate. Now with the cursor-pointer -->
+  <div id="door-structure" 
+       class="w-[35vw] min-w-[320px] max-w-[400px] aspect-[2/3] rounded-lg shadow-2xl
+              bg-white/5 backdrop-blur-md border border-white/20 relative cursor-pointer"
+       style="transform: perspective(1200px);">
+    
+    <!-- The Door Handle -->
+    <div class="absolute top-1/2 -translate-y-1/2 right-5 w-4 h-24 rounded-full bg-white/30"></div>
+
+    <div class="h-full flex flex-col justify-center items-center p-8 text-center">
+      <p class="text-2xl font-bold animate-pulse" style="color: var(--fiery-terracotta);">Click to Enter</p>
+      <p class="text-white/50 text-sm mt-2">The Smart Salon</p>
+    </div>
   </div>
 </div>
-
-<style>
-  .door-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    perspective: 1500px;
-    /* Hides the entire component after animation */
-    transition: visibility 0s 1.6s;
-    visibility: visible;
-  }
-  .door-container.hiding {
-    visibility: hidden;
-  }
-
-  /* The solid black background overlay */
-  .door-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000;
-    z-index: 1;
-    opacity: 1;
-    /* Fades out on interaction */
-    transition: opacity 1.5s 0.2s ease-out;
-  }
-  .door-overlay.hiding {
-    opacity: 0;
-  }
-
-  /* The blurry glass door itself */
-  .glass-door {
-    width: 280px;
-    height: 450px;
-    position: relative;
-    z-index: 2; /* Sits on top of the black overlay */
-    transform-style: preserve-3d;
-    transform-origin: left;
-    transition: transform 1.5s cubic-bezier(0.76, 0.01, 0.2, 1);
-    
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 25px 45px rgba(0,0,0,0.5);
-  }
-  .glass-door.opening {
-    transform: rotateY(-120deg) translateX(-100px) scale(0.8);
-  }
-
-  .door-handle {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    width: 8px;
-    height: 60px;
-    background-color: rgba(255, 255, 255, 0.25);
-    border-radius: 4px;
-    transform: translateY(-50%);
-  }
-
-  .welcome-text {
-    color: var(--white);
-    font-family: 'Garamond', serif;
-    font-size: 1.5rem;
-    font-weight: 300;
-    letter-spacing: 2px;
-    opacity: 1;
-    transition: opacity 0.5s ease-out;
-  }
-
-  .glass-door.opening .welcome-text {
-    opacity: 0;
-  }
-</style>

@@ -1,74 +1,34 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
 import HairAnimation from '../components/HairAnimation.astro';
 ---
 
-<Layout title="Our Services | The Smart Salon">
+<Layout title="Services - The Smart Salon">
+  <Header />
   <HairAnimation />
   <main>
-    <section id="services" class="content-section">
-      <h2>Our Services</h2>
-      <div class="service-grid">
-        <div class="service-card">
-          <i class="fa-solid fa-scissors"></i>
-          <h3>Haircuts & Styling</h3>
-          <p>From classic cuts to the latest trends, our stylists will craft the perfect look for you.</p>
-        </div>
-        <div class="service-card">
-          <i class="fa-solid fa-paint-brush"></i>
-          <h3>Color & Highlights</h3>
-          <p>Transform your look with our expert coloring services, from subtle shades to bold new hues.</p>
-        </div>
-        <div class="service-card">
-          <i class="fa-solid fa-spa"></i>
-          <h3>Treatments</h3>
-          <p>Revitalize your hair with our range of deep conditioning and strengthening treatments.</p>
+    <section class="py-16 md:py-24" style="background-color: var(--ivory);">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12" style="color: var(--gunmetal);">Our Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Service Card 1 -->
+          <div class="bg-white p-8 rounded-lg shadow-md text-center">
+            <h3 class="text-2xl font-bold mb-4" style="color: var(--fiery-terracotta);">Smart Haircut</h3>
+            <p style="color: var(--gunmetal);">A precision cut enhanced with our AI-powered style analysis to perfectly match your features.</p>
+          </div>
+          <!-- Service Card 2 -->
+          <div class="bg-white p-8 rounded-lg shadow-md text-center">
+            <h3 class="text-2xl font-bold mb-4" style="color: var(--fiery-terracotta);">Chroma Color</h3>
+            <p style="color: var(--gunmetal);">Vibrant, long-lasting color formulated with our smart color-matching technology.</p>
+          </div>
+          <!-- Service Card 3 -->
+          <div class="bg-white p-8 rounded-lg shadow-md text-center">
+            <h3 class="text-2xl font-bold mb-4" style="color: var(--fiery-terracotta);">Revive Treatment</h3>
+            <p style="color: var(--gunmetal);">A deep conditioning treatment that uses smart sensors to target and repair damaged hair.</p>
+          </div>
         </div>
       </div>
     </section>
   </main>
 </Layout>
-
-<style>
-  main {
-    position: relative;
-    z-index: 10; /* Ensure content is above the animation */
-  }
-
-  .content-section {
-    padding: 4rem 1rem;
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .content-section h2 {
-    margin-bottom: 2rem;
-  }
-
-  .service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    text-align: left;
-  }
-
-  .service-card {
-    background: var(--white);
-    padding: 2.5rem;
-    border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
-  }
-
-  .service-card i {
-    font-size: 2.5rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-  }
-</style>

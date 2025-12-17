@@ -1,25 +1,56 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Door from '../components/Door.astro';
 import Welcome from '../components/Welcome.astro';
+import Door from '../components/Door.astro';
+import Header from '../components/Header.astro';
 ---
 
 <Layout title="The Smart Salon">
-  <main id="page-content" class="content-hidden">
-    <Welcome />
-  </main>
+  
   <Door />
+
+  <div id="main-content" style="opacity: 0; transition: opacity 1s ease-in-out 0.5s;">
+    <Header />
+    <main class="flex items-center justify-center min-h-screen">
+      <Welcome />
+    </main>
+  </div>
+
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const doorStructure = document.getElementById('door-structure');
+      const doorContainer = document.getElementById('door-container');
+      const doorOverlay = document.getElementById('door-overlay');
+      const mainContent = document.getElementById('main-content');
+
+      if (doorStructure && doorOverlay && doorContainer && mainContent) {
+        
+        // Set initial styles for elements that will be animated.
+        doorStructure.style.transition = 'transform 1.5s ease-in-out';
+        doorOverlay.style.transition = 'opacity 1.5s ease-in-out';
+
+        // The ONLY trigger for the animation.
+        doorStructure.addEventListener('click', () => {
+          
+          // Manually and directly apply the animation styles.
+          doorStructure.style.transform = 'perspective(1200px) rotateY(-110deg)';
+          doorOverlay.style.opacity = '0';
+          mainContent.style.opacity = '1';
+
+          // Clean up the door elements after the transition is done.
+          doorOverlay.addEventListener('transitionend', () => {
+            doorOverlay.style.display = 'none';
+            doorContainer.style.display = 'none';
+          }, { once: true });
+
+        }, { once: true });
+      }
+    });
+  </script>
+  
+  <style is:global>
+    /* No animation rules here to prevent any possibility of auto-play. */
+    /* Everything is handled directly by the script. */
+  </style>
+
 </Layout>
-
-
-<style>
-  /* This is now the ONLY class controlling visibility */
-  .content-hidden {
-    filter: blur(20px);
-    transform: scale(0.9);
-    opacity: 0;
-    /* The transition for the page content reveal */
-    transition: all 1.5s 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-  }
-
-</style>
