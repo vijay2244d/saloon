@@ -1,21 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+import ContactForm from '../components/ContactForm.astro';
 ---
 
 <Layout title="Contact - The Smart Salon">
   <Header />
-  <main>
-    <section class="py-16 md:py-24 bg-white">
-      <div class="container mx-auto text-center px-4">
-        <h2 class="text-3xl font-bold mb-4" style="color: var(--gunmetal);">Contact Us</h2>
-        <p class="text-lg mb-8" style="color: var(--gunmetal);">We'd love to hear from you. Book your appointment today.</p>
-        <a href="mailto:contact@thesmartsalon.com" 
-           class="inline-block text-white font-bold py-3 px-8 rounded-lg transition-transform transform hover:scale-105"
-           style="background-color: var(--fiery-terracotta);">
-          Book Now
-        </a>
-      </div>
+  <main class="py-16 md:py-24" style="background-color: var(--ivory);">
+    <section class="container mx-auto px-4">
+      <ContactForm />
     </section>
   </main>
 </Layout>

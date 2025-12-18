@@ -3,54 +3,85 @@ import Layout from '../layouts/Layout.astro';
 import Welcome from '../components/Welcome.astro';
 import Door from '../components/Door.astro';
 import Header from '../components/Header.astro';
+import BarberPole from '../components/BarberPole.astro';
 ---
 
 <Layout title="The Smart Salon">
-  
+
   <Door />
 
-  <div id="main-content" style="opacity: 0; transition: opacity 1s ease-in-out 0.5s;">
+  <div id="main-content">
     <Header />
-    <main class="flex items-center justify-center min-h-screen">
-      <Welcome />
+    <main class="relative flex items-center justify-center min-h-screen overflow-hidden">
+      <div class="flex items-center justify-center gap-8">
+        <BarberPole />
+        <Welcome />
+      </div>
     </main>
   </div>
 
+  <style is:global>
+    #door-structure {
+      transform: perspective(1200px) rotateY(0deg);
+      transform-origin: left;
+      transition: transform 1.5s ease-in-out;
+    }
+    #door-overlay,
+    #door-container {
+      opacity: 1;
+      transition: opacity 1.5s ease-in-out;
+    }
+    #main-content {
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+    }
+
+    body.is-opening #door-structure {
+      transform: perspective(1200px) rotateY(-90deg);
+    }
+    body.is-opening #door-overlay,
+    body.is-opening #door-container {
+      opacity: 0;
+    }
+    body.is-opening #main-content {
+      transition-delay: 0.75s;
+      opacity: 1;
+    }
+
+    body.animation-played #door-overlay,
+    body.animation-played #door-container {
+      display: none;
+    }
+    body.animation-played #main-content {
+      opacity: 1;
+    }
+  </style>
+
+  <!-- The script now uses a forced delay to prevent the rendering bug. -->
   <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {
-      const doorStructure = document.getElementById('door-structure');
-      const doorContainer = document.getElementById('door-container');
-      const doorOverlay = document.getElementById('door-overlay');
-      const mainContent = document.getElementById('main-content');
+      if (sessionStorage.getItem('animationPlayed') === 'true') {
+        document.body.classList.add('animation-played');
+      } else {
+        document.addEventListener('click', () => {
+          // THE FORCED REFLOW HACK:
+          // 1. We wait a fraction of a second before adding the class.
+          // This forces the browser to process the initial state before animating.
+          setTimeout(() => {
+            document.body.classList.add('is-opening');
+          }, 10); // A tiny, unnoticeable delay.
 
-      if (doorStructure && doorOverlay && doorContainer && mainContent) {
-        
-        // Set initial styles for elements that will be animated.
-        doorStructure.style.transition = 'transform 1.5s ease-in-out';
-        doorOverlay.style.transition = 'opacity 1.5s ease-in-out';
+          sessionStorage.setItem('animationPlayed', 'true');
 
-        // The ONLY trigger for the animation.
-        doorStructure.addEventListener('click', () => {
-          
-          // Manually and directly apply the animation styles.
-          doorStructure.style.transform = 'perspective(1200px) rotateY(-110deg)';
-          doorOverlay.style.opacity = '0';
-          mainContent.style.opacity = '1';
-
-          // Clean up the door elements after the transition is done.
-          doorOverlay.addEventListener('transitionend', () => {
-            doorOverlay.style.display = 'none';
-            doorContainer.style.display = 'none';
-          }, { once: true });
+          // 2. The cleanup timeout remains the same.
+          setTimeout(() => {
+            document.body.classList.remove('is-opening');
+            document.body.classList.add('animation-played');
+          }, 1510); // Increased slightly to account for the new delay.
 
         }, { once: true });
       }
     });
   </script>
-  
-  <style is:global>
-    /* No animation rules here to prevent any possibility of auto-play. */
-    /* Everything is handled directly by the script. */
-  </style>
 
 </Layout>

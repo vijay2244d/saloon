@@ -1,17 +1,13 @@
 ---
+// This component is now PURELY presentational HTML. No styles, no scripts.
 ---
-<!-- The full-screen overlay, which is NOT clickable -->
 <div id="door-overlay" class="fixed inset-0 bg-black/70 z-40"></div>
 
-<!-- A container to center the door -->
 <div id="door-container" class="fixed inset-0 z-50 flex justify-center items-center">
-  <!-- The physical door structure that will animate. Now with the cursor-pointer -->
   <div id="door-structure" 
        class="w-[35vw] min-w-[320px] max-w-[400px] aspect-[2/3] rounded-lg shadow-2xl
-              bg-white/5 backdrop-blur-md border border-white/20 relative cursor-pointer"
-       style="transform: perspective(1200px);">
+              bg-white/5 backdrop-blur-md border border-white/20 relative cursor-pointer">
     
-    <!-- The Door Handle -->
     <div class="absolute top-1/2 -translate-y-1/2 right-5 w-4 h-24 rounded-full bg-white/30"></div>
 
     <div class="h-full flex flex-col justify-center items-center p-8 text-center">
