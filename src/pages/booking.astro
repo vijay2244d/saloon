@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import BookingForm from '../components/BookingForm.astro';
+import PhoneAnimation from '../components/PhoneAnimation.astro'; // Import the new component
+---
+
+<Layout title="Book an Appointment - The Smart Salon">
+  <Header />
+  <main id="booking-page-container" class="py-16 md:py-24" style="background-color: var(--ivory);">
+    <section class="container mx-auto px-4">
+      <!-- The Phone Animation will be displayed here -->
+      <PhoneAnimation />
+      <BookingForm />
+    </section>
+  </main>
+</Layout>
+
+<!-- Interaction Script -->
+<script is:inline>
+  const bookingPageContainer = document.getElementById('booking-page-container');
+  const animationContainer = document.getElementById('phone-animation-container');
+
+  function stopAnimation() {
+    if (animationContainer) {
+      animationContainer.classList.add('no-animation');
+    }
+    // Remove the listener after it runs once to ensure it doesn't run again
+    bookingPageContainer.removeEventListener('click', stopAnimation);
+  }
+
+  // Add a click listener to the entire booking page main container
+  bookingPageContainer.addEventListener('click', stopAnimation);
+</script>

@@ -1,205 +1,134 @@
+
 ---
 // src/components/BookingForm.astro
 ---
 <div class="w-full max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-2xl border border-gray-200">
   <h3 class="text-3xl font-extrabold mb-2 text-center" style="color: var(--gunmetal);">Schedule Your Visit</h3>
-  <p class="text-center mb-8 text-gray-500 font-light">Choose a date and time that works for you.</p>
+  <p class="text-center mb-8 text-gray-500 font-light">Complete the fields below to book your appointment.</p>
   
-  <form action="#" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-
-    <!-- Calendar -->
-    <div class="md:col-span-1">
-        <label for="date" class="block text-sm font-bold mb-4 text-center" style="color: var(--gunmetal);">Select a Date</label>
-        <div id="calendar" class="vanilla-calendar"></div>
-    </div>
-
-    <!-- Time Slots & Form Fields -->
-    <div class="md:col-span-1">
-      <div class="w-full">
-        <label for="time-slots" class="block text-sm font-bold mb-4 text-center" style="color: var(--gunmetal);">Select a Time</label>
-        <div id="time-slots" class="grid grid-cols-2 gap-2 mb-6">
-          <!-- Time slots will be dynamically generated here -->
-          <button type="button" class="time-slot" data-time="09:00 AM">09:00 AM</button>
-          <button type="button" class="time-slot" data-time="10:00 AM">10:00 AM</button>
-          <button type="button" class="time-slot" data-time="11:00 AM">11:00 AM</button>
-          <button type="button" class="time-slot" data-time="12:00 PM">12:00 PM</button>
-          <button type="button" class="time-slot" data-time="01:00 PM">01:00 PM</button>
-          <button type="button" class="time-slot" data-time="02:00 PM">02:00 PM</button>
-          <button type="button" class="time-slot" data-time="03:00 PM">03:00 PM</button>
-          <button type="button" class="time-slot" data-time="04:00 PM">04:00 PM</button>
-        </div>
-
-        <!-- Hidden fields for selected date and time -->
-        <input type="hidden" id="selected-date" name="selected-date">
-        <input type="hidden" id="selected-time" name="selected-time">
-
-        <!-- Name -->
-        <div class="mb-4">
-            <label for="full-name" class="block text-sm font-bold mb-2" style="color: var(--gunmetal);">Full Name</label>
-            <input type="text" id="full-name" name="full-name" required class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-fiery-terracotta focus:border-transparent transition">
-        </div>
-        
-        <!-- Email -->
-        <div class="mb-4">
-            <label for="email" class="block text-sm font-bold mb-2" style="color: var(--gunmetal);">Email Address</label>
-            <input type="email" id="email" name="email" required class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-fiery-terracotta focus:border-transparent transition">
-        </div>
-
-        <!-- Phone Number -->
-        <div>
-            <label for="phone" class="block text-sm font-bold mb-2" style="color: var(--gunmetal);">Phone Number</label>
-            <input type="tel" id="phone" name="phone" required class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-fiery-terracotta focus:border-transparent transition">
-        </div>
+  <!-- The Form -->
+  <form action="#" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+    <!-- Left Column: Date/Time Inputs -->
+    <div class="space-y-6">
+      <div>
+        <label for="date-display" class="block text-sm font-bold mb-2" style="color: var(--gunmetal);">Date</label>
+        <input type="text" id="date-display" readonly placeholder="Click to choose a date" class="w-full p-3 rounded-lg border border-gray-300 cursor-pointer focus:ring-2 focus:ring-fiery-terracotta focus:border-transparent transition bg-gray-50">
+      </div>
+      <div>
+        <label for="time-display" class="block text-sm font-bold mb-2" style="color: var(--gunmetal);">Time</label>
+        <input type="text" id="time-display" readonly placeholder="Click to choose a time" class="w-full p-3 rounded-lg border border-gray-300 cursor-pointer focus:ring-2 focus:ring-fiery-terracotta focus:border-transparent transition bg-gray-50">
       </div>
     </div>
-    
-    <!-- Submit Button -->
-    <div class="md:col-span-2 text-center mt-6">
-      <button type="submit" 
-              class="w-full md:w-auto text-white font-bold py-4 px-12 rounded-lg transition-transform transform hover:scale-105 shadow-lg text-lg"
-              style="background-color: var(--fiery-terracotta);">
-        Book Appointment
-      </button>
+
+    <!-- Right Column: Personal Info -->
+    <div class="space-y-6">
+      <div>
+        <label for="full-name" class="block text-sm font-bold mb-2" style="color: var(--gunmetal);">Full Name</label>
+        <input type="text" id="full-name" name="full-name" required class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-fiery-terracotta focus:border-transparent transition bg-gray-50">
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-bold mb-2" style="color: var(--gunmetal);">Email Address</label>
+        <input type="email" id="email" name="email" required class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-fiery-terracotta focus:border-transparent transition bg-gray-50">
+      </div>
     </div>
 
+    <!-- Hidden Inputs for Form Submission -->
+    <input type="hidden" id="selected-date" name="selected-date">
+    <input type="hidden" id="selected-time" name="selected-time">
+
+    <!-- Submit Button (Full Width) -->
+    <div class="md:col-span-2 text-center pt-4">
+      <button type="submit" class="w-full md:w-auto text-white font-bold py-4 px-16 rounded-lg transition-transform transform hover:scale-105 shadow-xl text-lg" style="background-color: var(--fiery-terracotta);">
+        Book My Appointment
+      </button>
+    </div>
   </form>
 </div>
 
-<!-- Vanilla Calendar CSS -->
-<style is:global>
-  .vanilla-calendar {
-    --vcal-bg-color: #fff;
-    --vcal-border-radius: .5rem;
-    --vcal-font-family: 'system-ui', 'sans-serif';
-    --vcal-font-size: 1rem;
-    --vcal-header-font-size: 1.2rem;
-    --vcal-input-font-size: 1rem;
-    --vcal-main-color: var(--gunmetal);
-    --vcal-text-color: var(--gunmetal);
-    --vcal-text-disabled-color: rgba(0, 0, 0, 0.2);
-    --vcal-text-hover-color: #fff;
-    --vcal-hover-bg-color: var(--fiery-terracotta);
-    --vcal-selected-bg-color: var(--fiery-terracotta);
-    --vcal-selected-color: #fff;
-    --vcal-date-font-size: 1rem;
-    max-width: 100%;
-    width: 100%;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
-    border: 1px solid #e5e7eb;
-  }
-  #time-slots .time-slot {
-    background-color: #f3f4f6;
-    border: 1px solid #d1d5db;
-    border-radius: 0.5rem;
-    padding: 0.75rem 0.5rem;
-    text-align: center;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--gunmetal);
-    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
-  }
-  #time-slots .time-slot:hover {
-    background-color: var(--coral-pink);
-    border-color: var(--fiery-terracotta);
-    color: white;
-  }
-  #time-slots .time-slot.selected {
-    background-color: var(--fiery-terracotta);
-    border-color: var(--fiery-terracotta);
-    color: white;
-    box-shadow: 0 0 0 2px rgba(239, 108, 91, 0.4);
-  }
-</style>
+<!-- MODALS (Date & Time Pickers) -->
+<div id="date-modal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+  <div class="bg-white p-4 rounded-lg shadow-2xl">
+    <div id="calendar-container"></div>
+  </div>
+</div>
 
-<!-- Vanilla Calendar JS and custom integration script -->
+<div id="time-modal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+  <div class="bg-white p-8 rounded-lg shadow-2xl w-full max-w-md">
+    <h4 class="text-xl font-bold text-center mb-6" style="color: var(--gunmetal);">Choose a Time</h4>
+    <div id="time-slots-container" class="grid grid-cols-3 gap-4">
+      <!-- Time slots will be generated here -->
+    </div>
+  </div>
+</div>
+
+<!-- EXTERNAL LIBRARIES -->
+<link href="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.js" defer onload="initializeBookingForm()"></script>
+
+
+<!-- SCRIPT INITIALIZATION -->
 <script is:inline>
-  // Vanilla Calendar II (https://github.com/uvarov-frontend/vanilla-calendar-ii)
-  // A lightweight and customizable JavaScript date and time picker.
-  (function() { /* Minified Vanilla Calendar JS */
-    // ... (The entire minified library code will be inserted here)
-    // This is a placeholder. In a real scenario, you'd paste the code here.
-  })();
-
-  // Custom script to initialize and manage the booking form
-  document.addEventListener('DOMContentLoaded', (event) => {
-    // In a real implementation, you would load the full vanilla-calendar.min.js
-    // For this example, we will simulate its presence.
-    if(typeof VanillaCalendar !== 'undefined') {
-      const calendar = new VanillaCalendar('#calendar', {
-        settings: {
-          visibility: {
-            daysOutside: false,
-          },
-          selection: {
-            day: 'single',
-            month: false,
-            year: false,
-          },
-          selected: {
-            dates: [new Date()], // Select today by default
-          }
-        },
-        actions: {
-          clickDay(e, dates) {
-            document.getElementById('selected-date').value = dates[0];
-            console.log(`Date selected: ${dates[0]}`);
-          }
-        },
-      });
-      calendar.init();
-      document.getElementById('selected-date').value = new Date().toISOString().slice(0, 10);
-    } else {
-      console.error('Vanilla Calendar library not loaded. Using a placeholder.');
-      const calendarDiv = document.getElementById('calendar');
-      calendarDiv.innerHTML = '<p class="text-red-500 text-center">Calendar library failed to load. Please refresh.</p>';
+  function initializeBookingForm() {
+    if (typeof VanillaCalendar === 'undefined') {
+      console.error('FATAL: Vanilla Calendar library did not load correctly.');
+      return;
     }
 
-    // Handle time slot selection
-    const timeSlotsContainer = document.getElementById('time-slots');
-    const selectedTimeInput = document.getElementById('selected-time');
+    const dateDisplay = document.getElementById('date-display');
+    const timeDisplay = document.getElementById('time-display');
+    const hiddenDate = document.getElementById('selected-date');
+    const hiddenTime = document.getElementById('selected-time');
+    const dateModal = document.getElementById('date-modal');
+    const timeModal = document.getElementById('time-modal');
+    const timeSlotsContainer = document.getElementById('time-slots-container');
+
+    // --- DATE PICKER LOGIC ---
+    const calendar = new VanillaCalendar('#calendar-container', {
+      actions: {
+        clickDay(event, self) {
+          const selectedDate = self.selectedDates[0];
+          if (selectedDate) {
+            // **FIX: Format and display the selected date**
+            const date = new Date(selectedDate);
+            dateDisplay.value = date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+            hiddenDate.value = selectedDate; // Store ISO format
+            dateModal.classList.add('hidden');
+            // Automatically open time modal after date selection
+            setTimeout(() => timeModal.classList.remove('hidden'), 100); 
+          }
+        },
+      },
+      settings: {
+        range: { disablePast: true },
+        selection: { day: 'single' },
+      }
+    });
+    calendar.init();
+
+    dateDisplay.addEventListener('click', () => dateModal.classList.remove('hidden'));
+    dateModal.addEventListener('click', (e) => {
+      if (e.target === dateModal) dateModal.classList.add('hidden');
+    });
+
+    // --- TIME PICKER LOGIC ---
+    const availableTimes = ['09:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '01:00 PM', '02:00 PM', '03:00 PM', '04:00 PM', '05:00 PM'];
+    timeSlotsContainer.innerHTML = availableTimes.map(time => 
+      `<div class="time-slot text-center p-3 rounded-lg border cursor-pointer hover:bg-fiery-terracotta hover:text-white hover:shadow-md transition">${time}</div>`
+    ).join('');
 
     timeSlotsContainer.addEventListener('click', (e) => {
-      if (e.target && e.target.classList.contains('time-slot')) {
-        // Remove 'selected' class from all other buttons
-        const allSlots = timeSlotsContainer.querySelectorAll('.time-slot');
-        allSlots.forEach(slot => slot.classList.remove('selected'));
-
-        // Add 'selected' class to the clicked button
-        e.target.classList.add('selected');
-
-        // Update the hidden input value
-        const time = e.target.dataset.time;
-        selectedTimeInput.value = time;
-        console.log(`Time selected: ${time}`);
+      if (e.target.classList.contains('time-slot')) {
+        const selectedTime = e.target.textContent;
+        // **FIX: Display the selected time**
+        timeDisplay.value = selectedTime;
+        hiddenTime.value = selectedTime;
+        timeModal.classList.add('hidden');
       }
     });
 
-    // Handle form submission
-    const form = document.querySelector('form');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('full-name').value;
-        const date = document.getElementById('selected-date').value;
-        const time = document.getElementById('selected-time').value;
-
-        if (!date) {
-            alert('Please select a date.');
-            return;
-        }
-
-        if (!time) {
-            alert('Please select a time slot.');
-            return;
-        }
-
-        alert(`Thank you, ${name}! Your appointment is requested for ${date} at ${time}. We will contact you shortly to confirm.`);
-        form.reset();
-        // Reset calendar and time slots visual state
-        const allSlots = timeSlotsContainer.querySelectorAll('.time-slot');
-        allSlots.forEach(slot => slot.classList.remove('selected'));
-        // Potentially reset calendar to today's date if desired
+    timeDisplay.addEventListener('click', () => timeModal.classList.remove('hidden'));
+    timeModal.addEventListener('click', (e) => {
+      if (e.target === timeModal) timeModal.classList.add('hidden');
     });
-
-  });
+  }
 </script>
-<script src="https://cdn.jsdelivr.net/npm/vanilla-calendar-ii@1.4.1/build/vanilla-calendar.min.js" is:inline></script>
