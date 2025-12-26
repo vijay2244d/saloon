@@ -2,33 +2,49 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import BookingForm from '../components/BookingForm.astro';
-import PhoneAnimation from '../components/PhoneAnimation.astro'; // Import the new component
+import PhoneAnimation from '../components/PhoneAnimation.astro';
 ---
 
 <Layout title="Book an Appointment - The Smart Salon">
   <Header />
-  <main id="booking-page-container" class="py-16 md:py-24" style="background-color: var(--ivory);">
+
+  <!-- This container will be revealed after the animation is clicked -->
+  <main id="booking-page-content" class="py-16 md:py-24" style="background-color: var(--ivory); display: none;">
     <section class="container mx-auto px-4">
-      <!-- The Phone Animation will be displayed here -->
-      <PhoneAnimation />
       <BookingForm />
     </section>
   </main>
+
+  <!-- The full-screen animation that appears first -->
+  <PhoneAnimation />
+
 </Layout>
 
 <!-- Interaction Script -->
 <script is:inline>
-  const bookingPageContainer = document.getElementById('booking-page-container');
   const animationContainer = document.getElementById('phone-animation-container');
+  const bookingPageContent = document.getElementById('booking-page-content');
 
-  function stopAnimation() {
+  function revealBookingForm() {
     if (animationContainer) {
-      animationContainer.classList.add('no-animation');
+      // Hide the animation with a fade-out effect
+      animationContainer.style.transition = 'opacity 0.5s ease-out';
+      animationContainer.style.opacity = '0';
+      // After the transition, set display to none so it doesn't block content
+      setTimeout(() => {
+        animationContainer.style.display = 'none';
+      }, 500); // Match timeout to transition duration
     }
-    // Remove the listener after it runs once to ensure it doesn't run again
-    bookingPageContainer.removeEventListener('click', stopAnimation);
+
+    if (bookingPageContent) {
+      // Show the main content
+      bookingPageContent.style.display = 'block';
+    }
+
+    // Remove the listener after it runs once
+    animationContainer.removeEventListener('click', revealBookingForm);
   }
 
-  // Add a click listener to the entire booking page main container
-  bookingPageContainer.addEventListener('click', stopAnimation);
+  // Add a click listener to the animation container
+  animationContainer.addEventListener('click', revealBookingForm);
 </script>

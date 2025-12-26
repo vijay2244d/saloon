@@ -13,11 +13,6 @@ import { reviews } from '../data/reviews.js';
       {reviews.map(review => (
         <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
           <div class="flex items-center mb-4">
-            <img 
-              src={`https://i.pravatar.cc/50?u=${review.name.replace(/\s+/g, '')}`}
-              alt={review.name}
-              class="w-12 h-12 rounded-full mr-4"
-            />
             <div>
               <h3 class="text-xl font-bold" style="color: var(--gunmetal);">{review.name}</h3>
               <div class="text-yellow-400">{'★'.repeat(review.rating)}</div>
