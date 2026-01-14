@@ -25,45 +25,39 @@ import DoorAnimation from '../components/DoorAnimation.astro';
 <script is:inline>
   const doorAnimationContainer = document.getElementById('door-animation-container');
   const doorBackdrop = document.getElementById('door-backdrop');
-  const door = document.getElementById('door');
-  const clickToEnter = document.getElementById('click-to-enter');
+  const doorLeft = document.getElementById('door-left');
+  const doorRight = document.getElementById('door-right');
   const mainContent = document.getElementById('main-content');
 
   function startExperience() {
     // Ensure the function only runs once
     doorAnimationContainer.removeEventListener('click', startExperience);
 
-    if(clickToEnter) {
-        // 1. Fade out the "Click to Enter" text
-        clickToEnter.style.transition = 'opacity 0.3s ease-out';
-        clickToEnter.style.opacity = '0';
-    }
-
-    if (door) {
-      // 2. Swing the door open
-      door.style.transform = 'rotateY(-120deg)';
+    // 1. Slide the door halves open
+    if (doorLeft && doorRight) {
+      doorLeft.style.transform = 'translateX(-100%)';
+      doorRight.style.transform = 'translateX(100%)';
     }
 
     if (mainContent) {
-      // 3. Un-blur the content in sync with the door opening
-      mainContent.style.transition = 'filter 1s cubic-bezier(0.8, 0, 0.2, 1)';
+      // 2. Un-blur the content in sync with the door opening
+      mainContent.style.transition = 'filter 1.2s cubic-bezier(0.8, 0, 0.2, 1)';
       mainContent.style.filter = 'blur(0px)';
     }
     
-    // 4. After the door opens, initiate the fly-through effect
+    // 3. Fade out the black backdrop after the doors have started opening
     setTimeout(() => {
       if (doorBackdrop) {
-        doorBackdrop.style.transform = 'scale(3)';
         doorBackdrop.style.opacity = '0';
       }
-    }, 900); // Starts just before the door finishes opening
+    }, 1000);
 
-    // 5. Hide the container after the fly-through animation is complete
+    // 4. Hide the container after the animations are complete
     setTimeout(() => {
       if (doorAnimationContainer) {
         doorAnimationContainer.style.display = 'none';
       }
-    }, 1900); // 900ms delay + 1000ms animation
+    }, 2200); // 1000ms delay + 1200ms animation
   }
 
   doorAnimationContainer.addEventListener('click', startExperience);

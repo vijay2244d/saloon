@@ -18,6 +18,7 @@ This project is a modern, content-focused website for "The Smart Salon," built w
 ### Pages & Components
 
 *   **Home Page (`/`):** A welcoming landing page featuring a stylish barber pole animation (`src/components/BarberPole.astro`) and a brief introduction to the salon (`src/components/Welcome.astro`).
+*   **Entrance Animation:** A sleek, modern entrance animation featuring a "frosted glass" door that splits in half and slides open to reveal the website content. The door is enhanced with sleek, vertical handles and a subtle inner shadow for a more premium and realistic feel. The "Click to Enter" text has been removed for a cleaner, more minimalist design. The surrounding area of the door is blacked out, creating a spotlight effect.
 *   **Services Page (`/services`):** A showcase of the salon's services, including precision haircuts, expert coloring, and luxe treatments. The page is designed to be visually appealing, with high-quality images and descriptive text.
 *   **Offers Page (`/offers`):** A dedicated page to highlight special promotions and discounts. The page features an "offer giver" theme, with a unique gift icon (`src/components/Gift.astro`) for each offer, making the deals feel more special and enticing.
 *   **Booking Page (`/contact`):** A full-fledged booking page that allows clients to schedule appointments directly on the website. The page features:
