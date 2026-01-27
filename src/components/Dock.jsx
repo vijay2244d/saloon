@@ -3,7 +3,7 @@ import { Children, cloneElement, useEffect, useMemo, useRef, useState } from 're
 
 import './Dock.css';
 
-function DockItem({ children, className = '', onClick, mouseX, spring, distance, magnification, baseItemSize }) {
+function DockItem({ children, className = '', onClick, mouseX, spring, distance, magnification, baseItemSize, label, id }) {
   const ref = useRef(null);
   const isHovered = useMotionValue(0);
 
@@ -33,15 +33,17 @@ function DockItem({ children, className = '', onClick, mouseX, spring, distance,
       className={`dock-item ${className}`}
       tabIndex={0}
       role="button"
-      aria-haspopup="true"
+      aria-haspopup="dialog"
+      aria-label={label}
+      aria-controls={id}
     >
-      {Children.map(children, child => cloneElement(child, { isHovered }))}
+      {Children.map(children, child => cloneElement(child, { isHovered, id }))}
     </motion.div>
   );
 }
 
 function DockLabel({ children, className = '', ...rest }) {
-  const { isHovered } = rest;
+  const { isHovered, id } = rest;
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -55,6 +57,7 @@ function DockLabel({ children, className = '', ...rest }) {
     <AnimatePresence>
       {isVisible && (
         <motion.div
+          id={id}
           initial={{ opacity: 0, y: 0 }}
           animate={{ opacity: 1, y: -10 }}
           exit={{ opacity: 0, y: 0 }}
@@ -120,6 +123,8 @@ export default function Dock({
             distance={distance}
             magnification={magnification}
             baseItemSize={baseItemSize}
+            label={item.label}
+            id={`dock-item-${index}`}
           >
             <DockIcon>{item.icon}</DockIcon>
             <DockLabel>{item.label}</DockLabel>

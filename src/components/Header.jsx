@@ -23,8 +23,9 @@ const Header = () => {
         
         {/* Hamburger Menu Button */}
         <div className="md:hidden">
-          <button id="menu-btn" onClick={toggleMenu} className="text-gunmetal focus:outline-none">
+          <button id="menu-btn" onClick={toggleMenu} className="text-gunmetal focus:outline-none" aria-controls="menu" aria-expanded={isMenuOpen}>
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>Menu</title>
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
             </svg>
           </button>

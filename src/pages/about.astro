@@ -1,6 +1,11 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+import stylist1 from 'https://i.pravatar.cc/150?u=stylist1';
+import stylist2 from 'https://i.pravatar.cc/150?u=stylist2';
+import stylist3 from 'https://i.pravatar.cc/150?u=stylist3';
+import salonInterior from 'https://images.unsplash.com/photo-1599387737255-7493e1b10f0f?q=80&w=1887&auto=format&fit=crop';
 ---
 
 <Layout title="About Us - The Smart Salon">
@@ -13,11 +18,11 @@ import Header from '../components/Header.astro';
 
     <div class="flex flex-wrap -mx-4 items-center mb-12">
       <div class="w-full md:w-1/2 px-4 mb-8 md:mb-0">
-        <img src="https://images.unsplash.com/photo-1599387737255-7493e1b10f0f?q=80&w=1887&auto=format&fit=crop" alt="Interior of The Smart Salon" class="rounded-lg shadow-xl w-full">
+        <Image src={salonInterior} alt="Interior of The Smart Salon" class="rounded-lg shadow-xl w-full" />
       </div>
       <div class="w-full md:w-1/2 px-4">
         <h2 class="text-3xl font-bold mb-4" style="color: var(--gunmetal);">Our Philosophy</h2>
-        <p class="text-gray-700 leading-relaxed">We started The Smart Salon to revolutionize the salon experience. Tired of the old-fashioned, one-size-fits-all approach, we envisioned a salon that adapts to you. From our smart mirrors that help you visualize your new look to our seamless online booking and personalized client profiles, every detail is designed for your convenience and satisfaction. We are committed to providing a sanctuary where you can relax, rejuvenate, and leave feeling like the best version of yourself.</p>
+        <p class="text-gray-700 leading-relaxed">We started The Smart Salon to revolutionize the salon experience. Tired of the old-fashioned, one-size-fits-all-approach, we envisioned a salon that adapts to you. From our smart mirrors that help you visualize your new look to our seamless online booking and personalized client profiles, every detail is designed for your convenience and satisfaction. We are committed to providing a sanctuary where you can relax, rejuvenate, and leave feeling like the best version of yourself.</p>
       </div>
     </div>
 
@@ -26,19 +31,19 @@ import Header from '../components/Header.astro';
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
         <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-          <img src="https://i.pravatar.cc/150?u=stylist1" alt="Stylist 1" class="w-32 h-32 rounded-full mx-auto mb-4">
+          <Image src={stylist1} alt="Stylist 1" class="w-32 h-32 rounded-full mx-auto mb-4" width="128" height="128" />
           <h3 class="text-xl font-bold" style="color: var(--gunmetal);">Aarav Patel</h3>
           <p class="text-gray-500">Master Stylist & Colorist</p>
         </div>
 
         <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-          <img src="https://i.pravatar.cc/150?u=stylist2" alt="Stylist 2" class="w-32 h-32 rounded-full mx-auto mb-4">
+          <Image src={stylist2} alt="Stylist 2" class="w-32 h-32 rounded-full mx-auto mb-4" width="128" height="128" />
           <h3 class="text-xl font-bold" style="color: var(--gunmetal);">Isha Singh</h3>
           <p class="text-gray-500">Creative Cuts & Modern Styles</p>
         </div>
 
         <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-          <img src="https://i.pravatar.cc/150?u=stylist3" alt="Stylist 3" class="w-32 h-32 rounded-full mx-auto mb-4">
+          <Image src={stylist3} alt="Stylist 3" class="w-32 h-32 rounded-full mx-auto mb-4" width="128" height="128" />
           <h3 class="text-xl font-bold" style="color: var(--gunmetal);">Vikram Rao</h3>
           <p class="text-gray-500">Barbering & Grooming Specialist</p>
         </div>

@@ -1,64 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Welcome from '../components/Welcome.astro';
 import Header from '../components/Header.astro';
-import BarberPole from '../components/BarberPole.astro';
-import DoorAnimation from '../components/DoorAnimation.astro';
+import Hero from '../components/Hero.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="The Smart Salon">
-  
-  <DoorAnimation />
-
-  <div id="main-content" style="filter: blur(10px);">
-    <Header />
-    <main class="relative flex items-center justify-center min-h-screen overflow-hidden">
-      <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
-        <BarberPole />
-        <Welcome />
-      </div>
-    </main>
-  </div>
-
+  <Header />
+  <main>
+    <Hero />
+  </main>
+  <Footer />
 </Layout>
-
-<script is:inline>
-  const doorAnimationContainer = document.getElementById('door-animation-container');
-  const doorBackdrop = document.getElementById('door-backdrop');
-  const doorLeft = document.getElementById('door-left');
-  const doorRight = document.getElementById('door-right');
-  const mainContent = document.getElementById('main-content');
-
-  function startExperience() {
-    // Ensure the function only runs once
-    doorAnimationContainer.removeEventListener('click', startExperience);
-
-    // 1. Slide the door halves open
-    if (doorLeft && doorRight) {
-      doorLeft.style.transform = 'translateX(-100%)';
-      doorRight.style.transform = 'translateX(100%)';
-    }
-
-    if (mainContent) {
-      // 2. Un-blur the content in sync with the door opening
-      mainContent.style.transition = 'filter 1.2s cubic-bezier(0.8, 0, 0.2, 1)';
-      mainContent.style.filter = 'blur(0px)';
-    }
-    
-    // 3. Fade out the black backdrop after the doors have started opening
-    setTimeout(() => {
-      if (doorBackdrop) {
-        doorBackdrop.style.opacity = '0';
-      }
-    }, 1000);
-
-    // 4. Hide the container after the animations are complete
-    setTimeout(() => {
-      if (doorAnimationContainer) {
-        doorAnimationContainer.style.display = 'none';
-      }
-    }, 2200); // 1000ms delay + 1200ms animation
-  }
-
-  doorAnimationContainer.addEventListener('click', startExperience);
-</script>

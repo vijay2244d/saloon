@@ -1,31 +1,36 @@
 # Project Blueprint
 
-## Overview
+## 1. Project Overview
 
-This project is a modern, content-focused website for "The Smart Salon," built with Astro.js. The primary goal is to create a fast, highly-performant, and visually engaging web experience for clients, showcasing the salon's services, special offers, and providing a seamless booking process.
+**The Smart Salon** is a modern, content-focused website for a fictional AI-powered hair salon. Built with Astro.js, it prioritizes performance and a seamless user experience. The site is designed to be visually appealing, accessible, and easy to navigate, with a focus on showcasing the salon's services and encouraging bookings.
 
-## Implemented Features
+## 2. Project Outline
 
-### Core & Styling
+### 2.1. Style & Design
 
-*   **Framework:** Astro.js
-*   **Styling:** Tailwind CSS with a custom color palette defined in `src/styles/global.css`.
-*   **Layout:** A consistent layout (`src/layouts/Layout.astro`) is used across all pages, providing a unified look and feel.
-*   **Header:** A navigation header (`src/components/Header.astro`) is present on all pages, allowing users to easily navigate the site.
-*   **Typography:** A modern and elegant font combination is used to create a premium feel.
-*   **Color Palette:** The color scheme is based on a sophisticated palette of Ivory, Gunmetal, Fiery Terracotta, and Coral Pink.
+*   **Palette:**
+    *   `--ivory`: #F6F7EB (background)
+    *   `--gunmetal`: #393E41 (text)
+    *   `--fiery-terracotta`: #E94F37 (primary accent)
+*   **Typography:** A clean, modern sans-serif font is used throughout the site.
+*   **Visuals:** The site uses a full-width hero image to create a strong first impression. Decorative animations are used to add a touch of personality.
 
-### Pages & Components
+### 2.2. Features
 
-*   **Home Page (`/`):** A welcoming landing page featuring a stylish barber pole animation (`src/components/BarberPole.astro`) and a brief introduction to the salon (`src/components/Welcome.astro`).
-*   **Entrance Animation:** A sleek, modern entrance animation featuring a "frosted glass" door that splits in half and slides open to reveal the website content. The door is enhanced with sleek, vertical handles and a subtle inner shadow for a more premium and realistic feel. The "Click to Enter" text has been removed for a cleaner, more minimalist design. The surrounding area of the door is blacked out, creating a spotlight effect.
-*   **Services Page (`/services`):** A showcase of the salon's services, including precision haircuts, expert coloring, and luxe treatments. The page is designed to be visually appealing, with high-quality images and descriptive text.
-*   **Offers Page (`/offers`):** A dedicated page to highlight special promotions and discounts. The page features an "offer giver" theme, with a unique gift icon (`src/components/Gift.astro`) for each offer, making the deals feel more special and enticing.
-*   **Booking Page (`/contact`):** A full-fledged booking page that allows clients to schedule appointments directly on the website. The page features:
-    *   An interactive calendar for date selection, powered by `vanilla-calendar-ii`.
-    *   A time slot picker with a list of available appointment times.
-    *   A user-friendly form to collect client information (name, email, phone number).
+*   **Responsive Header:** A fully responsive header with a hamburger menu for mobile devices.
+*   **Hero Section:** A prominent hero section with a compelling headline, descriptive text, and a call-to-action button.
+*   **Accessibility:** The site is designed to be accessible, with ARIA attributes and other accessibility best practices implemented.
+*   **Animations:** Subtle animations are used to enhance the user experience.
 
-## Current Plan
+## 3. Current Change: Accessibility Audit & Hero Component
 
-This marks the completion of the requested features. The next steps will be determined by your feedback and any new requests.
+### 3.1. Plan & Steps
+
+1.  **Audit Components:** Review all existing components in the `src/components` directory for accessibility issues.
+2.  **Remediate Issues:** Address any accessibility issues found, including:
+    *   Adding `aria-` attributes to interactive elements.
+    *   Providing text alternatives for icons and images.
+3.  **Create Hero Component:** Create a new `Hero.astro` component to be the main feature of the landing page.
+4.  **Integrate Hero Component:** Add the new `Hero.astro` component to the `index.astro` page.
+5.  **Style Hero Component:** Add the necessary styling for the `Hero.astro` component to the `global.css` file.
+6.  **Create Blueprint:** Create a `blueprint.md` file to document the project's purpose, features, and the changes made.
