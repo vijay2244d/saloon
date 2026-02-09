@@ -1,50 +1,51 @@
 ---
-import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
 import HairFalling from '../components/HairFalling.astro';
-import haircut from 'https://images.unsplash.com/photo-1580894908361-967195033215?q=80&w=1887&auto=format&fit=crop';
-import haircolor from 'https://images.unsplash.com/photo-1615211923912-1958b1d66a6a?q=80&w=1887&auto=format&fit=crop';
-import hairtreatment from 'https://images.unsplash.com/photo-1599387112150-93c622a5534c?q=80&w=1887&auto=format&fit=crop';
+
+const services = [
+  {
+    title: 'HairCare & Styling',
+    description: "Our AI-powered hair analysis helps you find the perfect cut, color, and style. We combine the latest trends with timeless techniques to create a look that's uniquely you, ensuring you leave with healthy, beautiful hair.",
+    icon: '/services/hair-care.svg'
+  },
+  {
+    title: 'Specialty & Modern Services',
+    description: "Step into the future with AI-powered consultations, robotic precision treatments, and virtual reality style previews. We offer a truly personalized and futuristic salon experience you won't find anywhere else.",
+    icon: '/services/specialty.svg'
+  },
+  {
+    title: 'Nail & Body Care',
+    description: "Indulge in our luxurious nail and body treatments. From chip-resistant gel manicures to robotic massages and automated body wraps, we use cutting-edge technology and the finest products to leave you feeling refreshed and rejuvenated.",
+    icon: '/services/nail-body.svg'
+  },
+  {
+    title: 'Skin & Face Treatments',
+    description: "Reveal your natural glow with our advanced skin treatments. Using state-of-the-art skin analysis, we customize facials, peels, and microdermabrasion to address your specific needs, helping you achieve a healthy, radiant complexion.",
+    icon: '/services/skin-face.svg'
+  },
+];
 ---
 
-<Layout title="Our Services - The Smart Salon">
-  <Header />
-  <main class="relative overflow-hidden bg-ivory">
+<Layout title="Services - The Smart Salon">
     <HairFalling />
-    <div class="container mx-auto p-8 relative z-10">
-      <div class="text-center mb-12">
-        <h1 class="text-4xl font-bold" style="color: var(--gunmetal);">Our Services</h1>
-        <p class="text-lg mt-4 text-gray-600">Precision cuts, vibrant color, and rejuvenating treatments, all tailored to you.</p>
-      </div>
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl font-bold text-center mb-12">Our Services</h1>
+            <p class="text-xl text-center max-w-3xl mx-auto mb-20">At The Smart Salon, we offer a range of revolutionary services that blend the artistry of our expert stylists with the precision of cutting-edge technology. Whether you're looking for a bold new look or a subtle refresh, we have the tools and expertise to make it happen.</p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-          <Image src={haircut} alt="A person with a stylish and precise haircut" class="w-full h-48 object-cover" />
-          <div class="p-6">
-            <h3 class="text-2xl font-bold mb-2" style="color: var(--gunmetal);">Precision Haircuts</h3>
-            <p class="text-gray-700 mb-4">Whether you want a timeless classic or a modern, edgy look, our stylists will craft a haircut that perfectly suits your features and lifestyle.</p>
-          </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                {services.map(service => (
+                    <a href={`/booking?service=${encodeURIComponent(service.title)}`} class="block bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <img src={service.icon} alt={service.title} class="w-12 h-12 mr-4" />
+                                <h3 class="text-2xl font-bold">{service.title}</h3>
+                            </div>
+                            <p class="text-gray-700">{service.description}</p>
+                        </div>
+                    </a>
+                ))}
+            </div>
         </div>
-
-        <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-          <Image src={haircolor} alt="A woman with vibrant, professionally colored hair" class="w-full h-48 object-cover" />
-          <div class="p-6">
-            <h3 class="text-2xl font-bold mb-2" style="color: var(--gunmetal);">Expert Coloring</h3>
-            <p class="text-gray-700 mb-4">From subtle highlights to bold, transformative color, our colorists use premium products to achieve stunning, long-lasting results while maintaining hair health.</p>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-          <Image src={hairtreatment} alt="A woman relaxing while receiving a luxe hair treatment" class="w-full h-48 object-cover" />
-          <div class="p-6">
-            <h3 class="text-2xl font-bold mb-2" style="color: var(--gunmetal);">Luxe Treatments</h3>
-            <p class="text-gray-700 mb-4">Revitalize your hair with our range of deep conditioning, keratin, and scalp treatments designed to restore shine, strength, and vitality.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </main>
+    </section>
 </Layout>

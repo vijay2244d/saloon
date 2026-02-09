@@ -39,6 +39,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  filter: brightness(0) saturate(100%) invert(34%) sepia(90%) saturate(1478%) hue-rotate(349deg) brightness(93%) contrast(91%);
 }
 
 .dock-label {

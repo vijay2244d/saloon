@@ -1,55 +1,53 @@
 ---
-import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import stylist1 from 'https://i.pravatar.cc/150?u=stylist1';
-import stylist2 from 'https://i.pravatar.cc/150?u=stylist2';
-import stylist3 from 'https://i.pravatar.cc/150?u=stylist3';
-import salonInterior from 'https://images.unsplash.com/photo-1599387737255-7493e1b10f0f?q=80&w=1887&auto=format&fit=crop';
+
+const teamMembers = [
+  {
+    name: 'Alexandre Dubois',
+    role: 'Creative Director',
+    bio: 'Alexandre is the visionary behind The Smart Salon, with over 15 years of experience in avant-garde hair styling and a passion for blending artistry with technology. His work has been featured in international fashion magazines, and he is a two-time recipient of the prestigious Global Hairdresser of the Year award.',
+    image: '/team/alexandre.jpg'
+  },
+  {
+    name: 'Isabella Rossi',
+    role: 'Master Colorist & AI Specialist',
+    bio: 'Isabella is a world-renowned colorist, known for her ability to create breathtakingly vibrant and nuanced hair colors. She has pioneered the use of our AI-powered color analysis system, ensuring that every client receives a perfectly customized and flattering shade.',
+    image: '/team/isabella.jpg'
+  },
+  {
+    name: 'Kenji Tanaka',
+    role: 'Lead Stylist & Robotic Precision Expert',
+    bio: 'Kenji brings a unique blend of traditional Japanese haircutting techniques and modern robotic precision to his craft. He is the lead operator of our automated styling systems, guaranteeing a flawless and consistent result with every cut.',
+    image: '/team/kenji.jpg'
+  },
+    {
+    name: 'Sofia Rodriguez',
+    role: 'Client Experience Manager & Tech Integrationist',
+    bio: 'Sofia is the heart of our client experience, ensuring that every visit to The Smart Salon is seamless, personalized, and unforgettable. She is also responsible for integrating our various technologies, from the AI-powered consultations to the automated appointment system.',
+    image: '/team/sofia.jpg'
+  }
+];
+
 ---
 
 <Layout title="About Us - The Smart Salon">
-  <Header />
-  <main class="container mx-auto p-8">
-    <div class="text-center mb-12">
-      <h1 class="text-4xl font-bold" style="color: var(--gunmetal);">Where Tradition Meets Technology</h1>
-      <p class="text-lg mt-4 text-gray-600 max-w-3xl mx-auto">At The Smart Salon, we believe that a great haircut is more than just a service—it's a fusion of artistry, personal care, and the latest technology. Founded on the principle of innovation, our salon is a space where classic styling techniques are enhanced by modern comforts and digital precision.</p>
-    </div>
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <h1 class="text-5xl font-bold text-center mb-12">Meet the Future of Hairdressing</h1>
+      <p class="text-xl text-center max-w-3xl mx-auto mb-20">At The Smart Salon, we believe that the perfect hairstyle is a blend of artistry and science. Our team of world-class stylists and technicians are not only masters of their craft, but also pioneers in the use of artificial intelligence and robotics to create a truly personalized and revolutionary salon experience.</p>
 
-    <div class="flex flex-wrap -mx-4 items-center mb-12">
-      <div class="w-full md:w-1/2 px-4 mb-8 md:mb-0">
-        <Image src={salonInterior} alt="Interior of The Smart Salon" class="rounded-lg shadow-xl w-full" />
-      </div>
-      <div class="w-full md:w-1/2 px-4">
-        <h2 class="text-3xl font-bold mb-4" style="color: var(--gunmetal);">Our Philosophy</h2>
-        <p class="text-gray-700 leading-relaxed">We started The Smart Salon to revolutionize the salon experience. Tired of the old-fashioned, one-size-fits-all-approach, we envisioned a salon that adapts to you. From our smart mirrors that help you visualize your new look to our seamless online booking and personalized client profiles, every detail is designed for your convenience and satisfaction. We are committed to providing a sanctuary where you can relax, rejuvenate, and leave feeling like the best version of yourself.</p>
-      </div>
-    </div>
-
-    <div class="text-center">
-      <h2 class="text-3xl font-bold mb-8" style="color: var(--gunmetal);">Meet Our Stylists</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-          <Image src={stylist1} alt="Stylist 1" class="w-32 h-32 rounded-full mx-auto mb-4" width="128" height="128" />
-          <h3 class="text-xl font-bold" style="color: var(--gunmetal);">Aarav Patel</h3>
-          <p class="text-gray-500">Master Stylist & Colorist</p>
-        </div>
-
-        <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-          <Image src={stylist2} alt="Stylist 2" class="w-32 h-32 rounded-full mx-auto mb-4" width="128" height="128" />
-          <h3 class="text-xl font-bold" style="color: var(--gunmetal);">Isha Singh</h3>
-          <p class="text-gray-500">Creative Cuts & Modern Styles</p>
-        </div>
-
-        <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-          <Image src={stylist3} alt="Stylist 3" class="w-32 h-32 rounded-full mx-auto mb-4" width="128" height="128" />
-          <h3 class="text-xl font-bold" style="color: var(--gunmetal);">Vikram Rao</h3>
-          <p class="text-gray-500">Barbering & Grooming Specialist</p>
-        </div>
-
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        {teamMembers.map(member => (
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+            <img src={member.image} alt={member.name} class="w-full h-80 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-2">{member.name}</h3>
+              <p class="text-lg text-[var(--fiery-terracotta)] font-semibold mb-4">{member.role}</p>
+              <p class="text-gray-700">{member.bio}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
-
-  </main>
+  </section>
 </Layout>

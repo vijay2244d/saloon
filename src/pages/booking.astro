@@ -1,50 +1,73 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import BookingForm from '../components/BookingForm.astro';
-import PhoneAnimation from '../components/PhoneAnimation.astro';
+import PhoneNumber from '../components/PhoneNumber.astro';
+
+const { searchParams } = Astro.url;
+const selectedService = searchParams.get('service');
+
+const services = [
+  'HairCare & Styling',
+  'Specialty & Modern Services',
+  'Nail & Body Care',
+  'Skin & Face Treatments'
+];
 ---
 
-<Layout title="Book an Appointment - The Smart Salon">
-  <Header />
+<Layout title="Booking - The Smart Salon">
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl font-bold text-center mb-12" style="font-family: 'Playfair Display', serif;">Book Your Appointment</h1>
+            <p class="text-xl text-center max-w-3xl mx-auto mb-12">Ready to experience the future of hairdressing? Book your appointment today and let us help you redefine your look.</p>
 
-  <!-- This container will be revealed after the animation is clicked -->
-  <main id="booking-page-content" class="py-16 md:py-24" style="background-color: var(--ivory); display: none;">
-    <section class="container mx-auto px-4">
-      <BookingForm />
+            <form class="max-w-xl mx-auto bg-white/10 backdrop-blur-sm p-8 rounded-lg shadow-xl border border-white/20">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="md:col-span-2">
+                        <label for="service" class="block text-sm font-medium text-[var(--gunmetal)] mb-2">Service</label>
+                        <select id="service" name="service" class="w-full bg-[var(--ivory)] border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[var(--fiery-terracotta)] text-[var(--gunmetal)]">
+                            {services.map(service => (
+                                <option value={service} selected={service === selectedService}>{service}</option>
+                            ))}
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-[var(--gunmetal)] mb-2">Full Name</label>
+                        <input type="text" id="name" name="name" class="w-full bg-[var(--ivory)] border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[var(--fiery-terracotta)] text-[var(--gunmetal)]" required>
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-[var(--gunmetal)] mb-2">Email Address</label>
+                        <input type="email" id="email" name="email" class="w-full bg-[var(--ivory)] border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[var(--fiery-terracotta)] text-[var(--gunmetal)]" required>
+                    </div>
+
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-[var(--gunmetal)] mb-2">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="w-full bg-[var(--ivory)] border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[var(--fiery-terracotta)] text-[var(--gunmetal)]" required>
+                    </div>
+
+                     <div>
+                        <label for="date" class="block text-sm font-medium text-[var(--gunmetal)] mb-2">Preferred Date</label>
+                        <input type="date" id="date" name="date" class="w-full bg-[var(--ivory)] border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[var(--fiery-terracotta)] text-[var(--gunmetal)]" required>
+                    </div>
+
+                     <div class="md:col-span-2">
+                        <label for="time" class="block text-sm font-medium text-[var(--gunmetal)] mb-2">Preferred Time</label>
+                        <input type="time" id="time" name="time" class="w-full bg-[var(--ivory)] border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[var(--fiery-terracotta)] text-[var(--gunmetal)]" required>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <button type="submit" class="bg-[var(--fiery-terracotta)] text-white font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition-all transform hover:scale-105 shadow-lg">
+                        Book Now
+                    </button>
+                </div>
+            </form>
+
+            <div class="text-center mt-12">
+                 <p class="text-lg mb-2">Or call us to book:</p>
+                 <PhoneNumber />
+            </div>
+
+        </div>
     </section>
-  </main>
-
-  <!-- The full-screen animation that appears first -->
-  <PhoneAnimation />
-
 </Layout>
-
-<!-- Interaction Script -->
-<script is:inline>
-  const animationContainer = document.getElementById('phone-animation-container');
-  const bookingPageContent = document.getElementById('booking-page-content');
-
-  function revealBookingForm() {
-    if (animationContainer) {
-      // Hide the animation with a fade-out effect
-      animationContainer.style.transition = 'opacity 0.5s ease-out';
-      animationContainer.style.opacity = '0';
-      // After the transition, set display to none so it doesn't block content
-      setTimeout(() => {
-        animationContainer.style.display = 'none';
-      }, 500); // Match timeout to transition duration
-    }
-
-    if (bookingPageContent) {
-      // Show the main content
-      bookingPageContent.style.display = 'block';
-    }
-
-    // Remove the listener after it runs once
-    animationContainer.removeEventListener('click', revealBookingForm);
-  }
-
-  // Add a click listener to the animation container
-  animationContainer.addEventListener('click', revealBookingForm);
-</script>

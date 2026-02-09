@@ -1,27 +1,42 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import { reviews } from '../data/reviews.js';
+
+const reviews = [
+  {
+    name: 'Olivia Chen',
+    review: 'The Smart Salon is unlike anything I have ever experienced. The AI consultation was spot-on, and the robotic haircut was the most precise I have ever had. I walked out feeling like a new person. I cannot recommend it enough!',
+    avatar: '/avatars/olivia.jpg'
+  },
+  {
+    name: 'Benjamin Carter',
+    review: 'I was a bit skeptical about the whole AI and robotics thing, but I was blown away by the results. The team at The Smart Salon is incredibly talented and made me feel comfortable throughout the entire process. My new hairstyle is amazing!',
+    avatar: '/avatars/benjamin.jpg'
+  },
+  {
+    name: 'Chloe Dubois',
+    review: 'I had the virtual reality consultation, and it was so much fun! I was able to try on a bunch of different hairstyles before I committed, and the final result was even better than I had imagined. The Smart Salon is the future of hairdressing!',
+    avatar: '/avatars/chloe.jpg'
+  },
+];
 ---
 
-<Layout title="Customer Reviews - The Smart Salon">
-  <Header />
-  <main class="container mx-auto p-8">
-    <h1 class="text-4xl font-bold text-center mb-12" style="color: var(--gunmetal);">What Our Clients Say</h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      
-      {reviews.map(review => (
-        <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-          <div class="flex items-center mb-4">
-            <div>
-              <h3 class="text-xl font-bold" style="color: var(--gunmetal);">{review.name}</h3>
-              <div class="text-yellow-400">{'★'.repeat(review.rating)}</div>
+<Layout title="Reviews - The Smart Salon">
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl font-bold text-center mb-12">What Our Clients Are Saying</h1>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                {reviews.map(review => (
+                    <div class="bg-white rounded-lg shadow-lg p-8">
+                        <div class="flex items-center mb-6">
+                            <img src={review.avatar} alt={review.name} class="w-16 h-16 rounded-full mr-6" />
+                            <div>
+                                <h3 class="text-2xl font-bold">{review.name}</h3>
+                            </div>
+                        </div>
+                        <p class="text-gray-700">{review.review}</p>
+                    </div>
+                ))}
             </div>
-          </div>
-          <p class="text-gray-600">"{review.text}"</p>
         </div>
-      ))}
-
-    </div>
-  </main>
+    </section>
 </Layout>

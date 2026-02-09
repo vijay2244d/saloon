@@ -3,7 +3,7 @@ import { Children, cloneElement, useEffect, useMemo, useRef, useState } from 're
 
 import './Dock.css';
 
-function DockItem({ children, className = '', onClick, mouseX, spring, distance, magnification, baseItemSize, label, id }) {
+function DockItem({ children, className = '', href, mouseX, spring, distance, magnification, baseItemSize, label, id }) {
   const ref = useRef(null);
   const isHovered = useMotionValue(0);
 
@@ -19,8 +19,9 @@ function DockItem({ children, className = '', onClick, mouseX, spring, distance,
   const size = useSpring(targetSize, spring);
 
   return (
-    <motion.div
+    <motion.a
       ref={ref}
+      href={href}
       style={{
         width: size,
         height: size
@@ -29,7 +30,6 @@ function DockItem({ children, className = '', onClick, mouseX, spring, distance,
       onHoverEnd={() => isHovered.set(0)}
       onFocus={() => isHovered.set(1)}
       onBlur={() => isHovered.set(0)}
-      onClick={onClick}
       className={`dock-item ${className}`}
       tabIndex={0}
       role="button"
@@ -38,7 +38,7 @@ function DockItem({ children, className = '', onClick, mouseX, spring, distance,
       aria-controls={id}
     >
       {Children.map(children, child => cloneElement(child, { isHovered, id }))}
-    </motion.div>
+    </motion.a>
   );
 }
 
@@ -74,7 +74,7 @@ function DockLabel({ children, className = '', ...rest }) {
 }
 
 function DockIcon({ children, className = '' }) {
-  return <div className={`dock-icon ${className}`}>{children}</div>;
+  return <img src={children} alt="" className={`dock-icon ${className}`} />;
 }
 
 export default function Dock({
@@ -116,7 +116,7 @@ export default function Dock({
         {items.map((item, index) => (
           <DockItem
             key={index}
-            onClick={item.onClick}
+            href={item.href}
             className={item.className}
             mouseX={mouseX}
             spring={spring}

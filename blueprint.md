@@ -12,25 +12,63 @@
     *   `--ivory`: #F6F7EB (background)
     *   `--gunmetal`: #393E41 (text)
     *   `--fiery-terracotta`: #E94F37 (primary accent)
-*   **Typography:** A clean, modern sans-serif font is used throughout the site.
-*   **Visuals:** The site uses a full-width hero image to create a strong first impression. Decorative animations are used to add a touch of personality.
+*   **Typography:** The site will use "Playfair Display" for headings and a clean, modern sans-serif font for the body text.
+*   **Visuals:** The site uses a full-width hero section with a barber pole graphic to create a strong first impression. The navigation icons now match the accent color.
 
 ### 2.2. Features
 
-*   **Responsive Header:** A fully responsive header with a hamburger menu for mobile devices.
-*   **Hero Section:** A prominent hero section with a compelling headline, descriptive text, and a call-to-action button.
+*   **Hero Section:** A prominent hero section with a compelling headline, descriptive text, and a barber pole graphic. The home page is non-scrollable to keep the focus on the hero section.
+*   **Interactive Dock:** A bottom navigation dock that provides an interactive and visually appealing way to navigate the site. The icon colors have been updated to match the site's theme.
 *   **Accessibility:** The site is designed to be accessible, with ARIA attributes and other accessibility best practices implemented.
-*   **Animations:** Subtle animations are used to enhance the user experience.
+*   **Animations:**
+    *   **One-Time Intro Animation:** A responsive door animation that plays only once per user session. It uses `sessionStorage` to ensure it doesn't repeat on subsequent page loads.
+        *   **Laptop/Default:** A full-screen, blurry-glass door with handles.
+        *   **Desktop (>1440px):** A centered, 50% width door with a black background.
+    *   **Hair Animation:** A subtle hair-falling animation is present on the "Services" page.
+*   **Content Pages:** Dedicated pages for "About Us", "Services", "Booking", "Reviews", and "Special Offers". 
+    *   The **Services** page lists the salon's actual services with custom icons and detailed descriptions. Clicking a service card redirects the user to the booking page with the service pre-selected.
+    *   The **Booking** page now features a comprehensive booking form and displays the salon's phone number.
+    *   The **Offers** page has been cleaned up.
 
-## 3. Current Change: Accessibility Audit & Hero Component
+## 3. Current Task
 
-### 3.1. Plan & Steps
+### Enhance Booking Page
 
-1.  **Audit Components:** Review all existing components in the `src/components` directory for accessibility issues.
-2.  **Remediate Issues:** Address any accessibility issues found, including:
-    *   Adding `aria-` attributes to interactive elements.
-    *   Providing text alternatives for icons and images.
-3.  **Create Hero Component:** Create a new `Hero.astro` component to be the main feature of the landing page.
-4.  **Integrate Hero Component:** Add the new `Hero.astro` component to the `index.astro` page.
-5.  **Style Hero Component:** Add the necessary styling for the `Hero.astro` component to the `global.css` file.
-6.  **Create Blueprint:** Create a `blueprint.md` file to document the project's purpose, features, and the changes made.
+**Objective:** Add a complete booking form to the booking page, including fields for the user's name, email, and phone number, and display the salon's phone number.
+
+**Plan:**
+
+1.  **[Done]** Updated `src/pages/booking.astro` to include a full booking form with fields for service, name, email, phone number, date, and time.
+2.  **[Done]** Created a new `src/components/PhoneNumber.astro` component to display the salon's contact number.
+3.  **[Done]** Added the `PhoneNumber` component to the booking page.
+
+## 4. Previous Tasks
+
+### Remove Header
+
+**Objective:** Remove the redundant header component to simplify the layout.
+
+**Plan:**
+
+1.  **[Done]** Removed the `<Header />` component from `src/layouts/Layout.astro`.
+2.  **[Done]** Deleted the `src/components/Header.astro` file.
+
+### Implement One-Time Intro Animation
+
+**Objective:** Ensure the door animation only plays once per user session.
+
+**Plan:**
+
+1.  **[Done]** Used `sessionStorage` in `Door.astro` to track if the intro has been seen.
+2.  **[Done]** Hid the component instantly on subsequent views within the same session.
+
+## 5. Next Task
+
+### Deploy the Website
+
+**Objective:** Deploy the website to a public URL.
+
+**Plan:**
+
+1.  Run the build command to generate the static files.
+2.  Deploy the `dist` folder to Firebase Hosting.

@@ -8,5 +8,13 @@ dotenv.config();
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), solidJs(), react()]
+  integrations: [
+    tailwind(),
+    solidJs({
+      exclude: ['**/*.jsx'], // Exclude React components
+    }),
+    react({
+      include: ['**/*.jsx'], // Only include React components
+    }),
+  ],
 });
