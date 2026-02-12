@@ -33,16 +33,12 @@ const services = [
             <h1 class="text-5xl font-bold text-center mb-12">Our Services</h1>
             <p class="text-xl text-center max-w-3xl mx-auto mb-20">At The Smart Salon, we offer a range of revolutionary services that blend the artistry of our expert stylists with the precision of cutting-edge technology. Whether you're looking for a bold new look or a subtle refresh, we have the tools and expertise to make it happen.</p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 {services.map(service => (
-                    <a href={`/booking?service=${encodeURIComponent(service.title)}`} class="block bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                        <div class="p-6">
-                            <div class="flex items-center mb-4">
-                                <img src={service.icon} alt={service.title} class="w-12 h-12 mr-4" />
-                                <h3 class="text-2xl font-bold">{service.title}</h3>
-                            </div>
-                            <p class="text-gray-700">{service.description}</p>
-                        </div>
+                    <a href={`/booking?service=${encodeURIComponent(service.title)}`} class="flex flex-col justify-center items-center p-6 bg-white rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 aspect-square">
+                        <img src={service.icon} alt={service.title} class="w-16 h-16 mb-4" />
+                        <h3 class="text-xl font-bold text-center mb-2">{service.title}</h3>
+                        <p class="text-gray-600 text-sm text-center">{service.description}</p>
                     </a>
                 ))}
             </div>

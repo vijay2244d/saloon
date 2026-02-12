@@ -25,12 +25,22 @@
         *   **Laptop/Default:** A full-screen, blurry-glass door with handles.
         *   **Desktop (>1440px):** A centered, 50% width door with a black background.
     *   **Hair Animation:** A subtle hair-falling animation is present on the "Services" page.
-*   **Content Pages:** Dedicated pages for "About Us", "Services", "Booking", "Reviews", and "Special Offers". 
-    *   The **Services** page lists the salon's actual services with custom icons and detailed descriptions. Clicking a service card redirects the user to the booking page with the service pre-selected.
+*   **Content Pages:** Dedicated pages for "About Us", "Services", "Booking", "Reviews", and "Special Offers".
+    *   The **Services** page lists the salon's actual services with custom icons and detailed descriptions. The service cards are now square and have a more prominent hover effect. Clicking a service card redirects the user to the booking page with the service pre-selected.
     *   The **Booking** page now features a comprehensive booking form and displays the salon's phone number.
     *   The **Offers** page has been cleaned up.
 
 ## 3. Current Task
+
+### Enhance Service Page
+
+**Objective:** Change the service placeholders on the services page to be square and add a more prominent hover effect.
+
+**Plan:**
+
+1.  **[Done]** Updated `src/pages/services.astro` to change the grid layout and styling of the service cards to be square and have a more pronounced hover effect.
+
+## 4. Previous Tasks
 
 ### Enhance Booking Page
 
@@ -41,8 +51,6 @@
 1.  **[Done]** Updated `src/pages/booking.astro` to include a full booking form with fields for service, name, email, phone number, date, and time.
 2.  **[Done]** Created a new `src/components/PhoneNumber.astro` component to display the salon's contact number.
 3.  **[Done]** Added the `PhoneNumber` component to the booking page.
-
-## 4. Previous Tasks
 
 ### Remove Header
 
