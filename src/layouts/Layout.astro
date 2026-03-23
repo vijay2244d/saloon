@@ -4,6 +4,7 @@ import SidePanels from '../components/SidePanels.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
 import Door from '../components/Door.astro';
 import Dock from '../components/Dock.jsx';
+import Movable from '../components/Movable.jsx';
 import '../styles/global.css';
 
 interface Props {
@@ -64,8 +65,10 @@ const dockItems = navLinks.map(link => ({
         <slot />
     </main>
     <Footer />
-    <div class="fixed bottom-0 left-0 right-0 z-50">
-        <Dock client:only="react" items={dockItems} />
+    <div class="fixed bottom-10 left-1/2 -translate-x-1/2 z-50">
+      <Movable client:only="react">
+        <Dock items={dockItems} />
+      </Movable>
     </div>
   </body>
 </html>
