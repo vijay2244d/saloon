@@ -4,14 +4,14 @@ import Layout from '../layouts/Layout.astro';
 const teamMembers = [
   {
     name: 'Kenji Tanaka',
-    role: 'Lead Stylist & Robotic Precision Expert',
-    bio: 'Kenji brings a unique blend of traditional Japanese haircutting techniques and modern robotic precision to his craft. He is the lead operator of our automated styling systems, guaranteeing a flawless and consistent result with every cut.',
+    role: 'Artistic Director',
+    bio: 'With over 15 years of experience in the hairstyling industry, Kenji is a master of his craft. He combines classic techniques with a modern artistic vision, creating stunning and personalized looks for his clients. He is a multi-award-winning stylist, recognized for his creativity and precision.',
     image: '/team/kenji.jpg'
   },
     {
     name: 'Sofia Rodriguez',
-    role: 'Client Experience Manager & Tech Integrationist',
-    bio: 'Sofia is the heart of our client experience, ensuring that every visit to The Smart Salon is seamless, personalized, and unforgettable. She is also responsible for integrating our various technologies, from the AI-powered consultations to the automated appointment system.',
+    role: 'Salon Manager & Client Relations',
+    bio: 'Sofia ensures that every client\'s experience at The Smart Salon is exceptional. She oversees the daily operations of the salon and is dedicated to providing a warm, welcoming, and luxurious atmosphere. Her passion for hospitality and her attention to detail make her an invaluable part of the team.',
     image: '/team/sofia.jpg'
   }
 ];
@@ -21,20 +21,28 @@ const teamMembers = [
 <Layout title="About Us - The Smart Salon">
   <section class="py-20">
     <div class="container mx-auto px-4">
-      <h1 class="text-5xl font-bold text-center mb-12">Meet the Future of Hairdressing</h1>
-      <p class="text-xl text-center max-w-3xl mx-auto mb-20">At The Smart Salon, we believe that the perfect hairstyle is a blend of artistry and science. Our team of world-class stylists and technicians are not only masters of their craft, but also pioneers in the use of artificial intelligence and robotics to create a truly personalized and revolutionary salon experience.</p>
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-t from-white to-transparent z-10"></div>
+        <video autoplay loop muted playsinline class="w-full h-full object-cover">
+          <source src="/videos/hair-animation.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="relative z-20">
+        <h1 class="text-5xl font-bold text-center mb-12">Meet Our Talented Team</h1>
+        <p class="text-xl text-center max-w-3xl mx-auto mb-20">At The Smart Salon, our team of dedicated professionals is the heart of our success. We are passionate about our craft and committed to providing our clients with the highest level of service and artistry.</p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-        {teamMembers.map(member => (
-          <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-            <img src={member.image} alt={member.name} class="w-full h-80 object-cover">
-            <div class="p-6">
-              <h3 class="text-2xl font-bold mb-2">{member.name}</h3>
-              <p class="text-lg text-[var(--fiery-terracotta)] font-semibold mb-4">{member.role}</p>
-              <p class="text-gray-700">{member.bio}</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {teamMembers.map(member => (
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+              <img src={member.image} alt={member.name} class="w-full h-80 object-cover">
+              <div class="p-6">
+                <h3 class="text-2xl font-bold mb-2">{member.name}</h3>
+                <p class="text-lg text-[var(--fiery-terracotta)] font-semibold mb-4">{member.role}</p>
+                <p class="text-gray-700">{member.bio}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   </section>

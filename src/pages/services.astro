@@ -4,25 +4,35 @@ import HairFalling from '../components/HairFalling.astro';
 
 const services = [
   {
-    title: 'HairCare & Styling',
-    description: "Our AI-powered hair analysis helps you find the perfect cut, color, and style. We combine the latest trends with timeless techniques to create a look that's uniquely you, ensuring you leave with healthy, beautiful hair.",
+    title: 'Haircuts & Styling',
+    description: "Our expert stylists create personalized haircuts and styles to suit your individual features and lifestyle. We offer everything from classic cuts to the latest trends.",
     icon: '/services/hair-care.svg'
   },
   {
-    title: 'Specialty & Modern Services',
-    description: "Step into the future with AI-powered consultations, robotic precision treatments, and virtual reality style previews. We offer a truly personalized and futuristic salon experience you won't find anywhere else.",
+    title: 'Hair Coloring',
+    description: "Transform your look with our professional hair coloring services. We use high-quality products to achieve stunning results, from subtle highlights to bold new colors.",
     icon: '/services/specialty.svg'
   },
   {
-    title: 'Nail & Body Care',
-    description: "Indulge in our luxurious nail and body treatments. From chip-resistant gel manicures to robotic massages and automated body wraps, we use cutting-edge technology and the finest products to leave you feeling refreshed and rejuvenated.",
+    title: 'Hair Treatments',
+    description: "Revitalize your hair with our nourishing treatments. We offer a range of services to repair damage, add moisture, and restore shine, leaving your hair healthy and vibrant.",
+    icon: '/services/hair-care.svg'
+  },
+  {
+    title: 'Manicures & Pedicures',
+    description: "Indulge in our luxurious manicures and pedicures. Our skilled technicians will leave your hands and feet looking and feeling their best, with a wide range of colors and finishes to choose from.",
     icon: '/services/nail-body.svg'
   },
   {
-    title: 'Skin & Face Treatments',
-    description: "Reveal your natural glow with our advanced skin treatments. Using state-of-the-art skin analysis, we customize facials, peels, and microdermabrasion to address your specific needs, helping you achieve a healthy, radiant complexion.",
+    title: 'Facials & Skincare',
+    description: "Rejuvenate your skin with our customized facials and skincare treatments. We use premium products and advanced techniques to address your specific skin concerns and reveal a radiant complexion.",
     icon: '/services/skin-face.svg'
   },
+    {
+    title: 'Waxing & Hair Removal',
+    description: "Achieve smooth, silky skin with our professional waxing and hair removal services. Our experienced estheticians provide a comfortable and effective experience, leaving you with long-lasting results.",
+    icon: '/services/specialty.svg'
+  }
 ];
 ---
 
@@ -30,10 +40,10 @@ const services = [
     <HairFalling />
     <section class="py-20">
         <div class="container mx-auto px-4">
-            <h1 class="text-5xl font-bold text-center mb-12">Our Services</h1>
-            <p class="text-xl text-center max-w-3xl mx-auto mb-20">At The Smart Salon, we offer a range of revolutionary services that blend the artistry of our expert stylists with the precision of cutting-edge technology. Whether you're looking for a bold new look or a subtle refresh, we have the tools and expertise to make it happen.</p>
+            <h1 class="text-5xl font-bold text-center mb-12">Our Salon Services</h1>
+            <p class="text-xl text-center max-w-3xl mx-auto mb-20">At The Smart Salon, we offer a comprehensive menu of services to meet all your beauty needs. Our team of skilled professionals is dedicated to providing you with a luxurious and relaxing experience, using only the finest products and techniques.</p>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {services.map(service => (
                     <a href={`/booking?service=${encodeURIComponent(service.title)}`} class="flex flex-col justify-center items-center p-6 bg-white rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 aspect-square">
                         <img src={service.icon} alt={service.title} class="w-16 h-16 mb-4" />
