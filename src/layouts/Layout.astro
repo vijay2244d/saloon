@@ -1,7 +1,6 @@
 ---
 import Footer from '../components/Footer.astro';
 import SidePanels from '../components/SidePanels.astro';
-import ThemeToggle from '../components/ThemeToggle.astro';
 import Door from '../components/Door.astro';
 import Dock from '../components/Dock.jsx';
 import Movable from '../components/Movable.jsx';
@@ -58,7 +57,6 @@ const dockItems = navLinks.map(link => ({
     "bg-[var(--ivory)] text-[var(--gunmetal)]",
     { "home": isHomePage },
   ]}>
-    <ThemeToggle />
     <SidePanels />
     <Door />
     <main>
@@ -67,7 +65,7 @@ const dockItems = navLinks.map(link => ({
     <Footer />
     <div class="fixed bottom-10 left-1/2 -translate-x-1/2 z-50">
       <Movable client:only="react">
-        <Dock items={dockItems} />
+        <Dock items={dockItems} client:only="react"/>
       </Movable>
     </div>
   </body>

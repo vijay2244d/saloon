@@ -40,12 +40,26 @@ This project is a modern, content-focused website for "The Smart Salon," built w
 *   **Services Page:**
     *   Replaced the futuristic and unrealistic service descriptions with a list of professional, high-end salon services.
 
+### Version 1.3 (Security Enhancements)
+
+*   **Firebase Hosting:** Initialized Firebase Hosting to enable the configuration of security headers.
+*   **Security Headers:** Implemented the following security headers in `firebase.json` to protect against common web vulnerabilities:
+    *   **Content-Security-Policy:** Restricts the sources of content to prevent XSS attacks.
+    *   **X-Frame-Options:** Prevents clickjacking by controlling whether the site can be embedded in an iframe.
+    *   **X-Content-Type-Options:** Prevents MIME-type sniffing by forcing the browser to adhere to the `Content-Type` header.
+    *   **Referrer-Policy:** Controls how much referrer information is sent in requests.
+*   **Dependency Audit:** Performed a security audit of all project dependencies using `npm audit` and resolved all identified vulnerabilities by running `npm audit fix`.
+
+### Version 1.4 (Navigation)
+
+*   **Navigation Dock:**
+    *   **Glass Effect:** The navigation dock has been redesigned with a frosted glass effect using `backdrop-filter`, giving it a modern, iOS-style appearance.
+
 ## Current Change Request
 
-*   **Change:** Update the content on the "Services" page to be more realistic and professional.
+*   **Change:** Remove the theme switch mode.
 *   **Plan:**
-    1.  ~~Read the `src/pages/services.astro` file.~~
-    2.  ~~Remove the existing services.~~
-    3.  ~~Add a new list of realistic and professional salon services.~~
-    4.  ~~Update the grid layout to accommodate the new services.~~
-    5.  Update the `blueprint.md` file to document the changes.
+    1.  ~~Remove the `ThemeToggle` component from the `Dock.jsx` file.~~
+    2.  ~~Delete the `ThemeToggle.jsx` component file.~~
+    3.  ~~Remove the dark theme classes and logic from `Layout.astro`.~~
+    4.  Update the `blueprint.md` file to document the removal of the theme switch mode.
