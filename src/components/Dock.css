@@ -15,11 +15,6 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.dark .dock-panel {
-  background-color: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
 .dock-item {
   position: relative;
   display: inline-flex;
@@ -40,10 +35,6 @@
   filter: none;
 }
 
-.dark .dock-icon {
-  filter: brightness(0) saturate(100%) invert(34%) sepia(90%) saturate(1478%) hue-rotate(349deg) brightness(93%) contrast(91%);
-}
-
 .dock-label {
   position: absolute;
   top: -1.5rem;
@@ -57,19 +48,4 @@
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.dark .dock-label {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.central-object {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #ff00ff;
-  margin: 0 1rem;
-  align-self: center;
 }

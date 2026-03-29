@@ -57,9 +57,11 @@ This project is a modern, content-focused website for "The Smart Salon," built w
 
 ## Current Change Request
 
-*   **Change:** Remove the theme switch mode.
+*   **Change:** Remove the theme switch mode and the central object from the navigation bar.
 *   **Plan:**
     1.  ~~Remove the `ThemeToggle` component from the `Dock.jsx` file.~~
     2.  ~~Delete the `ThemeToggle.jsx` component file.~~
     3.  ~~Remove the dark theme classes and logic from `Layout.astro`.~~
-    4.  Update the `blueprint.md` file to document the removal of the theme switch mode.
+    4.  ~~Remove the central object styling from `Dock.css`.~~
+    5.  ~~Remove the logic for the central object from `Dock.jsx`.~~
+    6.  Update the `blueprint.md` file to document the removal of the theme switch mode and the central object.
