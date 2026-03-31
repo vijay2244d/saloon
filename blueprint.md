@@ -69,8 +69,8 @@ This project is a modern, content-focused website for "The Smart Salon," built w
 *   **Actions Taken:**
     *   Scanned all `.astro` and `.jsx` components within the `src/components/` directory.
     *   For each component containing `<style>` tags, the CSS was extracted into a new, corresponding `.css` file in `src/styles/`.
-    *   For each component containing `<script>` tags, the JavaScript was extracted into a new, corresponding `.js` file in `src/scripts/`.\
-    *   For the React component `Dock.jsx`, inline style objects were converted to CSS classes and moved to `src/components/Dock.css`.\
+    *   For each component containing `<script>` tags, the JavaScript was extracted into a new, corresponding `.js` file in `src/scripts/`.
+    *   For the React component `Dock.jsx`, inline style objects were converted to CSS classes and moved to `src/components/Dock.css`.
     *   Components were updated to import the new external CSS and JS files.
 *   **Affected Components:**
     *   `src/components/Card.astro`
@@ -88,7 +88,7 @@ This project is a modern, content-focused website for "The Smart Salon," built w
 *   **Goal:** Implement a light/dark theme switcher.
 *   **Actions Taken:**
     *   Created a new React component `ThemeToggle.jsx` to handle theme switching logic.
-    *   Added CSS for the `ThemeToggle` component in `src/styles/ThemeToggle.css`.\
+    *   Added CSS for the `ThemeToggle` component in `src/styles/ThemeToggle.css`.
     *   Updated `src/styles/global.css` with a dark theme color palette.
     *   Integrated the `ThemeToggle` component into the `Dock.jsx` navigation component.
 *   **Functionality:**
@@ -141,6 +141,28 @@ This project is a modern, content-focused website for "The Smart Salon," built w
     *   **Updated `src/components/Dock.css`:** Added `dark:` mode styles to the navigation dock and its labels to ensure their appearance is consistent with the new theme.
 *   **Outcome:**
     *   The dark theme is now applied globally and consistently across all pages and components.
+
+### Version 2.2 (Responsive Design Audit & Implementation)
+
+*   **Goal:** Ensure the website is fully responsive and provides an optimal viewing experience on all devices, from mobile to desktop.
+*   **Actions Taken:**
+    *   **Global Layout (`Layout.astro`):**
+        *   Updated the viewport meta tag to `width=device-width, initial-scale=1.0` to ensure proper scaling on all devices.
+        *   Adjusted the fixed positioning of the navigation dock to be closer to the bottom edge on mobile devices for better ergonomics (`bottom-4 sm:bottom-6 md:bottom-8`).
+    *   **Hero Component (`Hero.astro`):**
+        *   Converted the static, horizontal layout to a flexible layout that stacks vertically on small screens (`flex-col`) and transitions to a horizontal layout on larger screens (`sm:flex-row`).
+        *   Implemented responsive typography, reducing heading sizes on mobile for better readability.
+    *   **Services Page (`services.astro`):**
+        *   Made the typography for the page title and description responsive.
+        *   Removed the fixed `aspect-square` from the service cards, allowing their height to adjust to the content, which prevents text from being cut off on smaller screens.
+        *   Optimized section and container padding for different breakpoints.
+    *   **Navigation Dock (`Dock.jsx`, `Dock.css`):**
+        *   Removed the `<Movable>` wrapper component, as draggable UI elements are not a standard or intuitive pattern on mobile. The `Movable.jsx` file was deleted.
+        *   Reduced the default `baseItemSize` and `magnification` of the dock items in `Dock.jsx` to create a more compact appearance.
+        *   Added a media query to `Dock.css` to reduce the `gap` and `padding` of the dock on screens smaller than 640px.
+*   **Outcome:**
+    *   The website is now fully responsive, offering a seamless and intuitive user experience across a wide range of screen sizes.
+    *   Key pages and components have been audited and refactored to adhere to responsive design best practices.
 
 ## Current Change Request
 

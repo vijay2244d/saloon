@@ -38,14 +38,14 @@ const services = [
 
 <Layout title="Services - The Smart Salon">
     <HairFalling />
-    <section class="py-20">
-        <div class="container mx-auto px-4">
-            <h1 class="text-5xl font-bold text-center mb-12">Our Salon Services</h1>
-            <p class="text-xl text-center max-w-3xl mx-auto mb-20">At The Smart Salon, we offer a comprehensive menu of services to meet all your beauty needs. Our team of skilled professionals is dedicated to providing you with a luxurious and relaxing experience, using only the finest products and techniques.</p>
+    <section class="py-16 sm:py-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl sm:text-5xl font-bold text-center mb-8 sm:mb-12">Our Salon Services</h1>
+            <p class="text-lg sm:text-xl text-center max-w-3xl mx-auto mb-12 sm:mb-20">At The Smart Salon, we offer a comprehensive menu of services to meet all your beauty needs. Our team of skilled professionals is dedicated to providing you with a luxurious and relaxing experience, using only the finest products and techniques.</p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {services.map(service => (
-                    <a href={`/booking?service=${encodeURIComponent(service.title)}`} class="flex flex-col justify-center items-center p-6 bg-white dark:bg-gunmetal rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 aspect-square">
+                    <a href={`/booking?service=${encodeURIComponent(service.title)}`} class="flex flex-col items-center p-8 bg-white dark:bg-gunmetal rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
                         <img src={service.icon} alt={service.title} class="w-16 h-16 mb-4" />
                         <h3 class="text-xl font-bold text-center mb-2 dark:text-ivory">{service.title}</h3>
                         <p class="text-gray-600 dark:text-gray-400 text-sm text-center">{service.description}</p>

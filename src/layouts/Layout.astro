@@ -3,7 +3,6 @@ import Footer from '../components/Footer.astro';
 import SidePanels from '../components/SidePanels.astro';
 import Door from '../components/Door.astro';
 import Dock from '../components/Dock.jsx';
-import Movable from '../components/Movable.jsx';
 import ThemeToggle from '../components/ThemeToggle.jsx';
 import '../styles/global.css';
 
@@ -36,11 +35,11 @@ const dockItems = navLinks.map(link => ({
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <style>
@@ -65,10 +64,8 @@ const dockItems = navLinks.map(link => ({
         <slot />
     </main>
     <Footer />
-    <div class="fixed bottom-10 left-1/2 -translate-x-1/2 z-50">
-      <Movable client:only="react">
+    <div class="fixed bottom-4 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-50">
         <Dock items={dockItems} client:only="react"/>
-      </Movable>
     </div>
   </body>
 </html>
