@@ -1,0 +1,31 @@
+.hair-fall-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 9;
+}
+
+.hair-bunch {
+  position: absolute;
+  top: -200px;
+  will-change: transform;
+  animation-name: fall;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  transform-origin: top center;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(0) rotateZ(var(--rotation));
+    opacity: 1;
+  }
+  to {
+    transform: translateY(calc(100vh + 200px)) rotateZ(var(--rotation));
+    opacity: 0.8;
+  }
+}

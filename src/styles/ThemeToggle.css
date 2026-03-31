@@ -1,0 +1,14 @@
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0;
+  color: var(--gunmetal);
+  transition: color 0.3s ease;
+}
+
+[data-theme="dark"] .theme-toggle {
+  color: var(--ivory);
+}

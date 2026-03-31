@@ -55,13 +55,93 @@ This project is a modern, content-focused website for "The Smart Salon," built w
 *   **Navigation Dock:**
     *   **Glass Effect:** The navigation dock has been redesigned with a frosted glass effect using `backdrop-filter`, giving it a modern, iOS-style appearance.
 
+### Version 1.5 (Navigation Cleanup)
+
+*   **Navigation Dock:**
+    *   Removed the theme switch toggle from the navigation dock.
+    *   Removed the central object/placeholder from the navigation dock.
+    *   Deleted the `ThemeToggle.jsx` component.
+    *   Removed all dark theme related styles and logic from the application.
+
+### Version 1.6 (Code Refactoring)
+
+*   **Goal:** Improve maintainability and adherence to best practices by externalizing inline CSS and JavaScript.
+*   **Actions Taken:**
+    *   Scanned all `.astro` and `.jsx` components within the `src/components/` directory.
+    *   For each component containing `<style>` tags, the CSS was extracted into a new, corresponding `.css` file in `src/styles/`.
+    *   For each component containing `<script>` tags, the JavaScript was extracted into a new, corresponding `.js` file in `src/scripts/`.\
+    *   For the React component `Dock.jsx`, inline style objects were converted to CSS classes and moved to `src/components/Dock.css`.\
+    *   Components were updated to import the new external CSS and JS files.
+*   **Affected Components:**
+    *   `src/components/Card.astro`
+    *   `src/components/Dock.jsx`
+    *   `src/components/Door.astro`
+    *   `src/components/Gift.astro`
+    *   `src/components/HairAnimation.astro`
+*   **Benefits:**
+    *   Cleaner and more readable component files.
+    *   Improved separation of concerns (structure, style, and behavior).
+    *   Enhanced cacheability of CSS and JavaScript assets.
+
+### Version 1.7 (Theme Changer)
+
+*   **Goal:** Implement a light/dark theme switcher.
+*   **Actions Taken:**
+    *   Created a new React component `ThemeToggle.jsx` to handle theme switching logic.
+    *   Added CSS for the `ThemeToggle` component in `src/styles/ThemeToggle.css`.\
+    *   Updated `src/styles/global.css` with a dark theme color palette.
+    *   Integrated the `ThemeToggle` component into the `Dock.jsx` navigation component.
+*   **Functionality:**
+    *   The theme preference is saved to `localStorage` to persist across sessions.
+    *   A `data-theme` attribute on the `<html>` element is updated to dynamically switch between light and dark themes.
+
+### Version 1.8 (Theme Toggle Repositioning)
+
+*   **Goal:** Move the theme toggle to a more conventional, fixed position.
+*   **Actions Taken:**
+    *   Removed the `ThemeToggle` component from the `Dock.jsx` component.
+    *   Added the `ThemeToggle` component directly to the main `src/layouts/Layout.astro` file.
+    *   Added inline CSS to `Layout.astro` to position the toggle in the top-right corner of the screen using `position: fixed`.
+*   **Benefit:** The theme toggle is now always accessible in a consistent location across all pages.
+
+### Version 1.9 (Dependency Maintenance)
+
+*   **Goal:** Update outdated project dependencies to improve security, performance, and stability.
+*   **Actions Taken:**
+    *   Attempted to update all dependencies to their latest versions.
+    *   Encountered a critical "Unsupported engine" error, as the latest Astro versions require Node.js v22+, while the environment runs Node.js v20.
+    *   Resolved the issue by systematically downgrading `astro`, `@astrojs/react`, `@astrojs/solid-js`, `@astrojs/tailwind`, and `tailwindcss` to the latest versions compatible with Node.js v20.
+    *   Used the `--legacy-peer-deps` flag to resolve several complex peer dependency conflicts that arose during the downgrade process.
+    *   Started the development server and performed a full visual and functional regression test.
+*   **Outcome:**
+    *   All dependencies are now on stable, compatible versions.
+    *   The application is confirmed to be running correctly, with all original animations, layout, and component functionality preserved.
+    *   The project is now on a more secure and stable foundation.
+
+### Version 2.0 (Dark Mode Optimization)
+
+*   **Goal:** Fix an issue where service card names were unreadable in dark mode.
+*   **Problem:** The existing theme implementation caused light text to be displayed on a light background for the service cards in dark mode. This was due to a simple CSS variable swap that didn't account for the cards' hardcoded white background.
+*   **Actions Taken:**
+    *   **Adopted Tailwind's Class-Based Dark Mode:** The theming strategy was upgraded to use Tailwind CSS's standard `class`-based system for better control and maintainability.
+    *   **Updated `tailwind.config.cjs`:** Set the `darkMode` property to `'class'` to enable the new strategy.
+    *   **Refactored `ThemeToggle.jsx`:** The theme toggle component was modified to add/remove the `dark` class to the `<html>` element, activating Tailwind's `dark:` variants.
+    *   **Applied `dark:` Variants:** The service cards in `src/pages/services.astro` were updated with `dark:` utility classes (e.g., `dark:bg-gunmetal`, `dark:text-ivory`) to define their appearance in dark mode.
+    *   **Cleaned up CSS:** The now-redundant `[data-theme="dark"]` styles were removed from `src/styles/global.css`.
+*   **Outcome:**
+    *   The service cards are now perfectly readable in both light and dark modes.
+    *   The project's theming system is now more robust, maintainable, and aligned with industry best practices.
+
+### Version 2.1 (Global Theme Application)
+
+*   **Goal:** Ensure the dark theme is applied consistently across the entire website.
+*   **Problem:** The initial dark mode implementation only targeted specific components, leaving the rest of the site in light mode.
+*   **Actions Taken:**
+    *   **Updated `src/layouts/Layout.astro`:** Applied the `dark:` utility classes to the `<body>` tag to set the global background and text colors for dark mode.
+    *   **Updated `src/components/Dock.css`:** Added `dark:` mode styles to the navigation dock and its labels to ensure their appearance is consistent with the new theme.
+*   **Outcome:**
+    *   The dark theme is now applied globally and consistently across all pages and components.
+
 ## Current Change Request
 
-*   **Change:** Remove the theme switch mode and the central object from the navigation bar.
-*   **Plan:**
-    1.  ~~Remove the `ThemeToggle` component from the `Dock.jsx` file.~~
-    2.  ~~Delete the `ThemeToggle.jsx` component file.~~
-    3.  ~~Remove the dark theme classes and logic from `Layout.astro`.~~
-    4.  ~~Remove the central object styling from `Dock.css`.~~
-    5.  ~~Remove the logic for the central object from `Dock.jsx`.~~
-    6.  Update the `blueprint.md` file to document the removal of the theme switch mode and the central object.
+*There are no active change requests.*

@@ -26,11 +26,11 @@ function DockItem({ children, className = '', href, mouseX, spring, distance, ma
         width: size,
         height: size
       }}
+      className={`dock-item dock-item-motion ${className}`}
       onHoverStart={() => isHovered.set(1)}
       onHoverEnd={() => isHovered.set(0)}
       onFocus={() => isHovered.set(1)}
       onBlur={() => isHovered.set(0)}
-      className={`dock-item ${className}`}
       tabIndex={0}
       role="button"
       aria-haspopup="dialog"
@@ -62,9 +62,8 @@ function DockLabel({ children, className = '', ...rest }) {
           animate={{ opacity: 1, y: -10 }}
           exit={{ opacity: 0, y: 0 }}
           transition={{ duration: 0.2 }}
-          className={`dock-label ${className}`}
+          className={`dock-label dock-label-motion ${className}`}
           role="tooltip"
-          style={{ x: '-50%' }}
         >
           {children}
         </motion.div>
@@ -108,7 +107,7 @@ export default function Dock({
           isHovered.set(0);
           mouseX.set(Infinity);
         }}
-        className={`dock-panel ${className}`}
+        className={`dock-panel dock-panel-motion ${className}`}
         style={{ height: panelHeight }}
         role="toolbar"
         aria-label="Application dock"

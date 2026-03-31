@@ -4,6 +4,7 @@ import SidePanels from '../components/SidePanels.astro';
 import Door from '../components/Door.astro';
 import Dock from '../components/Dock.jsx';
 import Movable from '../components/Movable.jsx';
+import ThemeToggle from '../components/ThemeToggle.jsx';
 import '../styles/global.css';
 
 interface Props {
@@ -43,20 +44,21 @@ const dockItems = navLinks.map(link => ({
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <style>
-      body {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
-      main {
-        flex-grow: 1;
+      .theme-toggle-container {
+        position: fixed;
+        top: 1.5rem;
+        right: 1.5rem;
+        z-index: 1000;
       }
     </style>
   </head>
   <body class:list={[
-    "bg-[var(--ivory)] text-[var(--gunmetal)]",
+    "bg-ivory text-gunmetal dark:bg-gunmetal dark:text-ivory",
     { "home": isHomePage },
   ]}>
+    <div class="theme-toggle-container">
+      <ThemeToggle client:only="react" />
+    </div>
     <SidePanels />
     <Door />
     <main>

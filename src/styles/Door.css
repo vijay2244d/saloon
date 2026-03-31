@@ -1,0 +1,115 @@
+/* --- Default Styles (Laptop & smaller) --- */
+/* Full-screen blurry glass door */
+
+.door-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: flex;
+  pointer-events: none;
+  overflow: hidden;
+  background-color: transparent; /* Transparent by default */
+  transition: background-color 1.5s ease; /* For desktop fade-in */
+}
+
+.door-wrapper {
+  position: relative;
+  width: 100%; /* Full width by default */
+  height: 100%; /* Full height by default */
+  display: flex;
+  overflow: hidden;
+}
+
+.door-panel {
+  width: 50%;
+  height: 100%;
+  background-color: rgba(246, 247, 235, 0.5);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 1.5s cubic-bezier(0.82, 0, 0.18, 1);
+}
+
+.door-handle {
+  position: absolute;
+  top: 50%;
+  width: 8px;
+  height: 70px;
+  background-color: rgba(57, 62, 65, 0.6);
+  border-radius: 4px;
+  transform: translateY(-50%);
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.door-panel.left .door-handle { right: 20px; }
+.door-panel.right .door-handle { left: 20px; }
+
+.enter-prompt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--gunmetal);
+  font-size: 1.5rem;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  letter-spacing: 1px;
+}
+
+/* --- Desktop Overrides (Large Monitors > 1440px) --- */
+/* 50% centered door with black background */
+
+@media (min-width: 1441px) {
+  .door-container {
+    background-color: #000; /* Black background for desktop */
+    align-items: center; /* Center the wrapper vertically */
+    justify-content: center; /* Center the wrapper horizontally */
+  }
+
+  .door-wrapper {
+    width: 50vw;
+    height: 90vh;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  }
+
+  .door-panel {
+      background-color: rgba(57, 62, 65, 0.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .door-handle {
+      display: none; /* Hide handles on desktop version */
+  }
+
+  .enter-prompt {
+      color: var(--ivory);
+      text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  }
+
+  /* Fade out the black background on desktop */
+  body:not(.loading) .door-container {
+      background-color: transparent;
+  }
+}
+
+/* --- Animation States --- */
+
+body.loading .door-container { pointer-events: auto; }
+body.loading .door-panel { transform: translateX(0); }
+body.loading .enter-prompt { opacity: 1; }
+
+body:not(.loading) .door-container { pointer-events: none; }
+body:not(.loading) .door-panel.left { transform: translateX(-100%); }
+body:not(.loading) .door-panel.right { transform: translateX(100%); }
+body:not(.loading) .enter-prompt { opacity: 0; }

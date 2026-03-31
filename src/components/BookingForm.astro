@@ -1,9 +1,8 @@
-
 ---
-// src/components/BookingForm.astro
+import '../styles/BookingForm.css';
 ---
 <div class="w-full max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-2xl border border-gray-200">
-  <h3 class="text-3xl font-extrabold mb-2 text-center" style="color: var(--gunmetal);">Schedule Your Visit</h3>
+  <h3 class="text-3xl font-extrabold mb-2 text-center booking-form-h3">Schedule Your Visit</h3>
   <p class="text-center mb-8 text-gray-500 font-light">Complete the fields below to book your appointment.</p>
   
   <!-- The Form -->
@@ -11,11 +10,11 @@
     <!-- Left Column: Date/Time Inputs -->
     <div class="space-y-6">
       <div>
-        <label for="date-display" class="block text-sm font-bold mb-2" style="color: var(--gunmetal);">Date</label>
+        <label for="date-display" class="block text-sm font-bold mb-2 booking-form-label">Date</label>
         <input type="text" id="date-display" readonly placeholder="Click to choose a date" class="w-full p-3 rounded-lg border border-gray-300 cursor-pointer focus:ring-2 focus:ring-fiery-terracotta focus:border-transparent transition bg-gray-50" aria-label="Selected date">
       </div>
       <div>
-        <label for="time-display" class="block text-sm font-bold mb-2" style="color: var(--gunmetal);">Time</label>
+        <label for="time-display" class="block text-sm font-bold mb-2 booking-form-label">Time</label>
         <input type="text" id="time-display" readonly placeholder="Click to choose a time" class="w-full p-3 rounded-lg border border-gray-300 cursor-pointer focus:ring-2 focus:ring-fiery-terracotta focus:border-transparent transition bg-gray-50" aria-label="Selected time">
       </div>
     </div>
@@ -23,15 +22,15 @@
     <!-- Right Column: Personal Info -->
     <div class="space-y-6">
       <div>
-        <label for="full-name" class="block text-sm font-bold mb-2" style="color: var(--gunmetal);">Full Name</label>
+        <label for="full-name" class="block text-sm font-bold mb-2 booking-form-label">Full Name</label>
         <input type="text" id="full-name" name="full-name" required class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-fiery-terracotta focus:border-transparent transition bg-gray-50">
       </div>
       <div>
-        <label for="email" class="block text-sm font-bold mb-2" style="color: var(--gunmetal);">Email Address</label>
+        <label for="email" class="block text-sm font-bold mb-2 booking-form-label">Email Address</label>
         <input type="email" id="email" name="email" required class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-fiery-terracotta focus:border-transparent transition bg-gray-50">
       </div>
       <div>
-        <label for="phone" class="block text-sm font-bold mb-2" style="color: var(--gunmetal);">Phone Number</label>
+        <label for="phone" class="block text-sm font-bold mb-2 booking-form-label">Phone Number</label>
         <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" required class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-fiery-terracotta focus:border-transparent transition bg-gray-50">
       </div>
     </div>
@@ -42,7 +41,7 @@
 
     <!-- Submit Button (Full Width) -->
     <div class="md:col-span-2 text-center pt-4">
-      <button type="submit" class="w-full md:w-auto text-white font-bold py-4 px-16 rounded-lg transition-transform transform hover:scale-105 shadow-xl text-lg" style="background-color: var(--fiery-terracotta);">
+      <button type="submit" class="w-full md:w-auto text-white font-bold py-4 px-16 rounded-lg transition-transform transform hover:scale-105 shadow-xl text-lg booking-form-button">
         Book My Appointment
       </button>
     </div>
@@ -62,119 +61,13 @@
 
 <div id="time-modal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden" role="dialog" aria-modal="true" aria-labelledby="time-modal-title">
   <div class="bg-white p-8 rounded-lg shadow-2xl w-full max-w-md">
-    <h4 id="time-modal-title" class="text-xl font-bold text-center mb-6" style="color: var(--gunmetal);">Choose a Time</h4>
+    <h4 id="time-modal-title" class="text-xl font-bold text-center mb-6 time-modal-h4">Choose a Time</h4>
     <div id="time-slots-container" class="grid grid-cols-3 gap-4"></div>
   </div>
 </div>
 
 <!-- EXTERNAL LIBRARIES -->
 <link href="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.js" defer onload="initializeBookingForm()"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.js" defer></script>
 
-
-<!-- SCRIPT INITIALIZATION -->
-<script is:inline>
-  function initializeBookingForm() {
-    if (typeof VanillaCalendar === 'undefined') {
-      console.error('FATAL: Vanilla Calendar library did not load correctly.');
-      return;
-    }
-
-    const dateDisplay = document.getElementById('date-display');
-    const timeDisplay = document.getElementById('time-display');
-    const hiddenDate = document.getElementById('selected-date');
-    const hiddenTime = document.getElementById('selected-time');
-    const dateModal = document.getElementById('date-modal');
-    const timeModal = document.getElementById('time-modal');
-    const timeSlotsContainer = document.getElementById('time-slots-container');
-
-    // --- DATE PICKER LOGIC ---
-    const calendar = new VanillaCalendar('#calendar-container', {
-      actions: {
-        clickDay(event, self) {
-          const selectedDate = self.selectedDates[0];
-          if (selectedDate) {
-            const date = new Date(selectedDate);
-            dateDisplay.value = date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-            hiddenDate.value = selectedDate;
-            closeModal(dateModal);
-            setTimeout(() => openModal(timeModal), 100);
-          }
-        },
-      },
-      settings: {
-        range: { disablePast: true },
-        selection: { day: 'single' },
-      }
-    });
-    calendar.init();
-
-    dateDisplay.addEventListener('click', () => openModal(dateModal));
-
-    // --- TIME PICKER LOGIC ---
-    const availableTimes = ['09:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '01:00 PM', '02:00 PM', '03:00 PM', '04:00 PM', '05:00 PM'];
-    timeSlotsContainer.innerHTML = availableTimes.map(time =>
-      `<button type="button" class="time-slot text-center p-3 rounded-lg border cursor-pointer hover:bg-fiery-terracotta hover:text-white hover:shadow-md transition">${time}</button>`
-    ).join('');
-
-    timeSlotsContainer.addEventListener('click', (e) => {
-      if (e.target.classList.contains('time-slot')) {
-        const selectedTime = e.target.textContent;
-        timeDisplay.value = selectedTime;
-        hiddenTime.value = selectedTime;
-        closeModal(timeModal);
-      }
-    });
-
-    timeDisplay.addEventListener('click', () => openModal(timeModal));
-
-    // --- MODAL ACCESSIBILITY --- 
-    let lastFocusedElement;
-
-    function openModal(modal) {
-      lastFocusedElement = document.activeElement;
-      modal.classList.remove('hidden');
-      const focusableElements = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-      if(focusableElements.length > 0) {
-        focusableElements[0].focus();
-      }
-      document.addEventListener('keydown', trapFocus);
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal(modal);
-      });
-    }
-
-    function closeModal(modal) {
-      modal.classList.add('hidden');
-      if(lastFocusedElement) {
-        lastFocusedElement.focus();
-      }
-      document.removeEventListener('keydown', trapFocus);
-    }
-
-    function trapFocus(e) {
-      if (e.key === 'Escape') {
-        const openModal = document.querySelector('[role="dialog"]:not(.hidden)');
-        if(openModal) {
-          closeModal(openModal);
-        }
-      }
-      if (e.key === 'Tab') {
-        const openModal = document.querySelector('[role="dialog"]:not(.hidden)');
-        if(openModal) {
-          const focusableElements = openModal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-          const firstElement = focusableElements[0];
-          const lastElement = focusableElements[focusableElements.length - 1];
-
-          if (e.shiftKey && document.activeElement === firstElement) {
-            lastElement.focus();
-            e.preventDefault();
-          } else if (!e.shiftKey && document.activeElement === lastElement) {
-            firstElement.focus();
-            e.preventDefault();
-          }
-        }
-      }
-    }
-  }
-</script>
+<script src="../scripts/booking.js"></script>

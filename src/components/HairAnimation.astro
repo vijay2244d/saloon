@@ -1,4 +1,5 @@
 ---
+import '../styles/HairAnimation.css';
 const numBunches = 100;
 ---
 
@@ -32,49 +33,4 @@ const numBunches = 100;
   })}
 </div>
 
-<style>
-  .hair-fall-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 9;
-  }
-
-  .hair-bunch {
-    position: absolute;
-    top: -200px;
-    will-change: transform;
-    animation-name: fall;
-    animation-timing-function: ease-in;
-    animation-fill-mode: forwards;
-    transform-origin: top center;
-  }
-
-  @keyframes fall {
-    from {
-      transform: translateY(0) rotateZ(var(--rotation));
-      opacity: 1;
-    }
-    to {
-      transform: translateY(calc(100vh + 200px)) rotateZ(var(--rotation));
-      opacity: 0.8;
-    }
-  }
-</style>
-
-<script>
-  document.addEventListener('astro:page-load', () => {
-    const container = document.querySelector('.hair-fall-container');
-    if (container) {
-      setTimeout(() => {
-        if (document.body.contains(container)) {
-          container.remove();
-        }
-      }, 7000); // Remove after 7 seconds
-    }
-  });
-</script>
+<script src="../scripts/hair-animation.js"></script>
