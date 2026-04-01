@@ -6,10 +6,36 @@ const { searchParams } = Astro.url;
 const selectedService = searchParams.get('service');
 
 const services = [
-  'HairCare & Styling',
-  'Specialty & Modern Services',
-  'Nail & Body Care',
-  'Skin & Face Treatments'
+  {
+    title: 'Haircuts & Styling',
+    description: "Our expert stylists create personalized haircuts and styles to suit your individual features and lifestyle. We offer everything from classic cuts to the latest trends.",
+    icon: '/services/hair-care.svg'
+  },
+  {
+    title: 'Hair Coloring',
+    description: "Transform your look with our professional hair coloring services. We use high-quality products to achieve stunning results, from subtle highlights to bold new colors.",
+    icon: '/services/specialty.svg'
+  },
+  {
+    title: 'Hair Treatments',
+    description: "Revitalize your hair with our nourishing treatments. We offer a range of services to repair damage, add moisture, and restore shine, leaving your hair healthy and vibrant.",
+    icon: '/services/hair-care.svg'
+  },
+  {
+    title: 'Manicures & Pedicures',
+    description: "Indulge in our luxurious manicures and pedicures. Our skilled technicians will leave your hands and feet looking and feeling their best, with a wide range of colors and finishes to choose from.",
+    icon: '/services/nail-body.svg'
+  },
+  {
+    title: 'Facials & Skincare',
+    description: "Rejuvenate your skin with our customized facials and skincare treatments. We use premium products and advanced techniques to address your specific skin concerns and reveal a radiant complexion.",
+    icon: '/services/skin-face.svg'
+  },
+    {
+    title: 'Waxing & Hair Removal',
+    description: "Achieve smooth, silky skin with our professional waxing and hair removal services. Our experienced estheticians provide a comfortable and effective experience, leaving you with long-lasting results.",
+    icon: '/services/specialty.svg'
+  }
 ];
 ---
 
@@ -25,7 +51,7 @@ const services = [
                         <label for="service" class="block text-sm font-medium text-[var(--gunmetal)] mb-2">Service</label>
                         <select id="service" name="service" class="w-full bg-[var(--ivory)] border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[var(--fiery-terracotta)] text-[var(--gunmetal)]">
                             {services.map(service => (
-                                <option value={service} selected={service === selectedService}>{service}</option>
+                                <option value={service.title} selected={service.title === selectedService}>{service.title}</option>
                             ))}
                         </select>
                     </div>
