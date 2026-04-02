@@ -1,0 +1,1 @@
+const n=document.getElementById("door-container"),o=sessionStorage.getItem("introSeen");if(o)n.style.display="none";else{let e=function(){document.body.classList.contains("loading")&&(document.body.classList.remove("loading"),sessionStorage.setItem("introSeen","true"))};var t=e;document.body.classList.add("loading"),n.addEventListener("click",e,{once:!0})}
