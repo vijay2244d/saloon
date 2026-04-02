@@ -45,7 +45,7 @@ const services = [
             <h1 class="text-5xl font-bold text-center mb-12">Book Your Appointment</h1>
             <p class="text-xl text-center max-w-3xl mx-auto mb-12">Ready to experience the future of hairdressing? Book your appointment today and let us help you redefine your look.</p>
 
-            <form class="max-w-xl mx-auto bg-white/10 backdrop-blur-sm p-8 rounded-lg shadow-xl border border-white/20">
+            <form id="booking-form" class="max-w-xl mx-auto bg-white/10 backdrop-blur-sm p-8 rounded-lg shadow-xl border border-white/20">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="md:col-span-2">
                         <label for="service" class="block text-sm font-medium text-[var(--gunmetal)] mb-2">Service</label>
@@ -87,6 +87,7 @@ const services = [
                         Book Now
                     </button>
                 </div>
+                <div id="status-message" class="mt-4 text-center"></div>
             </form>
 
             <div class="text-center mt-12">
@@ -96,4 +97,42 @@ const services = [
 
         </div>
     </section>
+    <script>
+        const form = document.getElementById('booking-form');
+        const statusMessage = document.getElementById('status-message');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            statusMessage.textContent = 'Sending...';
+            statusMessage.style.color = 'var(--gunmetal)';
+
+            try {
+                const response = await fetch('/api/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                if (response.ok) {
+                    statusMessage.textContent = 'Booking request sent successfully!';
+                    statusMessage.style.color = 'green';
+                    form.reset();
+                } else {
+                    const errorData = await response.json();
+                    statusMessage.textContent = `Error: ${errorData.error || 'Something went wrong'}`;
+                    statusMessage.style.color = 'red';
+                }
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                statusMessage.textContent = 'An unexpected error occurred.';
+                statusMessage.style.color = 'red';
+            }
+        });
+    </script>
 </Layout>

@@ -164,6 +164,26 @@ This project is a modern, content-focused website for "The Smart Salon," built w
     *   The website is now fully responsive, offering a seamless and intuitive user experience across a wide range of screen sizes.
     *   Key pages and components have been audited and refactored to adhere to responsive design best practices.
 
+### Version 2.3 (Dependency Hell)
+
+*   **Goal:** Resolve a series of complex dependency conflicts that were preventing the application from running.
+*   **Problem:** The project was in a broken state due to a cascade of dependency issues, including:
+    *   Incompatible versions of Astro and its related packages (`@astrojs/tailwind`, `@astrojs/react`, etc.).
+    *   Conflicts between `framer-motion` and other packages.
+    *   Incorrect package versions specified in `package.json`.
+    *   A corrupted `package-lock.json` file.
+*   **Actions Taken:**
+    *   Attempted to update `@astrojs/tailwind` and `framer-motion` individually, but this failed due to the underlying dependency conflicts.
+    *   Deleted the `node_modules` directory and the `package-lock.json` file to start with a clean slate.
+    *   Manually edited the `package.json` file to specify compatible versions for Astro and its related packages, downgrading to a stable major version (v4) and aligning the other `@astrojs` packages with it.
+    *   Corrected the versions of the `@nanostores` packages in `package.json`.
+    *   Ran `npm install` to install the corrected dependencies.
+    *   Re-introduced the `Dock` and `ThemeToggle` components in `src/layouts/Layout.astro` to verify that the application was working as expected.
+*   **Outcome:**
+    *   All dependency conflicts have been resolved.
+    *   The project is now in a stable and working state.
+    *   The `Dock` and `ThemeToggle` components are once again functional.
+
 ## Current Change Request
 
 *There are no active change requests.*
