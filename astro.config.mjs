@@ -8,6 +8,8 @@ dotenv.config();
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://vijay2244d.github.io',
+  base: '/saloon',
   integrations: [
     tailwind(),
     solidJs({
