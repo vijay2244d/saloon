@@ -1,703 +1,703 @@
-<!DOCTYPE html><html lang="en" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="description" content="Astro description"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.16.19"><title>Services - The Smart Salon</title><link rel="preconnect" href="https.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"><link rel="stylesheet" href="/saloon/_astro/about.CwcIthSq.css">
+<!DOCTYPE html><html lang="en" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="description" content="Astro description"><meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Prefix the favicon link with the base URL --><link rel="icon" type="image/svg+xml" href="/saloonfavicon.svg"><meta name="generator" content="Astro v4.16.19"><title>Services - The Smart Salon</title><link rel="preconnect" href="https.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"><link rel="stylesheet" href="/saloon/_astro/about.CwcIthSq.css">
 <style>.hair-fall-container[data-astro-cid-zxolejlg]{position:fixed;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:-10}.hair-bunch[data-astro-cid-zxolejlg]{position:absolute;top:-200px;will-change:transform;animation-name:fall;animation-timing-function:ease-in;animation-fill-mode:forwards;transform-origin:top center}@keyframes fall{0%{transform:translateY(0) rotate(var(--rotation));opacity:1}to{transform:translateY(calc(100vh + 200px)) rotate(var(--rotation));opacity:.8}}
 </style><script type="module" src="/saloon/_astro/hoisted.BK2gjG0Y.js"></script></head> <body class="bg-ivory text-gunmetal dark:bg-gunmetal dark:text-ivory" data-astro-cid-sckkx6r4> <div class="theme-toggle-container" data-astro-cid-sckkx6r4> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();;(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="Z2daVhF" prefix="r0" component-url="/saloon/_astro/ThemeToggle.8391wG0X.js" component-export="default" renderer-url="/saloon/_astro/client.BuOr9PT5.js" props="{&quot;data-astro-cid-sckkx6r4&quot;:[0,true]}" ssr="" client="load" opts="{&quot;name&quot;:&quot;ThemeToggle&quot;,&quot;value&quot;:true}" await-children=""><button class="theme-toggle" title="Toggle light/dark theme">🌙</button><!--astro:end--></astro-island> </div> <div id="side-panels" data-astro-cid-y6hkzcix> <!-- You can add content for the side panels here --> </div>  <div class="door-container" id="door-container"> <div class="door-wrapper"> <div class="enter-prompt" id="enter-prompt">Click to Enter</div> <div class="door-panel left"> <div class="door-handle"></div> </div> <div class="door-panel right"> <div class="door-handle"></div> </div> </div> </div>  <main data-astro-cid-sckkx6r4>  <div class="hair-fall-container" aria-hidden="true" data-astro-cid-zxolejlg> <div class="hair-bunch" style="
-      --rotation: -16.815669623065858deg;
-      left: 4.259801651592787%;
-      animation-delay: 1.0510205899588314s;
-      animation-duration: 3.880724155723075s;
-      width: 17.39269320233824px;
-      height: 167.61929380174547px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.39269320233824 167.61929380174547" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.69634660116912,0 Q 15.531994511633345,83.80964690087274 8.69634660116912,167.61929380174547" fill="none" stroke="hsl(30, 30%, 24.570265710143353%)" stroke-width="2.639597218195038" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 21.155910128877004deg;
-      left: 40.414303153022544%;
-      animation-delay: 3.30677140374779s;
-      animation-duration: 2.4566356023375375s;
-      width: 22.91444277902169px;
-      height: 125.25489076572995px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 22.91444277902169 125.25489076572995" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.457221389510845,0 Q 5.441564239457892,62.62744538286498 11.457221389510845,125.25489076572995" fill="none" stroke="hsl(30, 30%, 15.926373281022716%)" stroke-width="3.4813269586245656" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 14.738570188512327deg;
-      left: 91.4885424461762%;
-      animation-delay: 1.308543819861809s;
-      animation-duration: 2.1898076464832865s;
-      width: 18.906983944232604px;
-      height: 137.3629250025146px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 18.906983944232604 137.3629250025146" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.453491972116302,0 Q 5.44766793479648,68.6814625012573 9.453491972116302,137.3629250025146" fill="none" stroke="hsl(30, 30%, 24.326184543624276%)" stroke-width="3.980074265548544" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 0.1517736751227705deg;
-      left: 68.53388439838906%;
-      animation-delay: 3.3803956462432487s;
-      animation-duration: 3.1482798668650855s;
-      width: 22.77783637533878px;
-      height: 92.20082751642352px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 22.77783637533878 92.20082751642352" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.38891818766939,0 Q 1.9329495607828768,46.10041375821176 11.38891818766939,92.20082751642352" fill="none" stroke="hsl(30, 30%, 14.346278612911679%)" stroke-width="3.3703706274424827" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 4.9094954288124deg;
-      left: 0.7240453101676536%;
-      animation-delay: 1.2774423644756912s;
-      animation-duration: 4.208018378644426s;
-      width: 22.794650696387px;
-      height: 110.07912093207267px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 22.794650696387 110.07912093207267" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.3973253481935,0 Q 21.216078102816308,55.039560466036335 11.3973253481935,110.07912093207267" fill="none" stroke="hsl(30, 30%, 16.07751514344796%)" stroke-width="2.8273670962661903" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 6.730052539524989deg;
-      left: 92.15746783891592%;
-      animation-delay: 3.2286497504459577s;
-      animation-duration: 3.0692602502519817s;
-      width: 23.090074592995208px;
-      height: 154.8983403509726px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.090074592995208 154.8983403509726" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.545037296497604,0 Q 9.931023320002442,77.4491701754863 11.545037296497604,154.8983403509726" fill="none" stroke="hsl(30, 30%, 15.020556050080156%)" stroke-width="2.877107560613072" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 8.502246680211133deg;
-      left: 28.234933189408864%;
-      animation-delay: 1.4281700028493414s;
-      animation-duration: 2.9200425503044247s;
-      width: 16.925480124098907px;
-      height: 136.01469179313202px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 16.925480124098907 136.01469179313202" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.462740062049454,0 Q 12.530155091538656,68.00734589656601 8.462740062049454,136.01469179313202" fill="none" stroke="hsl(30, 30%, 19.701902801143206%)" stroke-width="2.9836381537465897" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 29.25895761463407deg;
-      left: 36.33114209369375%;
-      animation-delay: 0.530872684226496s;
-      animation-duration: 3.0537487746854417s;
-      width: 22.119249825639926px;
-      height: 123.70526905309576px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 22.119249825639926 123.70526905309576" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.059624912819963,0 Q 19.812693071444933,61.85263452654788 11.059624912819963,123.70526905309576" fill="none" stroke="hsl(30, 30%, 15.848301442338693%)" stroke-width="4.076879162744611" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 2.9058812671686196deg;
-      left: 68.65748282145373%;
-      animation-delay: 0.4697045120264516s;
-      animation-duration: 2.9934697803620605s;
-      width: 17.30939993111832px;
-      height: 106.57805395016712px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.30939993111832 106.57805395016712" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.65469996555916,0 Q 7.423362243377075,53.28902697508356 8.65469996555916,106.57805395016712" fill="none" stroke="hsl(30, 30%, 20.634787491100205%)" stroke-width="4.650665470281922" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 20.925605979209205deg;
-      left: 28.48166207076639%;
-      animation-delay: 3.174113233277267s;
-      animation-duration: 2.6295103730654525s;
-      width: 19.141280277918437px;
-      height: 113.88537592751652px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 19.141280277918437 113.88537592751652" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.570640138959218,0 Q 17.876738031020018,56.94268796375826 9.570640138959218,113.88537592751652" fill="none" stroke="hsl(30, 30%, 10.218363079762927%)" stroke-width="3.6945246302822317" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -28.057578716907685deg;
-      left: 86.17818597613348%;
-      animation-delay: 2.778850368472463s;
-      animation-duration: 2.183024678746357s;
-      width: 24.030674874166532px;
-      height: 146.1009969724422px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 24.030674874166532 146.1009969724422" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 12.015337437083266,0 Q 15.342652585859353,73.0504984862211 12.015337437083266,146.1009969724422" fill="none" stroke="hsl(30, 30%, 21.9670853824746%)" stroke-width="3.0485566709010206" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 1.8631435077515102deg;
-      left: 65.18911580954816%;
-      animation-delay: 0.7010424436081321s;
-      animation-duration: 4.201403086765503s;
-      width: 17.63062728720484px;
-      height: 127.50669270950303px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.63062728720484 127.50669270950303" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.81531364360242,0 Q 17.248650585953186,63.753346354751514 8.81531364360242,127.50669270950303" fill="none" stroke="hsl(30, 30%, 23.057285151860725%)" stroke-width="2.6572361500943336" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 5.303458558871976deg;
-      left: 74.00705184939693%;
-      animation-delay: 2.1159319783593955s;
-      animation-duration: 2.623039271603708s;
-      width: 18.24230249949868px;
-      height: 167.72448674219135px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 18.24230249949868 167.72448674219135" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.12115124974934,0 Q 1.9934592776544209,83.86224337109567 9.12115124974934,167.72448674219135" fill="none" stroke="hsl(30, 30%, 10.138230906704795%)" stroke-width="2.8767849411962256" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 20.236914650578125deg;
-      left: 76.15520906271614%;
-      animation-delay: 1.9268747069475305s;
-      animation-duration: 3.4255276505134216s;
-      width: 23.792384156526474px;
-      height: 124.29806427759705px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.792384156526474 124.29806427759705" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.896192078263237,0 Q 17.070539344972644,62.149032138798525 11.896192078263237,124.29806427759705" fill="none" stroke="hsl(30, 30%, 18.810056035414142%)" stroke-width="2.9191291933932195" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 1.6206614691081755deg;
-      left: 28.73340428305844%;
-      animation-delay: 1.67134529107976s;
-      animation-duration: 2.4743401200441286s;
-      width: 19.1056739810336px;
-      height: 74.13393763015807px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 19.1056739810336 74.13393763015807" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.5528369905168,0 Q 18.00682805504278,37.066968815079036 9.5528369905168,74.13393763015807" fill="none" stroke="hsl(30, 30%, 16.890261703731497%)" stroke-width="2.440601821030075" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -15.344007915134178deg;
-      left: 4.338519330904744%;
-      animation-delay: 2.7767107463019625s;
-      animation-duration: 3.967073943253121s;
-      width: 20.42829017623638px;
-      height: 85.79484308284856px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 20.42829017623638 85.79484308284856" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.21414508811819,0 Q 10.82963038058555,42.89742154142428 10.21414508811819,85.79484308284856" fill="none" stroke="hsl(30, 30%, 12.087663192511611%)" stroke-width="2.8031000116572447" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 6.076965189233334deg;
-      left: 1.635544179540016%;
-      animation-delay: 1.7466867077406887s;
-      animation-duration: 4.030085982990981s;
-      width: 24.924009938041003px;
-      height: 91.81527991746194px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 24.924009938041003 91.81527991746194" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 12.462004969020501,0 Q 20.126001798321234,45.90763995873097 12.462004969020501,91.81527991746194" fill="none" stroke="hsl(30, 30%, 22.798391138017255%)" stroke-width="2.013354320106031" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -16.319681096789548deg;
-      left: 21.81033134575461%;
-      animation-delay: 0.8464192344638533s;
-      animation-duration: 4.145885850947815s;
-      width: 17.44912604597614px;
-      height: 89.26284926572113px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.44912604597614 89.26284926572113" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.72456302298807,0 Q 0.5165289841510461,44.631424632860565 8.72456302298807,89.26284926572113" fill="none" stroke="hsl(30, 30%, 12.043031707760232%)" stroke-width="2.0130418635535943" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -10.593002583100638deg;
-      left: 17.505319278266374%;
-      animation-delay: 2.9015540869639422s;
-      animation-duration: 3.02756274389566s;
-      width: 23.871212701450347px;
-      height: 103.07122548201005px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.871212701450347 103.07122548201005" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.935606350725173,0 Q 0.6739899500746134,51.535612741005025 11.935606350725173,103.07122548201005" fill="none" stroke="hsl(30, 30%, 24.308111837176185%)" stroke-width="4.757517481025774" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -28.66706678782281deg;
-      left: 90.31084347069991%;
-      animation-delay: 2.0889611449999177s;
-      animation-duration: 3.762760250244278s;
-      width: 17.557775231216073px;
-      height: 153.26160657919056px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.557775231216073 153.26160657919056" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.778887615608037,0 Q 8.309126563584053,76.63080328959528 8.778887615608037,153.26160657919056" fill="none" stroke="hsl(30, 30%, 12.198284415503977%)" stroke-width="4.661275642442986" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -26.353324124719727deg;
-      left: 2.076862098566057%;
-      animation-delay: 2.4201829514894095s;
-      animation-duration: 3.510991766090357s;
-      width: 23.561260809883564px;
-      height: 161.06978400361248px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.561260809883564 161.06978400361248" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.780630404941782,0 Q 2.8027700033778533,80.53489200180624 11.780630404941782,161.06978400361248" fill="none" stroke="hsl(30, 30%, 14.815702202055599%)" stroke-width="3.715705055166042" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -3.729246647702804deg;
-      left: 19.58068280333447%;
-      animation-delay: 2.500956755599004s;
-      animation-duration: 3.789105335812115s;
-      width: 24.820675427609054px;
-      height: 74.72329614261469px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 24.820675427609054 74.72329614261469" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 12.410337713804527,0 Q 8.241356708245515,37.36164807130734 12.410337713804527,74.72329614261469" fill="none" stroke="hsl(30, 30%, 17.419037857646302%)" stroke-width="3.8240978727319392" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -25.59820663156268deg;
-      left: 87.27356291905485%;
-      animation-delay: 1.059853820601739s;
-      animation-duration: 2.4154579736494273s;
-      width: 17.313444898724633px;
-      height: 117.13357228888842px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.313444898724633 117.13357228888842" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.656722449362316,0 Q 0.4428610282986476,58.56678614444421 8.656722449362316,117.13357228888842" fill="none" stroke="hsl(30, 30%, 24.57993424056794%)" stroke-width="4.402664152403629" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 0.3437225356963358deg;
-      left: 68.28625823474965%;
-      animation-delay: 1.5534598574858212s;
-      animation-duration: 2.9563117830548804s;
-      width: 21.671669022699792px;
-      height: 150.8644173115884px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 21.671669022699792 150.8644173115884" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.835834511349896,0 Q 8.595839936649169,75.4322086557942 10.835834511349896,150.8644173115884" fill="none" stroke="hsl(30, 30%, 19.014499063466353%)" stroke-width="4.24735196098605" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 4.1447626399611925deg;
-      left: 61.02090388287185%;
-      animation-delay: 0.4735623175759417s;
-      animation-duration: 2.8093705114729386s;
-      width: 18.79499894239025px;
-      height: 83.16757237860222px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 18.79499894239025 83.16757237860222" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.397499471195125,0 Q 17.140875614609907,41.58378618930111 9.397499471195125,83.16757237860222" fill="none" stroke="hsl(30, 30%, 11.156338111734073%)" stroke-width="4.6094054394836945" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -20.56148168443745deg;
-      left: 68.64459988455248%;
-      animation-delay: 2.648340518596683s;
-      animation-duration: 4.643497071613234s;
-      width: 23.83767334235261px;
-      height: 99.45939928716766px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.83767334235261 99.45939928716766" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.918836671176305,0 Q 20.4178061646046,49.72969964358383 11.918836671176305,99.45939928716766" fill="none" stroke="hsl(30, 30%, 16.433188041886183%)" stroke-width="2.614883204916943" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -17.55476459940162deg;
-      left: 80.05941103079894%;
-      animation-delay: 0.9837119101327869s;
-      animation-duration: 3.585369723313362s;
-      width: 23.18237586697837px;
-      height: 157.9632439749746px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.18237586697837 157.9632439749746" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.591187933489184,0 Q 1.449633086834492,78.9816219874873 11.591187933489184,157.9632439749746" fill="none" stroke="hsl(30, 30%, 19.265913154157033%)" stroke-width="4.167406625658563" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 10.675958611609229deg;
-      left: 7.305009293735165%;
-      animation-delay: 3.422100299534626s;
-      animation-duration: 3.5851381193949505s;
-      width: 16.530539997703645px;
-      height: 142.18232891057585px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 16.530539997703645 142.18232891057585" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.265269998851823,0 Q 3.8605201697902913,71.09116445528792 8.265269998851823,142.18232891057585" fill="none" stroke="hsl(30, 30%, 22.824393879372543%)" stroke-width="2.7321363132693453" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 13.275273303416522deg;
-      left: 32.660273024230605%;
-      animation-delay: 2.6360329510070133s;
-      animation-duration: 2.8076431188629467s;
-      width: 21.78443175503111px;
-      height: 137.9894482095735px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 21.78443175503111 137.9894482095735" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.892215877515556,0 Q 17.477164203671656,68.99472410478675 10.892215877515556,137.9894482095735" fill="none" stroke="hsl(30, 30%, 15.600613967160932%)" stroke-width="4.314268696514318" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -7.684092457220193deg;
-      left: 33.05884636497589%;
-      animation-delay: 3.130617978081516s;
-      animation-duration: 3.334195834089066s;
-      width: 15.485910190858503px;
-      height: 101.65315147033763px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 15.485910190858503 101.65315147033763" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 7.742955095429251,0 Q 4.497712185054503,50.82657573516882 7.742955095429251,101.65315147033763" fill="none" stroke="hsl(30, 30%, 19.58585669376822%)" stroke-width="3.3814393184831117" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 25.674076092546606deg;
-      left: 10.320046236153724%;
-      animation-delay: 1.0518246957599422s;
-      animation-duration: 3.485226448935009s;
-      width: 23.066801197782652px;
-      height: 83.85508724547815px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.066801197782652 83.85508724547815" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.533400598891326,0 Q 0.5750806695512374,41.92754362273907 11.533400598891326,83.85508724547815" fill="none" stroke="hsl(30, 30%, 13.475042381683949%)" stroke-width="4.099223302669808" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 23.64228732383845deg;
-      left: 61.79033167894627%;
-      animation-delay: 2.607643864591692s;
-      animation-duration: 3.7634625606220293s;
-      width: 23.05312935385308px;
-      height: 118.88482043932736px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.05312935385308 118.88482043932736" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.52656467692654,0 Q 18.656206293904646,59.44241021966368 11.52656467692654,118.88482043932736" fill="none" stroke="hsl(30, 30%, 21.528168939513684%)" stroke-width="2.973121180707782" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 12.402321279978441deg;
-      left: 80.63313675966064%;
-      animation-delay: 0.4501226826089666s;
-      animation-duration: 4.098893057943714s;
-      width: 22.198700016821952px;
-      height: 94.11206560484523px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 22.198700016821952 94.11206560484523" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.099350008410976,0 Q 7.041478727203001,47.056032802422614 11.099350008410976,94.11206560484523" fill="none" stroke="hsl(30, 30%, 22.36890876925138%)" stroke-width="3.888434384539196" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -14.39048659666135deg;
-      left: 19.38034737558223%;
-      animation-delay: 0.17290928899537938s;
-      animation-duration: 3.067725324270826s;
-      width: 16.79017629452377px;
-      height: 98.61198461668238px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 16.79017629452377 98.61198461668238" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.395088147261886,0 Q 4.417119726616854,49.30599230834119 8.395088147261886,98.61198461668238" fill="none" stroke="hsl(30, 30%, 11.252339156240641%)" stroke-width="3.586032255189151" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -15.17073364753617deg;
-      left: 61.55811114109091%;
-      animation-delay: 1.1706146456028028s;
-      animation-duration: 4.264853013638785s;
-      width: 15.003498339222702px;
-      height: 124.65320469250348px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 15.003498339222702 124.65320469250348" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 7.501749169611351,0 Q 13.722973344993079,62.32660234625174 7.501749169611351,124.65320469250348" fill="none" stroke="hsl(30, 30%, 16.987627920168975%)" stroke-width="3.109490559173243" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 13.42361467120963deg;
-      left: 4.551803855325542%;
-      animation-delay: 0.4492782949686196s;
-      animation-duration: 3.0717507974148823s;
-      width: 17.87508795684445px;
-      height: 137.07820307130027px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.87508795684445 137.07820307130027" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.937543978422225,0 Q 16.633666102444515,68.53910153565013 8.937543978422225,137.07820307130027" fill="none" stroke="hsl(30, 30%, 17.751236069133206%)" stroke-width="2.1743005750379067" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 10.692517189940096deg;
-      left: 14.878818429314267%;
-      animation-delay: 3.2511126277520006s;
-      animation-duration: 2.798597131001001s;
-      width: 17.939664613569562px;
-      height: 135.56973668293762px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.939664613569562 135.56973668293762" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.969832306784781,0 Q 6.810461980648377,67.78486834146881 8.969832306784781,135.56973668293762" fill="none" stroke="hsl(30, 30%, 19.151820648796253%)" stroke-width="4.843107167056107" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -15.866173205246078deg;
-      left: 66.72739750958712%;
-      animation-delay: 1.195047277436904s;
-      animation-duration: 3.0179582844525648s;
-      width: 18.471480110042485px;
-      height: 102.02972706990488px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 18.471480110042485 102.02972706990488" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.235740055021243,0 Q 3.608433650656763,51.01486353495244 9.235740055021243,102.02972706990488" fill="none" stroke="hsl(30, 30%, 12.132281900195284%)" stroke-width="3.1478935552320166" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 7.562093680122826deg;
-      left: 18.89039172287459%;
-      animation-delay: 1.6387219630072956s;
-      animation-duration: 2.0071401397336777s;
-      width: 19.73953704944591px;
-      height: 124.08677830826585px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 19.73953704944591 124.08677830826585" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.869768524722955,0 Q 2.3890083676758946,62.043389154132925 9.869768524722955,124.08677830826585" fill="none" stroke="hsl(30, 30%, 12.536677638104903%)" stroke-width="4.264317586104841" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -4.280325081721097deg;
-      left: 82.82882515865455%;
-      animation-delay: 0.30876486235341005s;
-      animation-duration: 2.9822705629794477s;
-      width: 23.033834002219216px;
-      height: 125.44003730746543px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.033834002219216 125.44003730746543" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.516917001109608,0 Q 6.887174705676359,62.720018653732716 11.516917001109608,125.44003730746543" fill="none" stroke="hsl(30, 30%, 11.35921961283589%)" stroke-width="4.721334922191461" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -21.528903096519446deg;
-      left: 63.801912738484305%;
-      animation-delay: 0.08421775918444663s;
-      animation-duration: 2.2534378853631356s;
-      width: 23.607543721260285px;
-      height: 148.31611891593678px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.607543721260285 148.31611891593678" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.803771860630142,0 Q 9.467096838031607,74.15805945796839 11.803771860630142,148.31611891593678" fill="none" stroke="hsl(30, 30%, 24.72289075261846%)" stroke-width="4.569054004070933" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -6.774125997506522deg;
-      left: 83.04649388752732%;
-      animation-delay: 2.385107619157133s;
-      animation-duration: 4.9095514453660005s;
-      width: 18.90523084843958px;
-      height: 124.05627089182624px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 18.90523084843958 124.05627089182624" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.45261542421979,0 Q 2.778855005618267,62.02813544591312 9.45261542421979,124.05627089182624" fill="none" stroke="hsl(30, 30%, 21.863757582710537%)" stroke-width="4.835518421777918" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 24.61900670807551deg;
-      left: 59.21275586308965%;
-      animation-delay: 2.714608492450302s;
-      animation-duration: 3.943825825277084s;
-      width: 20.280722077907775px;
-      height: 164.68924747357192px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 20.280722077907775 164.68924747357192" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.140361038953888,0 Q 1.0013967173675429,82.34462373678596 10.140361038953888,164.68924747357192" fill="none" stroke="hsl(30, 30%, 21.723671908962732%)" stroke-width="2.7892532043334697" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 16.71743514459203deg;
-      left: 10.129497264484954%;
-      animation-delay: 3.2506656889952774s;
-      animation-duration: 3.216930596098538s;
-      width: 15.61963540237363px;
-      height: 81.97461587927675px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 15.61963540237363 81.97461587927675" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 7.809817701186815,0 Q 2.5231427915089233,40.98730793963838 7.809817701186815,81.97461587927675" fill="none" stroke="hsl(30, 30%, 12.570235486928205%)" stroke-width="4.623147889954105" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 19.519988909994602deg;
-      left: 8.895498705250038%;
-      animation-delay: 3.06054405691117s;
-      animation-duration: 4.71308273627238s;
-      width: 17.562094592047576px;
-      height: 152.15618312162275px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.562094592047576 152.15618312162275" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.781047296023788,0 Q 9.48627234259053,76.07809156081137 8.781047296023788,152.15618312162275" fill="none" stroke="hsl(30, 30%, 17.96966204733657%)" stroke-width="2.1822111787906495" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 5.932140947289919deg;
-      left: 54.16465214764234%;
-      animation-delay: 3.4854418922342028s;
-      animation-duration: 4.054025598340676s;
-      width: 17.665355782920447px;
-      height: 141.78689466264484px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.665355782920447 141.78689466264484" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.832677891460223,0 Q 14.7089027981819,70.89344733132242 8.832677891460223,141.78689466264484" fill="none" stroke="hsl(30, 30%, 18.434030261417462%)" stroke-width="4.416590465702772" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 9.353877728001763deg;
-      left: 43.930695668957064%;
-      animation-delay: 3.317864717079122s;
-      animation-duration: 2.668899917712576s;
-      width: 15.563866851887392px;
-      height: 100.45585212244262px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 15.563866851887392 100.45585212244262" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 7.781933425943696,0 Q 3.461544125492714,50.22792606122131 7.781933425943696,100.45585212244262" fill="none" stroke="hsl(30, 30%, 11.585204517175773%)" stroke-width="4.220598961027344" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 8.748888355691072deg;
-      left: 79.1443385164978%;
-      animation-delay: 0.35800237798251866s;
-      animation-duration: 4.978096073361835s;
-      width: 16.259451513254156px;
-      height: 142.73613346122633px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 16.259451513254156 142.73613346122633" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.129725756627078,0 Q 11.657779391807178,71.36806673061317 8.129725756627078,142.73613346122633" fill="none" stroke="hsl(30, 30%, 18.44957963807918%)" stroke-width="2.8892281087566403" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -27.260086562680858deg;
-      left: 39.067083899380606%;
-      animation-delay: 1.067484433666198s;
-      animation-duration: 3.8364733624702128s;
-      width: 24.133090014759265px;
-      height: 99.60142568085772px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 24.133090014759265 99.60142568085772" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 12.066545007379633,0 Q 12.014003468960425,49.80071284042886 12.066545007379633,99.60142568085772" fill="none" stroke="hsl(30, 30%, 24.259228990589985%)" stroke-width="3.1184560312601524" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 19.870392496611263deg;
-      left: 57.459705837711184%;
-      animation-delay: 2.7614252499840513s;
-      animation-duration: 3.015523331644076s;
-      width: 17.375903273678137px;
-      height: 151.82858812250944px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.375903273678137 151.82858812250944" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.687951636839069,0 Q 10.215897121470157,75.91429406125472 8.687951636839069,151.82858812250944" fill="none" stroke="hsl(30, 30%, 12.484639852036661%)" stroke-width="4.765700878812106" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -13.96057967051136deg;
-      left: 9.501103661738973%;
-      animation-delay: 1.8944570940772718s;
-      animation-duration: 4.648006719358562s;
-      width: 15.458716231625608px;
-      height: 89.33540064380861px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 15.458716231625608 89.33540064380861" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 7.729358115812804,0 Q 12.118702841192508,44.667700321904306 7.729358115812804,89.33540064380861" fill="none" stroke="hsl(30, 30%, 17.848891201900788%)" stroke-width="4.344753255496212" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -7.328072801239176deg;
-      left: 55.75944993821835%;
-      animation-delay: 1.844976477037096s;
-      animation-duration: 4.474511214614172s;
-      width: 17.64252401622679px;
-      height: 73.61322485231237px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.64252401622679 73.61322485231237" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.821262008113395,0 Q 6.82129038123726,36.806612426156185 8.821262008113395,73.61322485231237" fill="none" stroke="hsl(30, 30%, 12.97087931405763%)" stroke-width="3.330439240209472" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 10.11901950626099deg;
-      left: 49.44993293695157%;
-      animation-delay: 1.9598092726035359s;
-      animation-duration: 4.870255119822611s;
-      width: 23.222589413545993px;
-      height: 75.55341602362687px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.222589413545993 75.55341602362687" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.611294706772997,0 Q 5.898287998417275,37.77670801181343 11.611294706772997,75.55341602362687" fill="none" stroke="hsl(30, 30%, 24.939036130961085%)" stroke-width="2.6501379645069303" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -11.70945894685076deg;
-      left: 69.44228747707879%;
-      animation-delay: 2.179141738619467s;
-      animation-duration: 3.067408487713233s;
-      width: 22.170698993165878px;
-      height: 70.83827728720213px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 22.170698993165878 70.83827728720213" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.085349496582939,0 Q 14.577743785855816,35.419138643601066 11.085349496582939,70.83827728720213" fill="none" stroke="hsl(30, 30%, 17.110178374532175%)" stroke-width="2.4125984242909357" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 9.797852827663988deg;
-      left: 6.8401159201337824%;
-      animation-delay: 2.8258417400038933s;
-      animation-duration: 2.035589287379735s;
-      width: 17.291979550540685px;
-      height: 125.9908727757934px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.291979550540685 125.9908727757934" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.645989775270342,0 Q 6.812640264215694,62.9954363878967 8.645989775270342,125.9908727757934" fill="none" stroke="hsl(30, 30%, 20.958802058617277%)" stroke-width="3.6996883026040934" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 8.03148510508722deg;
-      left: 12.572001229832042%;
-      animation-delay: 0.670570546723521s;
-      animation-duration: 2.262038956625493s;
-      width: 18.936896443412074px;
-      height: 147.47083810948078px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 18.936896443412074 147.47083810948078" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.468448221706037,0 Q 7.111380209037074,73.73541905474039 9.468448221706037,147.47083810948078" fill="none" stroke="hsl(30, 30%, 19.389168521137968%)" stroke-width="3.0825385443683317" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -20.80031992342061deg;
-      left: 74.7278771921077%;
-      animation-delay: 2.953631624605518s;
-      animation-duration: 3.484513318973792s;
-      width: 17.15813871924752px;
-      height: 113.74124499294132px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.15813871924752 113.74124499294132" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.57906935962376,0 Q 2.522653706068361,56.87062249647066 8.57906935962376,113.74124499294132" fill="none" stroke="hsl(30, 30%, 23.975332507520115%)" stroke-width="4.022174227294272" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -29.444531881929827deg;
-      left: 72.7578424792614%;
-      animation-delay: 0.5019293000575026s;
-      animation-duration: 4.239636349367126s;
-      width: 20.390224449984593px;
-      height: 130.13839077064893px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 20.390224449984593 130.13839077064893" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.195112224992297,0 Q 19.61414540466283,65.06919538532446 10.195112224992297,130.13839077064893" fill="none" stroke="hsl(30, 30%, 11.627000617187589%)" stroke-width="4.735657438884018" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -19.79614340583476deg;
-      left: 39.93338362988701%;
-      animation-delay: 2.261033020394728s;
-      animation-duration: 2.2642951614813702s;
-      width: 18.055473255366547px;
-      height: 160.91175239737186px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 18.055473255366547 160.91175239737186" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.027736627683273,0 Q 8.178774944541018,80.45587619868593 9.027736627683273,160.91175239737186" fill="none" stroke="hsl(30, 30%, 21.72745895040232%)" stroke-width="4.604085111009382" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -17.038471803169188deg;
-      left: 99.77323912755496%;
-      animation-delay: 1.6153305885392308s;
-      animation-duration: 4.714344537104242s;
-      width: 16.386415973107738px;
-      height: 160.796339436444px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 16.386415973107738 160.796339436444" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.193207986553869,0 Q 5.2655102510518645,80.398169718222 8.193207986553869,160.796339436444" fill="none" stroke="hsl(30, 30%, 22.833880384458183%)" stroke-width="3.7481083138052442" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 17.49571684108855deg;
-      left: 35.900461750542824%;
-      animation-delay: 2.993455652576777s;
-      animation-duration: 2.8780889976494217s;
-      width: 20.659840780845837px;
-      height: 155.68617801638143px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 20.659840780845837 155.68617801638143" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.329920390422918,0 Q 12.409371891959852,77.84308900819072 10.329920390422918,155.68617801638143" fill="none" stroke="hsl(30, 30%, 12.62046257838962%)" stroke-width="3.015753455733301" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -18.84054544463706deg;
-      left: 53.99502311118505%;
-      animation-delay: 1.3967550007868328s;
-      animation-duration: 4.269200031212244s;
-      width: 19.440452863493277px;
-      height: 124.0958635701814px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 19.440452863493277 124.0958635701814" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.720226431746639,0 Q 18.578027968742923,62.0479317850907 9.720226431746639,124.0958635701814" fill="none" stroke="hsl(30, 30%, 10.736705001689316%)" stroke-width="4.115027131727329" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 29.16585316476676deg;
-      left: 77.59611154440532%;
-      animation-delay: 2.0584193892956795s;
-      animation-duration: 4.242836332817082s;
-      width: 21.41415492269332px;
-      height: 123.7503980770108px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 21.41415492269332 123.7503980770108" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.70707746134666,0 Q 8.568840446307565,61.8751990385054 10.70707746134666,123.7503980770108" fill="none" stroke="hsl(30, 30%, 18.300162489821197%)" stroke-width="3.968533097172763" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -19.414824657805795deg;
-      left: 91.0851040550432%;
-      animation-delay: 3.044145985207187s;
-      animation-duration: 4.762968490250518s;
-      width: 20.912557124005982px;
-      height: 118.75754521001437px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 20.912557124005982 118.75754521001437" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.456278562002991,0 Q 1.0505934192408493,59.378772605007185 10.456278562002991,118.75754521001437" fill="none" stroke="hsl(30, 30%, 24.12941518132124%)" stroke-width="2.9782909290669117" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 21.476627101648496deg;
-      left: 38.22012443294325%;
-      animation-delay: 0.939563808873734s;
-      animation-duration: 3.2376471640811615s;
-      width: 23.125698807299493px;
-      height: 77.26499188571256px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.125698807299493 77.26499188571256" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.562849403649746,0 Q 17.754796944382633,38.63249594285628 11.562849403649746,77.26499188571256" fill="none" stroke="hsl(30, 30%, 15.152752866539%)" stroke-width="4.456766660370811" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 10.977776458110217deg;
-      left: 54.48677087586895%;
-      animation-delay: 2.231443564935681s;
-      animation-duration: 3.5308574441476868s;
-      width: 22.31616813211259px;
-      height: 116.27461666252887px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 22.31616813211259 116.27461666252887" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.158084066056295,0 Q 22.031500291598796,58.137308331264435 11.158084066056295,116.27461666252887" fill="none" stroke="hsl(30, 30%, 20.445026408837833%)" stroke-width="3.2805209430258335" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -13.156081790291584deg;
-      left: 11.489781482648787%;
-      animation-delay: 2.4621962621766027s;
-      animation-duration: 4.518543302425515s;
-      width: 23.757370146805528px;
-      height: 153.0245261802644px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.757370146805528 153.0245261802644" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.878685073402764,0 Q 4.895502521927624,76.5122630901322 11.878685073402764,153.0245261802644" fill="none" stroke="hsl(30, 30%, 14.941477310811731%)" stroke-width="2.1020723282672247" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -23.8706781940025deg;
-      left: 69.49268366918409%;
-      animation-delay: 2.089417898451593s;
-      animation-duration: 2.405145184584315s;
-      width: 19.75012780611248px;
-      height: 88.45061126433443px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 19.75012780611248 88.45061126433443" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.87506390305624,0 Q 5.806425009889813,44.22530563216721 9.87506390305624,88.45061126433443" fill="none" stroke="hsl(30, 30%, 18.476097722975986%)" stroke-width="4.093658277028923" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 24.401004432233737deg;
-      left: 94.13278140775722%;
-      animation-delay: 3.2621482455672406s;
-      animation-duration: 3.8374496139615233s;
-      width: 15.655121609281279px;
-      height: 103.68413989576784px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 15.655121609281279 103.68413989576784" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 7.8275608046406395,0 Q 14.738427480344765,51.84206994788392 7.8275608046406395,103.68413989576784" fill="none" stroke="hsl(30, 30%, 16.761268657520734%)" stroke-width="4.989267077569209" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -3.66580006252073deg;
-      left: 42.83152304866549%;
-      animation-delay: 3.046143969130269s;
-      animation-duration: 3.991489447568932s;
-      width: 20.48176170374184px;
-      height: 168.8944940899949px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 20.48176170374184 168.8944940899949" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.24088085187092,0 Q 3.7404593061700915,84.44724704499745 10.24088085187092,168.8944940899949" fill="none" stroke="hsl(30, 30%, 23.02362058527617%)" stroke-width="3.3726150794925247" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 19.289938918161713deg;
-      left: 72.22085746033795%;
-      animation-delay: 1.4701642412874745s;
-      animation-duration: 2.7829749235825387s;
-      width: 22.921236616828118px;
-      height: 166.1516900572916px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 22.921236616828118 166.1516900572916" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.460618308414059,0 Q 19.306774768884626,83.0758450286458 11.460618308414059,166.1516900572916" fill="none" stroke="hsl(30, 30%, 12.165012191832432%)" stroke-width="3.1480659086140657" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -9.561043428042462deg;
-      left: 26.424508879161344%;
-      animation-delay: 1.4925890164858355s;
-      animation-duration: 3.5508488419547617s;
-      width: 18.894011143432877px;
-      height: 74.2182482678405px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 18.894011143432877 74.2182482678405" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.447005571716439,0 Q 14.680333064545959,37.10912413392025 9.447005571716439,74.2182482678405" fill="none" stroke="hsl(30, 30%, 22.246720431524587%)" stroke-width="3.134625959803631" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -8.566678013044417deg;
-      left: 88.34040549289111%;
-      animation-delay: 0.011662368403346557s;
-      animation-duration: 4.690622578462722s;
-      width: 24.213426697679623px;
-      height: 118.30269564245944px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 24.213426697679623 118.30269564245944" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 12.106713348839811,0 Q 1.5907194153312911,59.15134782122972 12.106713348839811,118.30269564245944" fill="none" stroke="hsl(30, 30%, 23.745837886277847%)" stroke-width="2.933336757488608" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 8.352974973511685deg;
-      left: 93.29268166536097%;
-      animation-delay: 3.386159664952573s;
-      animation-duration: 3.869621823003306s;
-      width: 15.897963951826137px;
-      height: 94.28154475419683px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 15.897963951826137 94.28154475419683" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 7.948981975913068,0 Q 14.444117330218724,47.140772377098415 7.948981975913068,94.28154475419683" fill="none" stroke="hsl(30, 30%, 16.821795547918654%)" stroke-width="2.0984418980920037" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -13.0748712893832deg;
-      left: 1.423693408180915%;
-      animation-delay: 2.0911137926504537s;
-      animation-duration: 4.353587744062294s;
-      width: 17.683204096581438px;
-      height: 125.06348540016444px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.683204096581438 125.06348540016444" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.841602048290719,0 Q 10.696409557273789,62.53174270008222 8.841602048290719,125.06348540016444" fill="none" stroke="hsl(30, 30%, 11.303293592531652%)" stroke-width="2.263187742524037" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 18.46943965821467deg;
-      left: 13.988162748695698%;
-      animation-delay: 1.2095769621313508s;
-      animation-duration: 2.1255629449222226s;
-      width: 23.07339911715321px;
-      height: 152.16978097653413px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.07339911715321 152.16978097653413" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.536699558576604,0 Q 20.30110258144949,76.08489048826706 11.536699558576604,152.16978097653413" fill="none" stroke="hsl(30, 30%, 21.27569269844153%)" stroke-width="2.8050220076406545" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -26.333647302470396deg;
-      left: 13.729550298901593%;
-      animation-delay: 1.3446691725384263s;
-      animation-duration: 3.9090407689951054s;
-      width: 15.434197847378005px;
-      height: 97.66849706334273px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 15.434197847378005 97.66849706334273" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 7.717098923689003,0 Q 0.1574526571031587,48.83424853167136 7.717098923689003,97.66849706334273" fill="none" stroke="hsl(30, 30%, 13.546320148073274%)" stroke-width="4.326581145103219" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 27.77756883339537deg;
-      left: 0.1688752515997427%;
-      animation-delay: 0.47537045490314356s;
-      animation-duration: 2.6403627675863595s;
-      width: 22.442002669783136px;
-      height: 152.0950526815568px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 22.442002669783136 152.0950526815568" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.221001334891568,0 Q 21.1595006528619,76.0475263407784 11.221001334891568,152.0950526815568" fill="none" stroke="hsl(30, 30%, 24.995406677913426%)" stroke-width="2.618917566488671" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 13.30031615690816deg;
-      left: 98.23893971864605%;
-      animation-delay: 3.25711755500237s;
-      animation-duration: 2.884641659777537s;
-      width: 23.034624750724788px;
-      height: 124.97370099191039px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.034624750724788 124.97370099191039" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.517312375362394,0 Q 2.2942359348782215,62.486850495955196 11.517312375362394,124.97370099191039" fill="none" stroke="hsl(30, 30%, 14.874266910188764%)" stroke-width="4.742885489087833" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -13.55559254970764deg;
-      left: 21.22874896009892%;
-      animation-delay: 3.163084991779808s;
-      animation-duration: 4.0372380570371815s;
-      width: 19.209691394822244px;
-      height: 88.63200173578974px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 19.209691394822244 88.63200173578974" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.604845697411122,0 Q 0.7309899646197682,44.31600086789487 9.604845697411122,88.63200173578974" fill="none" stroke="hsl(30, 30%, 10.141075119091171%)" stroke-width="4.708114599034306" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 8.226011640585948deg;
-      left: 29.777150841670895%;
-      animation-delay: 1.6137713306086727s;
-      animation-duration: 3.2412974814041844s;
-      width: 21.016909376319628px;
-      height: 164.4681773269961px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 21.016909376319628 164.4681773269961" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.508454688159814,0 Q 15.406303981358363,82.23408866349806 10.508454688159814,164.4681773269961" fill="none" stroke="hsl(30, 30%, 12.713555949084867%)" stroke-width="4.765664068424583" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 9.892043851253352deg;
-      left: 68.30219308949226%;
-      animation-delay: 2.2798154613180164s;
-      animation-duration: 4.540225678403672s;
-      width: 17.470101696539103px;
-      height: 112.69281248637566px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.470101696539103 112.69281248637566" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.735050848269552,0 Q 9.390788128993432,56.34640624318783 8.735050848269552,112.69281248637566" fill="none" stroke="hsl(30, 30%, 13.568031329210456%)" stroke-width="2.1308536601135395" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 20.32104975828274deg;
-      left: 97.99013789281929%;
-      animation-delay: 1.0960808633587469s;
-      animation-duration: 4.122441694033058s;
-      width: 21.54423508463356px;
-      height: 155.99623348129336px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 21.54423508463356 155.99623348129336" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.77211754231678,0 Q 18.08126623816667,77.99811674064668 10.77211754231678,155.99623348129336" fill="none" stroke="hsl(30, 30%, 22.052925416874658%)" stroke-width="3.2578390956403975" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 28.39289709568382deg;
-      left: 62.951998252992915%;
-      animation-delay: 0.9093449548645249s;
-      animation-duration: 2.1897405212855716s;
-      width: 15.180413192595054px;
-      height: 97.81225302364336px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 15.180413192595054 97.81225302364336" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 7.590206596297527,0 Q 4.695825984209767,48.90612651182168 7.590206596297527,97.81225302364336" fill="none" stroke="hsl(30, 30%, 18.119730714272407%)" stroke-width="2.8980515277495105" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 17.417415562425237deg;
-      left: 86.82344864430375%;
-      animation-delay: 2.4352020347259042s;
-      animation-duration: 2.426333289919903s;
-      width: 23.371731573392648px;
-      height: 87.64712236414272px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.371731573392648 87.64712236414272" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.685865786696324,0 Q 13.27758329984701,43.82356118207136 11.685865786696324,87.64712236414272" fill="none" stroke="hsl(30, 30%, 21.59619210182316%)" stroke-width="4.8519922285093315" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 20.197496194259912deg;
-      left: 84.94519659056787%;
-      animation-delay: 2.842069701532828s;
-      animation-duration: 3.5560683864640215s;
-      width: 20.071366657761303px;
-      height: 165.78413681651708px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 20.071366657761303 165.78413681651708" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.035683328880651,0 Q 15.72154946117636,82.89206840825854 10.035683328880651,165.78413681651708" fill="none" stroke="hsl(30, 30%, 16.637681099519185%)" stroke-width="4.727188817634302" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -20.04110663517406deg;
-      left: 66.81838597909963%;
-      animation-delay: 0.6140018684019638s;
-      animation-duration: 3.9393040425169095s;
-      width: 22.349942246087224px;
-      height: 134.00181325886325px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 22.349942246087224 134.00181325886325" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.174971123043612,0 Q 4.316467949752289,67.00090662943163 11.174971123043612,134.00181325886325" fill="none" stroke="hsl(30, 30%, 11.881142338726795%)" stroke-width="2.306004484278051" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 14.962898771377153deg;
-      left: 40.836061606218024%;
-      animation-delay: 0.2857737155010812s;
-      animation-duration: 4.105752877696284s;
-      width: 24.61519152159672px;
-      height: 128.88197034272292px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 24.61519152159672 128.88197034272292" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 12.30759576079836,0 Q 15.497077346090192,64.44098517136146 12.30759576079836,128.88197034272292" fill="none" stroke="hsl(30, 30%, 18.299267101483125%)" stroke-width="3.9210001325239054" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -21.00175278239395deg;
-      left: 49.40406272740492%;
-      animation-delay: 0.45503940091748085s;
-      animation-duration: 2.7721082402772703s;
-      width: 19.39848728209905px;
-      height: 114.65520810804674px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 19.39848728209905 114.65520810804674" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.699243641049526,0 Q 18.830275348672146,57.32760405402337 9.699243641049526,114.65520810804674" fill="none" stroke="hsl(30, 30%, 19.05889545108674%)" stroke-width="4.672981631215618" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -15.520604974262016deg;
-      left: 33.16255904332284%;
-      animation-delay: 1.5446711603882253s;
-      animation-duration: 2.625792289345032s;
-      width: 19.905492670084776px;
-      height: 110.03657218939259px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 19.905492670084776 110.03657218939259" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.952746335042388,0 Q 6.053325195397758,55.01828609469629 9.952746335042388,110.03657218939259" fill="none" stroke="hsl(30, 30%, 20.082284887019092%)" stroke-width="3.51558326825364" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 2.826585262625252deg;
-      left: 31.431055954389798%;
-      animation-delay: 0.5971210465851073s;
-      animation-duration: 4.091797871542107s;
-      width: 23.10460017620901px;
-      height: 70.13871403002233px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.10460017620901 70.13871403002233" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.552300088104506,0 Q 4.335320338253062,35.069357015011164 11.552300088104506,70.13871403002233" fill="none" stroke="hsl(30, 30%, 18.820069589669775%)" stroke-width="4.406033865898758" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -16.434715454164127deg;
-      left: 55.030776777462066%;
-      animation-delay: 2.2579209471729937s;
-      animation-duration: 3.3347499409599677s;
-      width: 20.689939944175816px;
-      height: 128.58844286618427px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 20.689939944175816 128.58844286618427" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.344969972087908,0 Q 12.413434921821905,64.29422143309213 10.344969972087908,128.58844286618427" fill="none" stroke="hsl(30, 30%, 15.791521331813824%)" stroke-width="3.514330295776408" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 26.061900018654207deg;
-      left: 90.97727336084529%;
-      animation-delay: 0.36108558256665935s;
-      animation-duration: 4.895110257220129s;
-      width: 23.243149791582645px;
-      height: 124.43501960044094px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.243149791582645 124.43501960044094" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.621574895791323,0 Q 17.434335643972318,62.21750980022047 11.621574895791323,124.43501960044094" fill="none" stroke="hsl(30, 30%, 24.995002676253506%)" stroke-width="3.367255066956404" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -3.142065047813749deg;
-      left: 97.22651806761675%;
-      animation-delay: 3.4064229843568268s;
-      animation-duration: 2.4862450483961225s;
-      width: 24.51104161345946px;
-      height: 166.32664312938135px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 24.51104161345946 166.32664312938135" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 12.25552080672973,0 Q 19.75017857792903,83.16332156469068 12.25552080672973,166.32664312938135" fill="none" stroke="hsl(30, 30%, 17.026784190497708%)" stroke-width="2.567096534224504" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -20.440022451875357deg;
-      left: 3.8976122661960932%;
-      animation-delay: 0.6333706629764752s;
-      animation-duration: 4.267865621744594s;
-      width: 17.935231791102805px;
-      height: 157.3943280520566px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.935231791102805 157.3943280520566" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.967615895551402,0 Q 7.447564484960379,78.6971640260283 8.967615895551402,157.3943280520566" fill="none" stroke="hsl(30, 30%, 15.469360752704677%)" stroke-width="2.169720761973489" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 26.117116968148228deg;
-      left: 76.36686084641244%;
-      animation-delay: 2.390845988795336s;
-      animation-duration: 4.035094887068623s;
-      width: 22.07944293153824px;
-      height: 145.53365912718817px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 22.07944293153824 145.53365912718817" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.03972146576912,0 Q 5.15710351619509,72.76682956359409 11.03972146576912,145.53365912718817" fill="none" stroke="hsl(30, 30%, 17.425617326821865%)" stroke-width="3.3684268779900544" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -15.686808430813869deg;
-      left: 97.26808923347284%;
-      animation-delay: 1.8958600254529394s;
-      animation-duration: 4.653925861043272s;
-      width: 19.495030024134387px;
-      height: 116.38866767054031px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 19.495030024134387 116.38866767054031" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.747515012067193,0 Q 9.950187545224356,58.19433383527016 9.747515012067193,116.38866767054031" fill="none" stroke="hsl(30, 30%, 11.041187329982248%)" stroke-width="4.191955873494515" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 15.92840472649744deg;
-      left: 84.16509702781794%;
-      animation-delay: 3.0058030289287254s;
-      animation-duration: 2.9180694562144547s;
-      width: 16.074053874620382px;
-      height: 143.41859420899698px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 16.074053874620382 143.41859420899698" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.037026937310191,0 Q 1.18479021478817,71.70929710449849 8.037026937310191,143.41859420899698" fill="none" stroke="hsl(30, 30%, 22.890931634048258%)" stroke-width="4.1291149535431675" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: -19.44867946531913deg;
-      left: 27.929883062098206%;
-      animation-delay: 1.1470306854842538s;
-      animation-duration: 2.7755644334899654s;
-      width: 15.51497157153124px;
-      height: 135.53976304830394px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 15.51497157153124 135.53976304830394" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 7.75748578576562,0 Q 6.021652105617052,67.76988152415197 7.75748578576562,135.53976304830394" fill="none" stroke="hsl(30, 30%, 12.36957986172743%)" stroke-width="2.9390004072340625" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
-      --rotation: 21.38922772849442deg;
-      left: 64.40259058733977%;
-      animation-delay: 2.161397049857813s;
-      animation-duration: 2.36474972299307s;
-      width: 21.34216452433411px;
-      height: 144.5241376847868px;
-    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 21.34216452433411 144.5241376847868" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.671082262167054,0 Q 8.715647452484856,72.2620688423934 10.671082262167054,144.5241376847868" fill="none" stroke="hsl(30, 30%, 24.42101792569096%)" stroke-width="3.114124235776117" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div> </div>   <section class="py-16 sm:py-20"> <div class="container mx-auto px-4 sm:px-6 lg:px-8"> <h1 class="text-4xl sm:text-5xl font-bold text-center mb-8 sm:mb-12">Our Salon Services</h1> <p class="text-lg sm:text-xl text-center max-w-3xl mx-auto mb-12 sm:mb-20">At The Smart Salon, we offer a comprehensive menu of services to meet all your beauty needs. Our team of skilled professionals is dedicated to providing you with a luxurious and relaxing experience, using only the finest products and techniques.</p> <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"> <a href="/booking?service=Haircuts%20%26%20Styling" class="flex flex-col items-center p-8 bg-white dark:bg-gunmetal rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"> <img src="/services/hair-care.svg" alt="Haircuts &#38; Styling" class="w-16 h-16 mb-4"> <h3 class="text-xl font-bold text-center mb-2 dark:text-ivory">Haircuts &amp; Styling</h3> <p class="text-gray-600 dark:text-gray-400 text-sm text-center">Our expert stylists create personalized haircuts and styles to suit your individual features and lifestyle. We offer everything from classic cuts to the latest trends.</p> </a><a href="/booking?service=Hair%20Coloring" class="flex flex-col items-center p-8 bg-white dark:bg-gunmetal rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"> <img src="/services/specialty.svg" alt="Hair Coloring" class="w-16 h-16 mb-4"> <h3 class="text-xl font-bold text-center mb-2 dark:text-ivory">Hair Coloring</h3> <p class="text-gray-600 dark:text-gray-400 text-sm text-center">Transform your look with our professional hair coloring services. We use high-quality products to achieve stunning results, from subtle highlights to bold new colors.</p> </a><a href="/booking?service=Hair%20Treatments" class="flex flex-col items-center p-8 bg-white dark:bg-gunmetal rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"> <img src="/services/hair-care.svg" alt="Hair Treatments" class="w-16 h-16 mb-4"> <h3 class="text-xl font-bold text-center mb-2 dark:text-ivory">Hair Treatments</h3> <p class="text-gray-600 dark:text-gray-400 text-sm text-center">Revitalize your hair with our nourishing treatments. We offer a range of services to repair damage, add moisture, and restore shine, leaving your hair healthy and vibrant.</p> </a><a href="/booking?service=Manicures%20%26%20Pedicures" class="flex flex-col items-center p-8 bg-white dark:bg-gunmetal rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"> <img src="/services/nail-body.svg" alt="Manicures &#38; Pedicures" class="w-16 h-16 mb-4"> <h3 class="text-xl font-bold text-center mb-2 dark:text-ivory">Manicures &amp; Pedicures</h3> <p class="text-gray-600 dark:text-gray-400 text-sm text-center">Indulge in our luxurious manicures and pedicures. Our skilled technicians will leave your hands and feet looking and feeling their best, with a wide range of colors and finishes to choose from.</p> </a><a href="/booking?service=Facials%20%26%20Skincare" class="flex flex-col items-center p-8 bg-white dark:bg-gunmetal rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"> <img src="/services/skin-face.svg" alt="Facials &#38; Skincare" class="w-16 h-16 mb-4"> <h3 class="text-xl font-bold text-center mb-2 dark:text-ivory">Facials &amp; Skincare</h3> <p class="text-gray-600 dark:text-gray-400 text-sm text-center">Rejuvenate your skin with our customized facials and skincare treatments. We use premium products and advanced techniques to address your specific skin concerns and reveal a radiant complexion.</p> </a><a href="/booking?service=Waxing%20%26%20Hair%20Removal" class="flex flex-col items-center p-8 bg-white dark:bg-gunmetal rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"> <img src="/services/specialty.svg" alt="Waxing &#38; Hair Removal" class="w-16 h-16 mb-4"> <h3 class="text-xl font-bold text-center mb-2 dark:text-ivory">Waxing &amp; Hair Removal</h3> <p class="text-gray-600 dark:text-gray-400 text-sm text-center">Achieve smooth, silky skin with our professional waxing and hair removal services. Our experienced estheticians provide a comfortable and effective experience, leaving you with long-lasting results.</p> </a> </div> </div> </section>  </main> <footer> <p>&copy; 2026 The Smart Salon. All rights reserved.</p> </footer> <div class="fixed bottom-4 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-50" data-astro-cid-sckkx6r4> <astro-island uid="ZGtI9a" prefix="r1" component-url="/saloon/_astro/Dock.BvYnctZK.js" component-export="default" renderer-url="/saloon/_astro/client.BuOr9PT5.js" props="{&quot;items&quot;:[1,[[0,{&quot;icon&quot;:[0,&quot;/home.svg&quot;],&quot;label&quot;:[0,&quot;Home&quot;],&quot;href&quot;:[0,&quot;/&quot;]}],[0,{&quot;icon&quot;:[0,&quot;/about.svg&quot;],&quot;label&quot;:[0,&quot;About&quot;],&quot;href&quot;:[0,&quot;/about&quot;]}],[0,{&quot;icon&quot;:[0,&quot;/services.svg&quot;],&quot;label&quot;:[0,&quot;Services&quot;],&quot;href&quot;:[0,&quot;/services&quot;]}],[0,{&quot;icon&quot;:[0,&quot;/booking.svg&quot;],&quot;label&quot;:[0,&quot;Booking&quot;],&quot;href&quot;:[0,&quot;/booking&quot;]}],[0,{&quot;icon&quot;:[0,&quot;/reviews.svg&quot;],&quot;label&quot;:[0,&quot;Reviews&quot;],&quot;href&quot;:[0,&quot;/reviews&quot;]}],[0,{&quot;icon&quot;:[0,&quot;/offers.svg&quot;],&quot;label&quot;:[0,&quot;Offers&quot;],&quot;href&quot;:[0,&quot;/offers&quot;]}]]],&quot;data-astro-cid-sckkx6r4&quot;:[0,true]}" ssr="" client="load" opts="{&quot;name&quot;:&quot;Dock&quot;,&quot;value&quot;:true}" await-children=""><div class="dock-outer" style="scrollbar-width:none;height:68px"><div class="dock-panel dock-panel-motion " role="toolbar" aria-label="Application dock" style="height:68px"><a href="/" class="dock-item dock-item-motion " tabindex="0" role="button" aria-haspopup="dialog" aria-label="Home" aria-controls="dock-item-0" style="width:40px;height:40px"><img src="/home.svg" alt="" class="dock-icon "/></a><a href="/about" class="dock-item dock-item-motion " tabindex="0" role="button" aria-haspopup="dialog" aria-label="About" aria-controls="dock-item-1" style="width:40px;height:40px"><img src="/about.svg" alt="" class="dock-icon "/></a><a href="/services" class="dock-item dock-item-motion " tabindex="0" role="button" aria-haspopup="dialog" aria-label="Services" aria-controls="dock-item-2" style="width:40px;height:40px"><img src="/services.svg" alt="" class="dock-icon "/></a><a href="/booking" class="dock-item dock-item-motion " tabindex="0" role="button" aria-haspopup="dialog" aria-label="Booking" aria-controls="dock-item-3" style="width:40px;height:40px"><img src="/booking.svg" alt="" class="dock-icon "/></a><a href="/reviews" class="dock-item dock-item-motion " tabindex="0" role="button" aria-haspopup="dialog" aria-label="Reviews" aria-controls="dock-item-4" style="width:40px;height:40px"><img src="/reviews.svg" alt="" class="dock-icon "/></a><a href="/offers" class="dock-item dock-item-motion " tabindex="0" role="button" aria-haspopup="dialog" aria-label="Offers" aria-controls="dock-item-5" style="width:40px;height:40px"><img src="/offers.svg" alt="" class="dock-icon "/></a></div></div><!--astro:end--></astro-island> </div> </body></html>
+      --rotation: -27.354395686577288deg;
+      left: 98.89702499956267%;
+      animation-delay: 1.2903393861281707s;
+      animation-duration: 4.88228512003847s;
+      width: 17.12369010862455px;
+      height: 116.74014026540492px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.12369010862455 116.74014026540492" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.561845054312275,0 Q 1.385092926592467,58.37007013270246 8.561845054312275,116.74014026540492" fill="none" stroke="hsl(30, 30%, 14.96386075191594%)" stroke-width="3.1529845639142686" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 24.69620434654591deg;
+      left: 97.13045284393648%;
+      animation-delay: 0.766906806540632s;
+      animation-duration: 3.195235125611049s;
+      width: 23.826438659054965px;
+      height: 129.36171304863552px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.826438659054965 129.36171304863552" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.913219329527482,0 Q 6.211245850379511,64.68085652431776 11.913219329527482,129.36171304863552" fill="none" stroke="hsl(30, 30%, 20.274004779441135%)" stroke-width="2.051522423264455" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -16.416494545502008deg;
+      left: 90.86000676195532%;
+      animation-delay: 2.9464593046569094s;
+      animation-duration: 4.926847854881224s;
+      width: 16.040990519331007px;
+      height: 128.68776128909326px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 16.040990519331007 128.68776128909326" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.020495259665504,0 Q 1.927722637752244,64.34388064454663 8.020495259665504,128.68776128909326" fill="none" stroke="hsl(30, 30%, 12.675150190392582%)" stroke-width="3.0337300587512828" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 13.474520546649007deg;
+      left: 38.05461062397888%;
+      animation-delay: 0.7491613943255919s;
+      animation-duration: 3.1762452851957548s;
+      width: 22.671394457553784px;
+      height: 169.50270108745974px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 22.671394457553784 169.50270108745974" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.335697228776892,0 Q 18.73670482241203,84.75135054372987 11.335697228776892,169.50270108745974" fill="none" stroke="hsl(30, 30%, 16.7095066765579%)" stroke-width="4.139173271060727" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -1.06277385786679deg;
+      left: 24.209095693887473%;
+      animation-delay: 1.2269602926302905s;
+      animation-duration: 3.311411754722478s;
+      width: 18.977710567689275px;
+      height: 113.49519812128433px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 18.977710567689275 113.49519812128433" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.488855283844638,0 Q 16.69191698953778,56.747599060642166 9.488855283844638,113.49519812128433" fill="none" stroke="hsl(30, 30%, 24.0433246702818%)" stroke-width="3.2932534971275613" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 26.21858571769046deg;
+      left: 46.56109105933346%;
+      animation-delay: 0.508115243260509s;
+      animation-duration: 3.895815713150582s;
+      width: 24.38411351052781px;
+      height: 160.985493786085px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 24.38411351052781 160.985493786085" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 12.192056755263906,0 Q 13.374620988924361,80.4927468930425 12.192056755263906,160.985493786085" fill="none" stroke="hsl(30, 30%, 23.4778326398774%)" stroke-width="2.681211027624382" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -14.682399866606275deg;
+      left: 42.51209915155793%;
+      animation-delay: 3.156376812440321s;
+      animation-duration: 3.9536463647340607s;
+      width: 19.54067357266854px;
+      height: 121.13875115328034px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 19.54067357266854 121.13875115328034" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.77033678633427,0 Q 6.655139261242452,60.56937557664017 9.77033678633427,121.13875115328034" fill="none" stroke="hsl(30, 30%, 16.244734486874215%)" stroke-width="3.790017036571238" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -21.81831674370198deg;
+      left: 55.11927685655316%;
+      animation-delay: 0.1485617468859859s;
+      animation-duration: 4.315195295504766s;
+      width: 22.444123562363337px;
+      height: 134.99174033754701px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 22.444123562363337 134.99174033754701" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.222061781181669,0 Q 17.350294945257946,67.49587016877351 11.222061781181669,134.99174033754701" fill="none" stroke="hsl(30, 30%, 19.131486059185058%)" stroke-width="3.458734566414244" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 6.218673997442146deg;
+      left: 56.53544512787603%;
+      animation-delay: 1.8885055483538178s;
+      animation-duration: 3.0566709945337034s;
+      width: 23.33048839277087px;
+      height: 73.7380448635592px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.33048839277087 73.7380448635592" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.665244196385435,0 Q 17.659721840186286,36.8690224317796 11.665244196385435,73.7380448635592" fill="none" stroke="hsl(30, 30%, 13.157402835017376%)" stroke-width="2.950552270197838" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 28.996689981769723deg;
+      left: 29.549819369636076%;
+      animation-delay: 2.9627957857702794s;
+      animation-duration: 2.7996583606673173s;
+      width: 16.98795658496026px;
+      height: 157.08375366709464px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 16.98795658496026 157.08375366709464" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.49397829248013,0 Q 10.291191306617407,78.54187683354732 8.49397829248013,157.08375366709464" fill="none" stroke="hsl(30, 30%, 15.939006783944041%)" stroke-width="4.016199511214344" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 10.296227344709163deg;
+      left: 6.810932426703986%;
+      animation-delay: 1.2367463797992597s;
+      animation-duration: 4.484116290989299s;
+      width: 23.384143283157144px;
+      height: 129.26409209502188px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.384143283157144 129.26409209502188" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.692071641578572,0 Q 9.238271911905056,64.63204604751094 11.692071641578572,129.26409209502188" fill="none" stroke="hsl(30, 30%, 15.876937615751002%)" stroke-width="4.19642879493448" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -5.118638337890582deg;
+      left: 3.964455853787885%;
+      animation-delay: 3.460627692631874s;
+      animation-duration: 2.1513620556620667s;
+      width: 22.86107594015298px;
+      height: 157.02061185117094px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 22.86107594015298 157.02061185117094" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.43053797007649,0 Q 21.92288869687263,78.51030592558547 11.43053797007649,157.02061185117094" fill="none" stroke="hsl(30, 30%, 17.469766380483193%)" stroke-width="3.9736871672757914" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -21.664318305831543deg;
+      left: 20.903634375674017%;
+      animation-delay: 3.2916065044120386s;
+      animation-duration: 3.96553864001478s;
+      width: 23.910811655400494px;
+      height: 71.34210383982267px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.910811655400494 71.34210383982267" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.955405827700247,0 Q 6.820318699985018,35.671051919911335 11.955405827700247,71.34210383982267" fill="none" stroke="hsl(30, 30%, 16.368190266188076%)" stroke-width="2.69454258769281" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 2.478255185628675deg;
+      left: 89.74690632929618%;
+      animation-delay: 1.697628589419141s;
+      animation-duration: 4.591832256997337s;
+      width: 17.708116574820938px;
+      height: 169.94774648046499px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.708116574820938 169.94774648046499" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.854058287410469,0 Q 7.525724522889413,84.97387324023249 8.854058287410469,169.94774648046499" fill="none" stroke="hsl(30, 30%, 21.671729977936955%)" stroke-width="4.491332434302262" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 21.36371343924147deg;
+      left: 13.229166151672288%;
+      animation-delay: 1.125653124591643s;
+      animation-duration: 4.748451923487943s;
+      width: 15.982186215971979px;
+      height: 106.65947087506771px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 15.982186215971979 106.65947087506771" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 7.991093107985989,0 Q 8.387698559303956,53.329735437533856 7.991093107985989,106.65947087506771" fill="none" stroke="hsl(30, 30%, 23.299428595128912%)" stroke-width="4.797982993625695" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -7.277853491984212deg;
+      left: 57.101846411191914%;
+      animation-delay: 3.2012356926730394s;
+      animation-duration: 4.537015185405664s;
+      width: 15.743690868426343px;
+      height: 162.22801775363502px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 15.743690868426343 162.22801775363502" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 7.871845434213172,0 Q 3.856969833392947,81.11400887681751 7.871845434213172,162.22801775363502" fill="none" stroke="hsl(30, 30%, 20.783982433415083%)" stroke-width="3.6975373487018466" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -0.3580911923054675deg;
+      left: 68.31067367557475%;
+      animation-delay: 0.9913242554131565s;
+      animation-duration: 2.67446251204621s;
+      width: 19.516185519522192px;
+      height: 90.66284549459476px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 19.516185519522192 90.66284549459476" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.758092759761096,0 Q 5.161904000912592,45.33142274729738 9.758092759761096,90.66284549459476" fill="none" stroke="hsl(30, 30%, 23.433644909659776%)" stroke-width="2.288526792058009" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -2.2886716808080676deg;
+      left: 76.04548067330485%;
+      animation-delay: 1.4974186382378525s;
+      animation-duration: 3.2266824648615087s;
+      width: 24.45584305876387px;
+      height: 72.33321153280215px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 24.45584305876387 72.33321153280215" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 12.227921529381936,0 Q 3.47843448027095,36.16660576640108 12.227921529381936,72.33321153280215" fill="none" stroke="hsl(30, 30%, 11.789337319637273%)" stroke-width="4.415290776925004" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 6.023938648599723deg;
+      left: 26.633240268146242%;
+      animation-delay: 1.5194063119688497s;
+      animation-duration: 2.0918313891437332s;
+      width: 22.585016700074792px;
+      height: 164.51708949159104px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 22.585016700074792 164.51708949159104" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.292508350037396,0 Q 9.796286832047098,82.25854474579552 11.292508350037396,164.51708949159104" fill="none" stroke="hsl(30, 30%, 14.234298339652494%)" stroke-width="3.175313251919211" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 28.69584250043381deg;
+      left: 88.82030638002725%;
+      animation-delay: 0.2512720413539927s;
+      animation-duration: 3.3096592259838298s;
+      width: 17.91317479116749px;
+      height: 82.53615674201467px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.91317479116749 82.53615674201467" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.956587395583744,0 Q 9.777400973623795,41.268078371007334 8.956587395583744,82.53615674201467" fill="none" stroke="hsl(30, 30%, 17.307368584224424%)" stroke-width="2.7881630611091204" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 21.271137407985933deg;
+      left: 14.411892969494788%;
+      animation-delay: 0.03651368057105109s;
+      animation-duration: 4.9360811218190515s;
+      width: 22.920865010634465px;
+      height: 131.97192228032299px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 22.920865010634465 131.97192228032299" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.460432505317232,0 Q 22.207402332171675,65.98596114016149 11.460432505317232,131.97192228032299" fill="none" stroke="hsl(30, 30%, 20.37816333785367%)" stroke-width="4.443728382762829" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -27.71111892474824deg;
+      left: 61.25069791903426%;
+      animation-delay: 3.248689371193022s;
+      animation-duration: 3.8899155185880856s;
+      width: 19.026142938143224px;
+      height: 136.56113620617666px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 19.026142938143224 136.56113620617666" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.513071469071612,0 Q 0.0681999629380794,68.28056810308833 9.513071469071612,136.56113620617666" fill="none" stroke="hsl(30, 30%, 22.26782860927058%)" stroke-width="4.462264461025776" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 25.266420310955734deg;
+      left: 50.75322176975827%;
+      animation-delay: 3.334415206919335s;
+      animation-duration: 3.659761666798264s;
+      width: 15.89269599475574px;
+      height: 111.66232840613704px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 15.89269599475574 111.66232840613704" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 7.94634799737787,0 Q 15.427706395150086,55.83116420306852 7.94634799737787,111.66232840613704" fill="none" stroke="hsl(30, 30%, 24.195867015265694%)" stroke-width="2.6491919489640203" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 4.860063819356544deg;
+      left: 44.924408309611394%;
+      animation-delay: 0.2400789101128079s;
+      animation-duration: 2.535921207456266s;
+      width: 18.977882030038746px;
+      height: 155.45326142950984px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 18.977882030038746 155.45326142950984" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.488941015019373,0 Q 15.301249377372855,77.72663071475492 9.488941015019373,155.45326142950984" fill="none" stroke="hsl(30, 30%, 17.139549579296418%)" stroke-width="2.609904233142964" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 24.824329744168686deg;
+      left: 61.395595548871725%;
+      animation-delay: 2.0518447281394825s;
+      animation-duration: 3.04106521408008s;
+      width: 21.397675619439767px;
+      height: 127.74721941119614px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 21.397675619439767 127.74721941119614" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.698837809719883,0 Q 17.135898194357658,63.87360970559807 10.698837809719883,127.74721941119614" fill="none" stroke="hsl(30, 30%, 19.450899840862593%)" stroke-width="2.4709954530341562" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -27.73602515465145deg;
+      left: 35.12403697121091%;
+      animation-delay: 1.8678259807685944s;
+      animation-duration: 4.807388155107507s;
+      width: 20.868391055194834px;
+      height: 70.16623181693691px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 20.868391055194834 70.16623181693691" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.434195527597417,0 Q 20.299130810559852,35.08311590846846 10.434195527597417,70.16623181693691" fill="none" stroke="hsl(30, 30%, 15.893234718475572%)" stroke-width="2.4633545369627607" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 13.024187315130398deg;
+      left: 25.73744105928204%;
+      animation-delay: 1.7037337302575961s;
+      animation-duration: 2.9662241102934557s;
+      width: 24.857775636266112px;
+      height: 78.8808934040132px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 24.857775636266112 78.8808934040132" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 12.428887818133056,0 Q 6.859055820297033,39.4404467020066 12.428887818133056,78.8808934040132" fill="none" stroke="hsl(30, 30%, 19.35613376886503%)" stroke-width="4.67383334922558" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 22.711170601353334deg;
+      left: 63.42745013304831%;
+      animation-delay: 0.8074385719424285s;
+      animation-duration: 4.313928613646026s;
+      width: 18.956669221873273px;
+      height: 101.08549360537727px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 18.956669221873273 101.08549360537727" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.478334610936637,0 Q 7.5607190369527455,50.54274680268863 9.478334610936637,101.08549360537727" fill="none" stroke="hsl(30, 30%, 19.46812368525586%)" stroke-width="2.9094336986859153" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 15.926346007781724deg;
+      left: 19.45668347292422%;
+      animation-delay: 1.7638343662807419s;
+      animation-duration: 4.5608735377353815s;
+      width: 16.0245822996545px;
+      height: 103.9236942506329px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 16.0245822996545 103.9236942506329" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.01229114982725,0 Q 1.2374353851171067,51.96184712531645 8.01229114982725,103.9236942506329" fill="none" stroke="hsl(30, 30%, 11.633112617249402%)" stroke-width="4.408200627522808" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 17.21715926755172deg;
+      left: 98.7278106136001%;
+      animation-delay: 1.4775904404417384s;
+      animation-duration: 3.920834550564866s;
+      width: 16.92369285783649px;
+      height: 137.76333431950272px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 16.92369285783649 137.76333431950272" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.461846428918244,0 Q 13.703205104844937,68.88166715975136 8.461846428918244,137.76333431950272" fill="none" stroke="hsl(30, 30%, 14.52991186439127%)" stroke-width="4.457383658380176" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -0.7230205349631902deg;
+      left: 42.12683294828577%;
+      animation-delay: 2.5293267824208128s;
+      animation-duration: 4.2640687505530215s;
+      width: 24.679896043170004px;
+      height: 162.2690205639834px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 24.679896043170004 162.2690205639834" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 12.339948021585002,0 Q 22.251925751678627,81.1345102819917 12.339948021585002,162.2690205639834" fill="none" stroke="hsl(30, 30%, 10.756156901032227%)" stroke-width="3.460119613652574" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 2.3568887643201863deg;
+      left: 23.004429040015207%;
+      animation-delay: 0.6599151801255042s;
+      animation-duration: 4.150450970696644s;
+      width: 24.339826592926066px;
+      height: 124.5503852818714px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 24.339826592926066 124.5503852818714" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 12.169913296463033,0 Q 1.4243527131093323,62.2751926409357 12.169913296463033,124.5503852818714" fill="none" stroke="hsl(30, 30%, 20.421036827907642%)" stroke-width="3.671922523275115" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -2.5456287926570687deg;
+      left: 21.69708133259485%;
+      animation-delay: 0.16637284438945643s;
+      animation-duration: 4.727116998876202s;
+      width: 18.559263387754072px;
+      height: 108.5467930637966px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 18.559263387754072 108.5467930637966" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.279631693877036,0 Q 2.052709680284309,54.2733965318983 9.279631693877036,108.5467930637966" fill="none" stroke="hsl(30, 30%, 18.647434260053693%)" stroke-width="2.569581663915237" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 11.689116181745716deg;
+      left: 20.86149923251972%;
+      animation-delay: 3.4977150186858714s;
+      animation-duration: 4.615812570121308s;
+      width: 23.751026122452572px;
+      height: 140.91976509003604px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.751026122452572 140.91976509003604" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.875513061226286,0 Q 14.918480495169435,70.45988254501802 11.875513061226286,140.91976509003604" fill="none" stroke="hsl(30, 30%, 23.0774554327719%)" stroke-width="3.047523194824237" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 21.392379220976917deg;
+      left: 52.886938684189325%;
+      animation-delay: 1.3344164901038769s;
+      animation-duration: 4.774457349753567s;
+      width: 21.408441515296033px;
+      height: 80.71470516008483px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 21.408441515296033 80.71470516008483" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.704220757648017,0 Q 5.318531825157731,40.357352580042416 10.704220757648017,80.71470516008483" fill="none" stroke="hsl(30, 30%, 12.040295784214393%)" stroke-width="2.0874227865228674" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -17.814413518613854deg;
+      left: 72.77479552402428%;
+      animation-delay: 2.0278514514676336s;
+      animation-duration: 2.4279829411813045s;
+      width: 23.439674869585865px;
+      height: 127.5985278388772px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.439674869585865 127.5985278388772" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.719837434792932,0 Q 9.572792103303751,63.7992639194386 11.719837434792932,127.5985278388772" fill="none" stroke="hsl(30, 30%, 20.156586190926838%)" stroke-width="3.2242557319512017" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -0.15681084142912916deg;
+      left: 32.09197207038952%;
+      animation-delay: 0.022054149431792847s;
+      animation-duration: 4.7275657779551s;
+      width: 20.702402085822897px;
+      height: 138.7276770767706px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 20.702402085822897 138.7276770767706" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.351201042911448,0 Q 9.223510082576846,69.3638385383853 10.351201042911448,138.7276770767706" fill="none" stroke="hsl(30, 30%, 11.954246339427975%)" stroke-width="3.693874015853492" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 3.0965151218487152deg;
+      left: 49.30953943395446%;
+      animation-delay: 0.09557752161732624s;
+      animation-duration: 2.049557383618744s;
+      width: 15.437399881310485px;
+      height: 141.5554479043543px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 15.437399881310485 141.5554479043543" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 7.718699940655243,0 Q 1.2094239460341942,70.77772395217715 7.718699940655243,141.5554479043543" fill="none" stroke="hsl(30, 30%, 23.07391255003572%)" stroke-width="2.2920149688721274" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -15.158176380991154deg;
+      left: 84.23396142849553%;
+      animation-delay: 2.1302633969792217s;
+      animation-duration: 3.6031519538877492s;
+      width: 17.31658782223683px;
+      height: 102.34996297894475px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.31658782223683 102.34996297894475" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.658293911118415,0 Q 8.82501605805795,51.17498148947237 8.658293911118415,102.34996297894475" fill="none" stroke="hsl(30, 30%, 18.985951260069577%)" stroke-width="2.6556868217167633" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 21.848052412708498deg;
+      left: 66.73237478226022%;
+      animation-delay: 3.3778570607844642s;
+      animation-duration: 3.4542555090035987s;
+      width: 16.396047298793295px;
+      height: 157.68355021449548px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 16.396047298793295 157.68355021449548" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.198023649396648,0 Q 5.408282180881111,78.84177510724774 8.198023649396648,157.68355021449548" fill="none" stroke="hsl(30, 30%, 11.925053059141549%)" stroke-width="4.340564228354069" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -5.624454753653634deg;
+      left: 56.23584318704782%;
+      animation-delay: 1.3840818748632202s;
+      animation-duration: 2.113126595638235s;
+      width: 20.90696627263409px;
+      height: 146.59787104777624px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 20.90696627263409 146.59787104777624" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.453483136317045,0 Q 13.949395862563739,73.29893552388812 10.453483136317045,146.59787104777624" fill="none" stroke="hsl(30, 30%, 13.976318268755861%)" stroke-width="4.068340805018819" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 25.720798842659654deg;
+      left: 46.36044248891083%;
+      animation-delay: 0.735263274935675s;
+      animation-duration: 3.5450374196421053s;
+      width: 18.223513358616355px;
+      height: 163.73393190732415px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 18.223513358616355 163.73393190732415" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.111756679308177,0 Q 17.760516535566765,81.86696595366207 9.111756679308177,163.73393190732415" fill="none" stroke="hsl(30, 30%, 20.382831327695172%)" stroke-width="3.234776047940833" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -29.8457940558939deg;
+      left: 12.039521431438182%;
+      animation-delay: 1.0094111798734895s;
+      animation-duration: 3.9933841188156887s;
+      width: 18.6114349781282px;
+      height: 151.79156822440092px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 18.6114349781282 151.79156822440092" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.3057174890641,0 Q 11.676966513483125,75.89578411220046 9.3057174890641,151.79156822440092" fill="none" stroke="hsl(30, 30%, 18.867402407110017%)" stroke-width="4.791819772776645" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 28.618796783888286deg;
+      left: 8.79847870835535%;
+      animation-delay: 2.251839040113018s;
+      animation-duration: 3.4847499604806407s;
+      width: 15.589282094098207px;
+      height: 94.3636402863035px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 15.589282094098207 94.3636402863035" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 7.794641047049104,0 Q 9.797044418710707,47.18182014315175 7.794641047049104,94.3636402863035" fill="none" stroke="hsl(30, 30%, 21.457471524120233%)" stroke-width="2.365784456719221" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 17.13415684294212deg;
+      left: 55.61945722711237%;
+      animation-delay: 1.8158788293616337s;
+      animation-duration: 2.56087928279793s;
+      width: 19.783851849578866px;
+      height: 115.25320154600026px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 19.783851849578866 115.25320154600026" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.891925924789433,0 Q 10.115895922373435,57.62660077300013 9.891925924789433,115.25320154600026" fill="none" stroke="hsl(30, 30%, 12.761154233238146%)" stroke-width="4.815821420555979" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -3.6391036031965873deg;
+      left: 51.831114245739585%;
+      animation-delay: 1.319642010634521s;
+      animation-duration: 4.399907646229803s;
+      width: 15.460504515863624px;
+      height: 74.32975088529022px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 15.460504515863624 74.32975088529022" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 7.730252257931812,0 Q 5.598471664055243,37.16487544264511 7.730252257931812,74.32975088529022" fill="none" stroke="hsl(30, 30%, 16.93089867391228%)" stroke-width="2.9661323158533452" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -19.52322724476101deg;
+      left: 30.19445693675631%;
+      animation-delay: 3.359159651707075s;
+      animation-duration: 4.567649504025786s;
+      width: 22.526645232412754px;
+      height: 77.39747540954248px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 22.526645232412754 77.39747540954248" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.263322616206377,0 Q 11.449456544279473,38.69873770477124 11.263322616206377,77.39747540954248" fill="none" stroke="hsl(30, 30%, 11.762492725527714%)" stroke-width="4.286909557126578" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 13.337150050282428deg;
+      left: 51.07228653222013%;
+      animation-delay: 2.299311876574584s;
+      animation-duration: 4.039854115586065s;
+      width: 23.26802982430344px;
+      height: 151.78451119094706px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.26802982430344 151.78451119094706" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.63401491215172,0 Q 4.386893488207387,75.89225559547353 11.63401491215172,151.78451119094706" fill="none" stroke="hsl(30, 30%, 12.424503319518456%)" stroke-width="3.8592883362120656" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -9.780578591149407deg;
+      left: 97.65042091473694%;
+      animation-delay: 1.2680434373181422s;
+      animation-duration: 2.056121694211855s;
+      width: 21.67504250972981px;
+      height: 168.605993932529px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 21.67504250972981 168.605993932529" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.837521254864905,0 Q 0.8332460665642163,84.3029969662645 10.837521254864905,168.605993932529" fill="none" stroke="hsl(30, 30%, 14.058379399034392%)" stroke-width="2.174321776247938" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 21.28098039055478deg;
+      left: 52.275175057133616%;
+      animation-delay: 0.46058150911719165s;
+      animation-duration: 2.565713135729472s;
+      width: 23.56677433119566px;
+      height: 140.77672474903574px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.56677433119566 140.77672474903574" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.78338716559783,0 Q 5.27445392426124,70.38836237451787 11.78338716559783,140.77672474903574" fill="none" stroke="hsl(30, 30%, 15.610243926159669%)" stroke-width="3.978737341950762" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 26.909135157283153deg;
+      left: 80.34631060407757%;
+      animation-delay: 0.9269201999304859s;
+      animation-duration: 2.4695827901974745s;
+      width: 17.133521341089754px;
+      height: 70.93120285447736px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.133521341089754 70.93120285447736" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.566760670544877,0 Q 7.728171732442407,35.46560142723868 8.566760670544877,70.93120285447736" fill="none" stroke="hsl(30, 30%, 16.737094806583997%)" stroke-width="2.453462137830855" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 0.7310772676778488deg;
+      left: 59.847869541862785%;
+      animation-delay: 3.128864584632929s;
+      animation-duration: 2.6057262323404857s;
+      width: 17.118728101584416px;
+      height: 141.6836796976047px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.118728101584416 141.6836796976047" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.559364050792208,0 Q 12.767811804001868,70.84183984880235 8.559364050792208,141.6836796976047" fill="none" stroke="hsl(30, 30%, 19.638343461570702%)" stroke-width="2.8914099055894686" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 25.765211981139302deg;
+      left: 4.612100670172836%;
+      animation-delay: 0.7890350290395122s;
+      animation-duration: 4.726067371995693s;
+      width: 24.28104989876244px;
+      height: 142.07676549078px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 24.28104989876244 142.07676549078" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 12.14052494938122,0 Q 22.456613047625506,71.03838274539 12.14052494938122,142.07676549078" fill="none" stroke="hsl(30, 30%, 22.7772596736064%)" stroke-width="4.125636586799488" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -8.389938200851997deg;
+      left: 29.417849887118642%;
+      animation-delay: 0.7909193799163986s;
+      animation-duration: 4.479544387668236s;
+      width: 15.491917250810484px;
+      height: 151.1478689688845px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 15.491917250810484 151.1478689688845" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 7.745958625405242,0 Q 11.47464592158748,75.57393448444225 7.745958625405242,151.1478689688845" fill="none" stroke="hsl(30, 30%, 15.755648353067892%)" stroke-width="2.0635963986639623" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 7.216871445383699deg;
+      left: 53.67361812648279%;
+      animation-delay: 2.3758736906804816s;
+      animation-duration: 3.3396605275737725s;
+      width: 19.8100510181359px;
+      height: 85.48769776449058px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 19.8100510181359 85.48769776449058" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.90502550906795,0 Q 1.6933857822283258,42.74384888224529 9.90502550906795,85.48769776449058" fill="none" stroke="hsl(30, 30%, 17.764058481472944%)" stroke-width="3.943798217589248" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -26.93453432929516deg;
+      left: 76.10681716696467%;
+      animation-delay: 1.3141012077757575s;
+      animation-duration: 3.9158650660479255s;
+      width: 17.594801949164864px;
+      height: 109.64335043635992px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.594801949164864 109.64335043635992" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.797400974582432,0 Q 3.2672171699144696,54.82167521817996 8.797400974582432,109.64335043635992" fill="none" stroke="hsl(30, 30%, 10.354935394789996%)" stroke-width="3.2646307597707898" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 10.259365097910127deg;
+      left: 28.886417199460347%;
+      animation-delay: 2.351765819698819s;
+      animation-duration: 4.225601319374996s;
+      width: 21.872413894415384px;
+      height: 91.84502305619208px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 21.872413894415384 91.84502305619208" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.936206947207692,0 Q 1.2969993764724421,45.92251152809604 10.936206947207692,91.84502305619208" fill="none" stroke="hsl(30, 30%, 20.441127708215326%)" stroke-width="3.2318816872193494" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 1.6881812298134902deg;
+      left: 37.94077835675089%;
+      animation-delay: 2.350434847601907s;
+      animation-duration: 4.55465355218498s;
+      width: 23.015377385344436px;
+      height: 131.62345739699558px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.015377385344436 131.62345739699558" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.507688692672218,0 Q 8.474735801908157,65.81172869849779 11.507688692672218,131.62345739699558" fill="none" stroke="hsl(30, 30%, 18.206044254666303%)" stroke-width="4.331898303595207" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -13.221392030192472deg;
+      left: 58.1135295885425%;
+      animation-delay: 1.9268195401355204s;
+      animation-duration: 4.138728266581701s;
+      width: 23.843253409748367px;
+      height: 150.9305329875814px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 23.843253409748367 150.9305329875814" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.921626704874184,0 Q 21.285072729581344,75.4652664937907 11.921626704874184,150.9305329875814" fill="none" stroke="hsl(30, 30%, 15.176399289800404%)" stroke-width="4.816914070044531" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -5.159071730518496deg;
+      left: 53.80858866703371%;
+      animation-delay: 2.7430668543488776s;
+      animation-duration: 2.1036277848188973s;
+      width: 19.47677649528964px;
+      height: 109.5314550513634px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 19.47677649528964 109.5314550513634" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.73838824764482,0 Q 0.525915593464882,54.7657275256817 9.73838824764482,109.5314550513634" fill="none" stroke="hsl(30, 30%, 20.440349193711366%)" stroke-width="4.335030241169909" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -14.525741991018538deg;
+      left: 80.6856399232085%;
+      animation-delay: 1.9524816907806928s;
+      animation-duration: 4.725128886462228s;
+      width: 20.27997122834737px;
+      height: 153.78753229368573px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 20.27997122834737 153.78753229368573" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.139985614173685,0 Q 19.290912189745015,76.89376614684286 10.139985614173685,153.78753229368573" fill="none" stroke="hsl(30, 30%, 18.2298012622252%)" stroke-width="2.1582564430375566" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 8.856152787140577deg;
+      left: 40.63351510820512%;
+      animation-delay: 2.240324736219634s;
+      animation-duration: 2.6567159721021705s;
+      width: 20.04923559414385px;
+      height: 145.93243436839612px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 20.04923559414385 145.93243436839612" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.024617797071924,0 Q 7.871472094451448,72.96621718419806 10.024617797071924,145.93243436839612" fill="none" stroke="hsl(30, 30%, 14.005528865951671%)" stroke-width="2.6763720734549965" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 26.439951137441767deg;
+      left: 82.57606618787842%;
+      animation-delay: 0.20431216003150632s;
+      animation-duration: 4.117922095369907s;
+      width: 18.63799890775468px;
+      height: 141.05757929449192px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 18.63799890775468 141.05757929449192" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.31899945387734,0 Q 18.559726914932824,70.52878964724596 9.31899945387734,141.05757929449192" fill="none" stroke="hsl(30, 30%, 16.4485852362151%)" stroke-width="4.059955083231383" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 13.578217555084638deg;
+      left: 94.99695313823455%;
+      animation-delay: 0.9098264114565173s;
+      animation-duration: 2.1845201524170568s;
+      width: 17.82770365369645px;
+      height: 130.02296621135056px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.82770365369645 130.02296621135056" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.913851826848225,0 Q 2.0471370551533514,65.01148310567528 8.913851826848225,130.02296621135056" fill="none" stroke="hsl(30, 30%, 23.048270707277936%)" stroke-width="2.3431232193623686" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 12.369259635520313deg;
+      left: 67.63527004331212%;
+      animation-delay: 2.377956505021454s;
+      animation-duration: 4.006751419918441s;
+      width: 22.093201562364463px;
+      height: 154.20434093117012px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 22.093201562364463 154.20434093117012" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.046600781182232,0 Q 8.013705218609918,77.10217046558506 11.046600781182232,154.20434093117012" fill="none" stroke="hsl(30, 30%, 12.485696884743328%)" stroke-width="2.060058932896351" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -26.66185696330789deg;
+      left: 81.05189864598901%;
+      animation-delay: 0.27749501618470584s;
+      animation-duration: 4.125279938475392s;
+      width: 22.990802649736274px;
+      height: 168.32647226084137px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 22.990802649736274 168.32647226084137" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.495401324868137,0 Q 18.18059562015085,84.16323613042069 11.495401324868137,168.32647226084137" fill="none" stroke="hsl(30, 30%, 13.263907979603834%)" stroke-width="3.10609369159968" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 20.519392274643273deg;
+      left: 68.43851819132132%;
+      animation-delay: 2.8525326011571854s;
+      animation-duration: 4.1676639720322965s;
+      width: 19.830432052249517px;
+      height: 102.96385098761021px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 19.830432052249517 102.96385098761021" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.915216026124758,0 Q 6.103657129574057,51.48192549380511 9.915216026124758,102.96385098761021" fill="none" stroke="hsl(30, 30%, 20.531976868859044%)" stroke-width="3.886839750024344" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -16.900692033606756deg;
+      left: 2.0395234323663303%;
+      animation-delay: 3.4208037551774373s;
+      animation-duration: 3.263094990659587s;
+      width: 20.73946532825223px;
+      height: 105.64635859756318px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 20.73946532825223 105.64635859756318" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.369732664126115,0 Q 10.971346405311047,52.82317929878159 10.369732664126115,105.64635859756318" fill="none" stroke="hsl(30, 30%, 15.462048907438291%)" stroke-width="4.984978581877002" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 1.403124164049574deg;
+      left: 65.47923733277376%;
+      animation-delay: 3.0371222438492347s;
+      animation-duration: 3.637687783080991s;
+      width: 21.594624674141166px;
+      height: 153.14068873161298px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 21.594624674141166 153.14068873161298" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.797312337070583,0 Q 21.500091118977075,76.57034436580649 10.797312337070583,153.14068873161298" fill="none" stroke="hsl(30, 30%, 24.55625837999387%)" stroke-width="4.129135282164717" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -18.840372016285954deg;
+      left: 23.49717166004204%;
+      animation-delay: 0.3527842930700512s;
+      animation-duration: 4.572346446690761s;
+      width: 20.492908677476102px;
+      height: 138.958866470018px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 20.492908677476102 138.958866470018" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.246454338738051,0 Q 18.43467159999738,69.479433235009 10.246454338738051,138.958866470018" fill="none" stroke="hsl(30, 30%, 17.899175615506604%)" stroke-width="2.93421963942959" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 12.312528153011915deg;
+      left: 78.46662307019245%;
+      animation-delay: 0.058711903348567795s;
+      animation-duration: 3.2318676638514274s;
+      width: 15.928776272306347px;
+      height: 126.50778234717436px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 15.928776272306347 126.50778234717436" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 7.964388136153174,0 Q 12.967035648653411,63.25389117358718 7.964388136153174,126.50778234717436" fill="none" stroke="hsl(30, 30%, 15.283537946693873%)" stroke-width="2.3521120503391004" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -7.879794498268726deg;
+      left: 64.71500188755269%;
+      animation-delay: 2.309619502629059s;
+      animation-duration: 2.1874384918241576s;
+      width: 16.586304777903088px;
+      height: 129.20607837347927px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 16.586304777903088 129.20607837347927" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.293152388951544,0 Q 15.495813089200055,64.60303918673964 8.293152388951544,129.20607837347927" fill="none" stroke="hsl(30, 30%, 16.902182638909498%)" stroke-width="4.510067778024464" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -5.650780562286424deg;
+      left: 23.96550428844826%;
+      animation-delay: 2.9797392243213032s;
+      animation-duration: 2.718829817134492s;
+      width: 19.35433000967615px;
+      height: 111.02759114372994px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 19.35433000967615 111.02759114372994" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.677165004838075,0 Q 7.5319214661488,55.51379557186497 9.677165004838075,111.02759114372994" fill="none" stroke="hsl(30, 30%, 19.46137003928918%)" stroke-width="3.1557149537886398" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 15.325965164914429deg;
+      left: 69.94648544109414%;
+      animation-delay: 2.2152308642746066s;
+      animation-duration: 4.095304002786406s;
+      width: 15.440513322500198px;
+      height: 164.36409708390875px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 15.440513322500198 164.36409708390875" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 7.720256661250099,0 Q 1.433518720464332,82.18204854195437 7.720256661250099,164.36409708390875" fill="none" stroke="hsl(30, 30%, 15.57235406746937%)" stroke-width="2.1220432585832447" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -19.423653355652007deg;
+      left: 35.81034437690749%;
+      animation-delay: 2.2817569195413396s;
+      animation-duration: 3.842889800726195s;
+      width: 16.221598521896794px;
+      height: 106.46370210537908px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 16.221598521896794 106.46370210537908" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.110799260948397,0 Q 10.719053248395317,53.23185105268954 8.110799260948397,106.46370210537908" fill="none" stroke="hsl(30, 30%, 19.989820712739153%)" stroke-width="3.9992616012828837" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 5.367316071713897deg;
+      left: 88.04398979934066%;
+      animation-delay: 2.487184662576393s;
+      animation-duration: 3.098108900568981s;
+      width: 18.613085823257943px;
+      height: 160.01095176375597px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 18.613085823257943 160.01095176375597" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.306542911628972,0 Q 17.713512132587496,80.00547588187798 9.306542911628972,160.01095176375597" fill="none" stroke="hsl(30, 30%, 17.533797658435276%)" stroke-width="3.3880348844455446" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 6.6206180052029895deg;
+      left: 23.392758937078018%;
+      animation-delay: 1.6051997996293013s;
+      animation-duration: 2.744766631670494s;
+      width: 19.965936396085752px;
+      height: 132.28329434820682px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 19.965936396085752 132.28329434820682" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.982968198042876,0 Q 10.770729514839015,66.14164717410341 9.982968198042876,132.28329434820682" fill="none" stroke="hsl(30, 30%, 19.21282983747886%)" stroke-width="4.344358858090503" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -0.4697754938611487deg;
+      left: 34.006944592270784%;
+      animation-delay: 1.601105309896996s;
+      animation-duration: 3.5209429168936106s;
+      width: 19.24767405203617px;
+      height: 139.29646601496427px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 19.24767405203617 139.29646601496427" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.623837026018085,0 Q 6.8293926827765565,69.64823300748213 9.623837026018085,139.29646601496427" fill="none" stroke="hsl(30, 30%, 20.855900804318622%)" stroke-width="2.408829799851399" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 16.343377593192827deg;
+      left: 74.88359576102293%;
+      animation-delay: 0.0007912717212473774s;
+      animation-duration: 3.7147302077204056s;
+      width: 17.032471523077366px;
+      height: 93.96735730550344px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.032471523077366 93.96735730550344" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.516235761538683,0 Q 13.975289861803319,46.98367865275172 8.516235761538683,93.96735730550344" fill="none" stroke="hsl(30, 30%, 15.665977472138765%)" stroke-width="4.833909282767684" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -17.89993810583001deg;
+      left: 91.98150850525657%;
+      animation-delay: 2.4811459182458164s;
+      animation-duration: 4.35304603183074s;
+      width: 16.77242015693768px;
+      height: 122.97260391468042px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 16.77242015693768 122.97260391468042" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.38621007846884,0 Q 2.5301592481049084,61.48630195734021 8.38621007846884,122.97260391468042" fill="none" stroke="hsl(30, 30%, 18.35663268551059%)" stroke-width="2.1910054657148503" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 5.589722137769599deg;
+      left: 65.48899628087716%;
+      animation-delay: 0.02017035129653455s;
+      animation-duration: 2.797417480729448s;
+      width: 16.176897089015146px;
+      height: 97.28466815519002px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 16.176897089015146 97.28466815519002" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.088448544507573,0 Q 3.874900746694612,48.64233407759501 8.088448544507573,97.28466815519002" fill="none" stroke="hsl(30, 30%, 20.825595436826575%)" stroke-width="2.768501957138679" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 1.107028992355521deg;
+      left: 2.638405733720983%;
+      animation-delay: 3.2726597776812816s;
+      animation-duration: 3.3927297433051833s;
+      width: 15.070099693317099px;
+      height: 105.75726313793852px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 15.070099693317099 105.75726313793852" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 7.535049846658549,0 Q 9.447942895820459,52.87863156896926 7.535049846658549,105.75726313793852" fill="none" stroke="hsl(30, 30%, 19.15226480889384%)" stroke-width="2.934545492424597" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 23.181128234225035deg;
+      left: 41.449362189407644%;
+      animation-delay: 1.2772980237223974s;
+      animation-duration: 2.4799305640885736s;
+      width: 15.460824816314902px;
+      height: 98.21952829548664px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 15.460824816314902 98.21952829548664" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 7.730412408157451,0 Q 2.6128786908866193,49.10976414774332 7.730412408157451,98.21952829548664" fill="none" stroke="hsl(30, 30%, 22.107214515417283%)" stroke-width="4.9962109272887005" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 26.6809289960891deg;
+      left: 40.13927715734174%;
+      animation-delay: 3.045913459052456s;
+      animation-duration: 3.782049343131373s;
+      width: 15.40870310267633px;
+      height: 147.40830141817025px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 15.40870310267633 147.40830141817025" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 7.704351551338165,0 Q 1.058531929171001,73.70415070908513 7.704351551338165,147.40830141817025" fill="none" stroke="hsl(30, 30%, 23.106217435165174%)" stroke-width="4.36121055620508" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 13.99962049770869deg;
+      left: 24.91729796055926%;
+      animation-delay: 2.8159966475303224s;
+      animation-duration: 2.3063726091050656s;
+      width: 24.659921726668905px;
+      height: 120.78650213907065px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 24.659921726668905 120.78650213907065" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 12.329960863334453,0 Q 16.816411035740355,60.393251069535324 12.329960863334453,120.78650213907065" fill="none" stroke="hsl(30, 30%, 15.024613855269969%)" stroke-width="2.7515556652849265" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 4.570805046550412deg;
+      left: 98.47324441578276%;
+      animation-delay: 2.3861059116823493s;
+      animation-duration: 4.084285934395932s;
+      width: 16.051677589658762px;
+      height: 103.40086044640384px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 16.051677589658762 103.40086044640384" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.025838794829381,0 Q 15.973694213409754,51.70043022320192 8.025838794829381,103.40086044640384" fill="none" stroke="hsl(30, 30%, 15.638553570152936%)" stroke-width="2.496105812459848" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 4.951936613144983deg;
+      left: 81.53219420492994%;
+      animation-delay: 1.0664661982193184s;
+      animation-duration: 2.5477191284557064s;
+      width: 17.313336273956978px;
+      height: 96.98229623448793px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.313336273956978 96.98229623448793" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.656668136978489,0 Q 9.336390063106297,48.49114811724397 8.656668136978489,96.98229623448793" fill="none" stroke="hsl(30, 30%, 14.978138216712225%)" stroke-width="3.372692281718587" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -12.378743271455313deg;
+      left: 20.026837603017423%;
+      animation-delay: 0.5602395059512684s;
+      animation-duration: 4.743067959806041s;
+      width: 21.20479628168173px;
+      height: 128.31750280301503px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 21.20479628168173 128.31750280301503" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.602398140840865,0 Q 14.913453189643564,64.15875140150752 10.602398140840865,128.31750280301503" fill="none" stroke="hsl(30, 30%, 23.595608501854635%)" stroke-width="2.064396032223213" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -15.527929640561013deg;
+      left: 13.738974575801022%;
+      animation-delay: 2.561736555903086s;
+      animation-duration: 4.4907362344574295s;
+      width: 21.523422913734535px;
+      height: 125.23734540310005px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 21.523422913734535 125.23734540310005" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 10.761711456867268,0 Q 5.616044368360269,62.618672701550025 10.761711456867268,125.23734540310005" fill="none" stroke="hsl(30, 30%, 23.852587306540748%)" stroke-width="4.983818200664994" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 1.8398435177822403deg;
+      left: 0.04483272569253405%;
+      animation-delay: 0.1246738973964977s;
+      animation-duration: 3.2235380579998094s;
+      width: 18.151945694375105px;
+      height: 77.45273837243529px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 18.151945694375105 77.45273837243529" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.075972847187552,0 Q 9.460994041507698,38.726369186217646 9.075972847187552,77.45273837243529" fill="none" stroke="hsl(30, 30%, 15.900095836730362%)" stroke-width="3.122748982322224" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 14.951888034255303deg;
+      left: 31.072920796449786%;
+      animation-delay: 1.1266411205452227s;
+      animation-duration: 3.5837534444239676s;
+      width: 19.58247146950191px;
+      height: 144.6816577536213px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 19.58247146950191 144.6816577536213" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.791235734750956,0 Q 19.073231454170546,72.34082887681065 9.791235734750956,144.6816577536213" fill="none" stroke="hsl(30, 30%, 18.455490497687173%)" stroke-width="3.252457528241939" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -13.263044945258326deg;
+      left: 78.88317845342054%;
+      animation-delay: 3.3500097024594155s;
+      animation-duration: 4.054417816534297s;
+      width: 15.65775780856998px;
+      height: 143.94262887059415px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 15.65775780856998 143.94262887059415" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 7.82887890428499,0 Q 3.1496959432700047,71.97131443529707 7.82887890428499,143.94262887059415" fill="none" stroke="hsl(30, 30%, 24.312186031715015%)" stroke-width="2.885644260287328" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -29.1226924878648deg;
+      left: 73.12230769250736%;
+      animation-delay: 2.4403558551834807s;
+      animation-duration: 4.347912342868382s;
+      width: 19.695388735517973px;
+      height: 70.58084422146443px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 19.695388735517973 70.58084422146443" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.847694367758987,0 Q 15.7018387119105,35.290422110732216 9.847694367758987,70.58084422146443" fill="none" stroke="hsl(30, 30%, 19.274351456771825%)" stroke-width="2.2237416832076096" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 0.32815852407920065deg;
+      left: 96.30826003841435%;
+      animation-delay: 2.611200854097091s;
+      animation-duration: 4.345129876068363s;
+      width: 15.62824128306094px;
+      height: 114.68032118129759px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 15.62824128306094 114.68032118129759" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 7.81412064153047,0 Q 13.990496044449062,57.34016059064879 7.81412064153047,114.68032118129759" fill="none" stroke="hsl(30, 30%, 15.915412068028344%)" stroke-width="4.097567423894455" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 22.103873653115716deg;
+      left: 78.86973175336232%;
+      animation-delay: 2.009918965522155s;
+      animation-duration: 2.2244906263819404s;
+      width: 22.15706616380277px;
+      height: 162.47621571258134px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 22.15706616380277 162.47621571258134" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.078533081901385,0 Q 12.532925115444806,81.23810785629067 11.078533081901385,162.47621571258134" fill="none" stroke="hsl(30, 30%, 18.391092494070357%)" stroke-width="2.249792905582601" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -2.6329365370448254deg;
+      left: 74.77334675741282%;
+      animation-delay: 1.1530469283047424s;
+      animation-duration: 4.2334830765596925s;
+      width: 17.227010956811757px;
+      height: 122.89648906609874px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.227010956811757 122.89648906609874" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.613505478405878,0 Q 12.549449071029551,61.44824453304937 8.613505478405878,122.89648906609874" fill="none" stroke="hsl(30, 30%, 10.291289531943592%)" stroke-width="3.0225937343088334" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -8.266334066660704deg;
+      left: 54.93708121928182%;
+      animation-delay: 2.0918449758805098s;
+      animation-duration: 2.123801513387674s;
+      width: 22.022446259577926px;
+      height: 102.85700118418377px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 22.022446259577926 102.85700118418377" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 11.011223129788963,0 Q 21.36085313477502,51.428500592091886 11.011223129788963,102.85700118418377" fill="none" stroke="hsl(30, 30%, 20.839874369280864%)" stroke-width="3.1125426313717854" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 12.20295556911485deg;
+      left: 55.75997917209614%;
+      animation-delay: 0.31242127513434437s;
+      animation-duration: 4.618181208682104s;
+      width: 16.580680409918667px;
+      height: 96.65149736383225px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 16.580680409918667 96.65149736383225" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.290340204959334,0 Q 5.147575356703603,48.325748681916124 8.290340204959334,96.65149736383225" fill="none" stroke="hsl(30, 30%, 19.382661545084247%)" stroke-width="2.877421684760666" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: 10.629556826286969deg;
+      left: 41.925760611978745%;
+      animation-delay: 0.6264445453690715s;
+      animation-duration: 3.2525473261333318s;
+      width: 19.51161003057328px;
+      height: 82.47578808374516px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 19.51161003057328 82.47578808374516" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 9.75580501528664,0 Q 0.2582781190896455,41.23789404187258 9.75580501528664,82.47578808374516" fill="none" stroke="hsl(30, 30%, 24.69257981702159%)" stroke-width="4.506675148943517" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div><div class="hair-bunch" style="
+      --rotation: -24.278801428095036deg;
+      left: 14.417963941581213%;
+      animation-delay: 0.7323715834540253s;
+      animation-duration: 4.133917803942518s;
+      width: 17.754644656835968px;
+      height: 154.34605564887892px;
+    " data-astro-cid-zxolejlg> <svg width="100%" height="100%" viewBox="0 0 17.754644656835968 154.34605564887892" preserveAspectRatio="none" data-astro-cid-zxolejlg> <path d="M 8.877322328417984,0 Q 6.693538436355787,77.17302782443946 8.877322328417984,154.34605564887892" fill="none" stroke="hsl(30, 30%, 20.3996667201537%)" stroke-width="4.909243053084172" stroke-linecap="round" data-astro-cid-zxolejlg></path> </svg> </div> </div>   <section class="py-16 sm:py-20"> <div class="container mx-auto px-4 sm:px-6 lg:px-8"> <h1 class="text-4xl sm:text-5xl font-bold text-center mb-8 sm:mb-12">Our Salon Services</h1> <p class="text-lg sm:text-xl text-center max-w-3xl mx-auto mb-12 sm:mb-20">At The Smart Salon, we offer a comprehensive menu of services to meet all your beauty needs. Our team of skilled professionals is dedicated to providing you with a luxurious and relaxing experience, using only the finest products and techniques.</p> <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"> <a href="/booking?service=Haircuts%20%26%20Styling" class="flex flex-col items-center p-8 bg-white dark:bg-gunmetal rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"> <img src="/services/hair-care.svg" alt="Haircuts &#38; Styling" class="w-16 h-16 mb-4"> <h3 class="text-xl font-bold text-center mb-2 dark:text-ivory">Haircuts &amp; Styling</h3> <p class="text-gray-600 dark:text-gray-400 text-sm text-center">Our expert stylists create personalized haircuts and styles to suit your individual features and lifestyle. We offer everything from classic cuts to the latest trends.</p> </a><a href="/booking?service=Hair%20Coloring" class="flex flex-col items-center p-8 bg-white dark:bg-gunmetal rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"> <img src="/services/specialty.svg" alt="Hair Coloring" class="w-16 h-16 mb-4"> <h3 class="text-xl font-bold text-center mb-2 dark:text-ivory">Hair Coloring</h3> <p class="text-gray-600 dark:text-gray-400 text-sm text-center">Transform your look with our professional hair coloring services. We use high-quality products to achieve stunning results, from subtle highlights to bold new colors.</p> </a><a href="/booking?service=Hair%20Treatments" class="flex flex-col items-center p-8 bg-white dark:bg-gunmetal rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"> <img src="/services/hair-care.svg" alt="Hair Treatments" class="w-16 h-16 mb-4"> <h3 class="text-xl font-bold text-center mb-2 dark:text-ivory">Hair Treatments</h3> <p class="text-gray-600 dark:text-gray-400 text-sm text-center">Revitalize your hair with our nourishing treatments. We offer a range of services to repair damage, add moisture, and restore shine, leaving your hair healthy and vibrant.</p> </a><a href="/booking?service=Manicures%20%26%20Pedicures" class="flex flex-col items-center p-8 bg-white dark:bg-gunmetal rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"> <img src="/services/nail-body.svg" alt="Manicures &#38; Pedicures" class="w-16 h-16 mb-4"> <h3 class="text-xl font-bold text-center mb-2 dark:text-ivory">Manicures &amp; Pedicures</h3> <p class="text-gray-600 dark:text-gray-400 text-sm text-center">Indulge in our luxurious manicures and pedicures. Our skilled technicians will leave your hands and feet looking and feeling their best, with a wide range of colors and finishes to choose from.</p> </a><a href="/booking?service=Facials%20%26%20Skincare" class="flex flex-col items-center p-8 bg-white dark:bg-gunmetal rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"> <img src="/services/skin-face.svg" alt="Facials &#38; Skincare" class="w-16 h-16 mb-4"> <h3 class="text-xl font-bold text-center mb-2 dark:text-ivory">Facials &amp; Skincare</h3> <p class="text-gray-600 dark:text-gray-400 text-sm text-center">Rejuvenate your skin with our customized facials and skincare treatments. We use premium products and advanced techniques to address your specific skin concerns and reveal a radiant complexion.</p> </a><a href="/booking?service=Waxing%20%26%20Hair%20Removal" class="flex flex-col items-center p-8 bg-white dark:bg-gunmetal rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"> <img src="/services/specialty.svg" alt="Waxing &#38; Hair Removal" class="w-16 h-16 mb-4"> <h3 class="text-xl font-bold text-center mb-2 dark:text-ivory">Waxing &amp; Hair Removal</h3> <p class="text-gray-600 dark:text-gray-400 text-sm text-center">Achieve smooth, silky skin with our professional waxing and hair removal services. Our experienced estheticians provide a comfortable and effective experience, leaving you with long-lasting results.</p> </a> </div> </div> </section>  </main> <footer> <p>&copy; 2026 The Smart Salon. All rights reserved.</p> </footer> <div class="fixed bottom-4 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-50" data-astro-cid-sckkx6r4> <astro-island uid="Z1DXyNI" prefix="r1" component-url="/saloon/_astro/Dock.BvYnctZK.js" component-export="default" renderer-url="/saloon/_astro/client.BuOr9PT5.js" props="{&quot;items&quot;:[1,[[0,{&quot;icon&quot;:[0,&quot;/saloonhome.svg&quot;],&quot;label&quot;:[0,&quot;Home&quot;],&quot;href&quot;:[0,&quot;/saloon&quot;]}],[0,{&quot;icon&quot;:[0,&quot;/saloonabout.svg&quot;],&quot;label&quot;:[0,&quot;About&quot;],&quot;href&quot;:[0,&quot;/saloonabout&quot;]}],[0,{&quot;icon&quot;:[0,&quot;/saloonservices.svg&quot;],&quot;label&quot;:[0,&quot;Services&quot;],&quot;href&quot;:[0,&quot;/saloonservices&quot;]}],[0,{&quot;icon&quot;:[0,&quot;/saloonbooking.svg&quot;],&quot;label&quot;:[0,&quot;Booking&quot;],&quot;href&quot;:[0,&quot;/saloonbooking&quot;]}],[0,{&quot;icon&quot;:[0,&quot;/saloonreviews.svg&quot;],&quot;label&quot;:[0,&quot;Reviews&quot;],&quot;href&quot;:[0,&quot;/saloonreviews&quot;]}],[0,{&quot;icon&quot;:[0,&quot;/saloonoffers.svg&quot;],&quot;label&quot;:[0,&quot;Offers&quot;],&quot;href&quot;:[0,&quot;/saloonoffers&quot;]}]]],&quot;data-astro-cid-sckkx6r4&quot;:[0,true]}" ssr="" client="load" opts="{&quot;name&quot;:&quot;Dock&quot;,&quot;value&quot;:true}" await-children=""><div class="dock-outer" style="scrollbar-width:none;height:68px"><div class="dock-panel dock-panel-motion " role="toolbar" aria-label="Application dock" style="height:68px"><a href="/saloon" class="dock-item dock-item-motion " tabindex="0" role="button" aria-haspopup="dialog" aria-label="Home" aria-controls="dock-item-0" style="width:40px;height:40px"><img src="/saloonhome.svg" alt="" class="dock-icon "/></a><a href="/saloonabout" class="dock-item dock-item-motion " tabindex="0" role="button" aria-haspopup="dialog" aria-label="About" aria-controls="dock-item-1" style="width:40px;height:40px"><img src="/saloonabout.svg" alt="" class="dock-icon "/></a><a href="/saloonservices" class="dock-item dock-item-motion " tabindex="0" role="button" aria-haspopup="dialog" aria-label="Services" aria-controls="dock-item-2" style="width:40px;height:40px"><img src="/saloonservices.svg" alt="" class="dock-icon "/></a><a href="/saloonbooking" class="dock-item dock-item-motion " tabindex="0" role="button" aria-haspopup="dialog" aria-label="Booking" aria-controls="dock-item-3" style="width:40px;height:40px"><img src="/saloonbooking.svg" alt="" class="dock-icon "/></a><a href="/saloonreviews" class="dock-item dock-item-motion " tabindex="0" role="button" aria-haspopup="dialog" aria-label="Reviews" aria-controls="dock-item-4" style="width:40px;height:40px"><img src="/saloonreviews.svg" alt="" class="dock-icon "/></a><a href="/saloonoffers" class="dock-item dock-item-motion " tabindex="0" role="button" aria-haspopup="dialog" aria-label="Offers" aria-controls="dock-item-5" style="width:40px;height:40px"><img src="/saloonoffers.svg" alt="" class="dock-icon "/></a></div></div><!--astro:end--></astro-island> </div> </body></html>
