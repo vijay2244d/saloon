@@ -2,6 +2,8 @@
 import Door from '../components/Door.astro';
 import Dock from '../components/Dock.jsx';
 import ThemeToggle from '../components/ThemeToggle.jsx';
+import SidePanels from '../components/SidePanels.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -27,6 +29,7 @@ const navLinks = [
   { href: `${safeBaseUrl}booking`, label: "Booking" },
   { href: `${safeBaseUrl}reviews`, label: "Reviews" },
   { href: `${safeBaseUrl}offers`, label: "Offers" },
+  { href: `${safeBaseUrl}contact`, label: "Contact" },
 ];
 
 const dockItems = navLinks.map(link => ({

@@ -16,9 +16,9 @@ function escapeHtml(text) {
 export const POST = async ({ request }) => {
   try {
     const data = await request.json();
-    const { name, email, date, time, service } = data;
+    const { name, email, subject, message } = data;
 
-    if (!name || !email || !date || !time || !service) {
+    if (!name || !email || !subject || !message) {
       return new Response(
         JSON.stringify({ error: 'Missing required fields' }),
         {
@@ -31,9 +31,8 @@ export const POST = async ({ request }) => {
     // Escape user input to prevent HTML injection in the email client
     const safeName = escapeHtml(name);
     const safeEmail = escapeHtml(email);
-    const safeDate = escapeHtml(date);
-    const safeTime = escapeHtml(time);
-    const safeService = escapeHtml(service);
+    const safeSubject = escapeHtml(subject);
+    const safeMessage = escapeHtml(message);
 
     // Configure the mail transporter from environment variables
     const transporter = nodemailer.createTransport({
@@ -47,23 +46,26 @@ export const POST = async ({ request }) => {
     });
 
     const mailOptions = {
-      from: `"The Smart Salon" <${process.env.EMAIL_USER}>`,
+      from: `"${safeName}" <${safeEmail}>`,
       to: process.env.DIRECTOR_EMAIL || 'sculpture489@gmail.com',
-      subject: 'New Booking Request',
+      subject: `The Smart Salon - New Contact Submission: ${safeSubject}`,
       html: `
-        <h1>New Booking Request</h1>
+        <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${safeName}</p>
         <p><strong>Email:</strong> <a href="mailto:${safeEmail}">${safeEmail}</a></p>
-        <p><strong>Date:</strong> ${safeDate}</p>
-        <p><strong>Time:</strong> ${safeTime}</p>
-        <p><strong>Service:</strong> ${safeService}</p>
+        <p><strong>Subject:</strong> ${safeSubject}</p>
+        <br/>
+        <p><strong>Message:</strong></p>
+        <blockquote style="border-left: 4px solid #E94F37; padding-left: 10px; margin-left: 0; color: #333; background-color: #f9f9f9; padding: 10px 15px; border-radius: 4px;">
+          ${safeMessage.replace(/\n/g, '<br/>')}
+        </blockquote>
       `,
     };
 
     await transporter.sendMail(mailOptions);
 
     return new Response(
-      JSON.stringify({ message: 'Email sent successfully' }),
+      JSON.stringify({ message: 'Message sent successfully' }),
       {
         status: 200,
         headers: { 'Content-Type': 'application/json' },
